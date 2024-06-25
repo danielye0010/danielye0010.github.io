@@ -28,10 +28,9 @@ linkedin: https://www.linkedin.com/in/danielye0001/
 # Images (e.g., your profile picture and your website's favicon)
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively.
 avatar: danielye.github.io/assets/phote.jpg
-
-# logo: ./assets/img/logo.png
-# favicon: ./assets/img/favicon.png
-# favicon_dark: ./assets/img/favicon-dark.png
+logo: ./assets/img/logo.png
+favicon: ./assets/img/favicon.png
+favicon_dark: ./assets/img/favicon-dark.png
 
 # Footnote
 # You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
