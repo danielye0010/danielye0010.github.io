@@ -20,11 +20,6 @@ Outside of academia, I began my journey as a professional swimmer at the age of 
 - **Deep Neural Network:**
 - **Operations Research**
 - **Statistical Inference & Learning:**
-<!-- 
-## Awards
-## Collaboration
-## Resources
-
 
 
 
