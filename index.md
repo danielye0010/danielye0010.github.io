@@ -1,5 +1,7 @@
 ---
 layout: homepage
+title: "daniel ye's persional website"
+keywords: "daniel ye iowa state, daniel, ye, daniel ye, iowa state"
 ---
 
 ## About Me
