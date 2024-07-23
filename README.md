@@ -159,6 +159,18 @@ Our project uses the source code from the following repositories:
 
 * [al-folio](https://github.com/alshedivat/al-folio) -->
 
+# Personal Website
+
+This website is hosted on GitHub Pages and includes various features to enhance search engine optimization (SEO) and overall user experience.
+
+## Features
+
+- **SEO Optimization**: 
+  - Added meta tags for title, description, and keywords.
+  - Created `sitemap.xml` for better indexing by search engines.
+  - Configured `robots.txt` to allow search engine crawlers.
+  - Added the website to Google and Bing search engines to enhance indexing.
+
 ## Acknowledgements
 
 [![LICENSE](https://img.shields.io/github/license/yaoyao-liu/minimal-light?style=flat-square&logo=creative-commons&color=EF9421)](https://github.com/yaoyao-liu/minimal-light/blob/main/LICENSE)
