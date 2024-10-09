@@ -13,7 +13,7 @@ My current research focuses on Operations Research in Digital Twin and Computer 
 
 Prior to the Ph.D. program, I obtained a Master's degree in Statistics from the <a href="https://cdis.wisc.edu/" target = "_blank"> University of Wisconsin-Madison</a>. During this period, I worked as a Research Cyberinfrastructure Project Assistant in the Office of Chief Technology Officer<a href="https://it.wisc.edu/about/division-of-information-technology/research-cyberinfrastructure-2/" target="_blank"> (CTO)</a>, where I developed and deployed multiple production-grade data management systems for the university. I received my Bachelor's degrees, B.S. in Statistics and B.A. in Economics from the<a href="https://www.d.umn.edu/" target = "_blank"> University of Minnesota Duluth</a>.
 
-<!--
+
 
 
 
