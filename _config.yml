@@ -1,7 +1,7 @@
 url: "danielye.net "
 # baseurl: danielye.github.io
 # Basic Information
-title: Daniel Ye「叶逸飞」
+title: "Daniel Ye<br>「叶逸飞」"
 position: Ph.D. Candidate
 affiliation: Iowa State University
 subaffiliation: Department of Industrial and Manufacturing Systems Engineering
@@ -19,8 +19,7 @@ canonical: https://minimal-light-theme.yliu.me/
 
 # Links
 # If you don't need one of them, you may delete the corresponding line.
-# google_scholar: 
-# cv_link: assets/files/HanchaoZhangCV.pdf
+google_scholar: 
 github_link: https://github.com/danielye0010
 linkedin: https://www.linkedin.com/in/danielye0001/
 
