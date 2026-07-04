@@ -1,7 +1,7 @@
 ---
 layout: homepage
 title: "daniel ye's persional website"
-keywords: "daniel, ye, danielye, iowa state, isu, yifei, imse"
+keywords: "daniel, danielye, iowa state, isu, yifei, iastate, yifeiye, danielyeiastate"
 ---
 
 ## About Me
