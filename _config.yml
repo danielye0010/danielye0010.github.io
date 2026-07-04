@@ -28,7 +28,7 @@ linkedin: https://www.linkedin.com/in/danielye0001/
 avatar: ./assets/img/danielavatar.jpg
 # logo: ./assets/img/logo.png
 favicon: ./assets/img/favicon_black.png
-favicon_dark: ./assets/img/favicon_white.png
+favicon_dark: ./assets/img/favicon_black.png
 
 # Footnote
 # You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
