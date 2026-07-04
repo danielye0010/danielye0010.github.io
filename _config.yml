@@ -26,7 +26,7 @@ linkedin: https://www.linkedin.com/in/danielye0001/
 # Images (e.g., your profile picture and your website's favicon)
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively.
 avatar: ./assets/img/danielavatar.jpg
-logo: ./assets/img/favicon_black.png
+# logo: ./assets/img/favicon_black.png
 favicon: ./assets/img/favicon_black.png
 favicon_dark: ./assets/img/favicon_black.png
 
