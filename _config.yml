@@ -1,4 +1,4 @@
-url: "danielye.net "
+url: "https://danielye.net"
 # baseurl: danielye.github.io
 # Basic Information
 title: "Daniel Ye"
@@ -13,9 +13,9 @@ address_link: https://maps.app.goo.gl/gMN2vPth4yKYm7pVA
 
 # Search Engine Optimization (SEO)
 # The following information is used to improve the website traffic from search engines, e.g., Google.
-keywords: minimal light
-description: The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.
-canonical: https://minimal-light-theme.yliu.me/
+keywords: Daniel Ye, Industrial Engineering, additive manufacturing, computational geometry, digital manufacturing
+description: Daniel Ye is a Ph.D. candidate in Industrial Engineering at Iowa State University, researching computational geometry, 3D deformation modeling, and additive manufacturing.
+canonical: https://danielye.net/
 
 # Links
 # If you don't need one of them, you may delete the corresponding line.
