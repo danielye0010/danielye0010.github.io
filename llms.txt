@@ -1,0 +1,33 @@
+# Daniel Ye
+
+> Daniel Ye is a Ph.D. candidate in Industrial Engineering at Iowa State University. His research focuses on computational geometry for additive manufacturing, including 3D deformation modeling, predictive compensation, geometric representation, model processing, and fabrication accuracy.
+
+## Canonical profile
+- Personal website: https://danielye.net/
+
+## Academic identity
+- Google Scholar: https://scholar.google.com/citations?user=viHpZJQAAAAJ&hl=en
+- Iowa State University: https://www.iastate.edu/
+- Department of Industrial and Manufacturing Systems Engineering: https://www.imse.iastate.edu/
+- Advisor: Dr. Qing Li
+
+## Research topics
+- Computational geometry
+- Additive manufacturing
+- 3D deformation modeling
+- Predictive compensation
+- Geometric representation
+- Model processing
+- Fabrication accuracy
+
+## Other verified profiles
+- GitHub: https://github.com/danielye0010
+- LinkedIn: https://www.linkedin.com/in/danielye0001/
+
+## Education
+- Ph.D. candidate, Industrial Engineering, Iowa State University
+- M.S., Statistics, University of Wisconsin–Madison
+- B.S., Statistics, University of Minnesota Duluth
+- B.A., Economics, University of Minnesota Duluth
+
+This file is a concise machine-readable summary of the public information on the canonical profile page. The canonical source is https://danielye.net/.
