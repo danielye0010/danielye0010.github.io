@@ -1,4 +1,6 @@
 url: "https://danielye.net"
+lang: en-US
+author: Daniel Ye
 # baseurl: danielye.github.io
 # Basic Information
 title: "Daniel Ye"
@@ -13,8 +15,8 @@ address_link: https://maps.app.goo.gl/gMN2vPth4yKYm7pVA
 
 # Search Engine Optimization (SEO)
 # The following information is used to improve the website traffic from search engines, e.g., Google.
-keywords: Daniel Ye, Industrial Engineering, additive manufacturing, computational geometry, digital manufacturing
-description: Daniel Ye is a Ph.D. candidate in Industrial Engineering at Iowa State University, researching computational geometry, 3D deformation modeling, and additive manufacturing.
+keywords: Daniel Ye, Industrial Engineering, Iowa State University, additive manufacturing, computational geometry, 3D deformation modeling, predictive compensation, digital manufacturing
+description: Daniel Ye is a Ph.D. candidate in Industrial Engineering at Iowa State University, researching computational geometry, 3D deformation modeling, predictive compensation, and additive manufacturing.
 canonical: https://danielye.net/
 
 # Links
