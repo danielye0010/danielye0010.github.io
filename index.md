@@ -1,7 +1,7 @@
 ---
 layout: homepage
-title: "daniel ye's persional website"
-keywords: "daniel, danielye, iowa state, isu, yifei, iastate, yifeiye, danielyeiastate"
+title: "Daniel Ye | Ph.D. Candidate at Iowa State University"
+keywords: "Daniel Ye, Industrial Engineering, Iowa State University, additive manufacturing, computational geometry, 3D deformation modeling, predictive compensation"
 ---
 
 ## About Me
@@ -12,8 +12,6 @@ I'm a Ph.D. candidate in Industrial Engineering at <a href="https://www.imse.ias
 Prior to beginning my Ph.D., I earned a Master's degree in Statistics from the <a href="https://cdis.wisc.edu/" target="_blank">University of Wisconsin–Madison</a>. During this time, I worked as a Research Cyberinfrastructure Project Assistant in the Office of the Chief Technology Officer <a href="https://it.wisc.edu/about/division-of-information-technology/research-cyberinfrastructure-2/" target="_blank">(CTO)</a>, where I developed and deployed multiple data management systems supporting university research and operations. I received my Bachelor's degrees, a B.S. in Statistics and a B.A. in Economics from the <a href="https://www.d.umn.edu/" target="_blank">University of Minnesota Duluth</a>.
 
 Outside of research, I enjoy reading and writing. Before graduate school, I worked in journalism on reporting and documentary projects. More recently, I published a short story collection, <a href="https://www.amazon.com/%E9%9B%BB%E6%A2%AF%E8%A3%A1%E6%B2%92%E6%9C%89%E6%B5%B7-Traditional-Chinese-Daniel-Ye-ebook/dp/B0H14C6DS1" target="_blank"><i>No Sea in the Elevator</i></a>, available on Amazon.
-
-
 
 
 
