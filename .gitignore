@@ -1,7 +1,19 @@
-_site
-.sass-cache
-Gemfile.lock
+# Jekyll build output / caches
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Local Bundler configuration and installed gems
+.bundle/
+vendor/bundle/
 *.gem
+
+# Editor / local history
+.history/
+
+# OS / local scripts
 .DS_Store
-.jekyll-cache
 git-update.sh
+
+# Gemfile.lock is intentionally tracked for reproducible site builds.
