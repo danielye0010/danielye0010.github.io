@@ -40,6 +40,11 @@ enable_footnote: false
 # Please remove this if you don't use Google Analytics
 # google_analytics: 
 
+# Cloudflare Web Analytics
+# For "Enable with JS Snippet installation" in Cloudflare Manage site.
+# Supply the site-specific token from the snippet. Do not combine with auto-injection.
+# cloudflare_web_analytics_token: YOUR_SITE_TOKEN
+
 # Use this project as a remote theme for GitHub Pages
 # See the guide here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
 remote_theme: yaoyao-liu/minimal-light
