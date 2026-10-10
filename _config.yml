@@ -43,7 +43,7 @@ enable_footnote: false
 # Cloudflare Web Analytics
 # For "Enable with JS Snippet installation" in Cloudflare Manage site.
 # Supply the site-specific token from the snippet. Do not combine with auto-injection.
-# cloudflare_web_analytics_token: YOUR_SITE_TOKEN
+cloudflare_web_analytics_token: 5637619e1ab545d8b5be22e2111be3d8
 
 # Use this project as a remote theme for GitHub Pages
 # See the guide here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
