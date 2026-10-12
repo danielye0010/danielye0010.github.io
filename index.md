@@ -14,4 +14,13 @@ I studied Statistics and Economics at the <a href="https://www.d.umn.edu/" targe
 
 Outside of research, I enjoy reading and writing. More recently, I published a short story collection, <a href="https://www.amazon.com/%E9%9B%BB%E6%A2%AF%E8%A3%A1%E6%B2%92%E6%9C%89%E6%B5%B7-Traditional-Chinese-Daniel-Ye-ebook/dp/B0H14C6DS1" target="_blank"><i>No Sea in the Elevator</i></a>, about cities, systems, and the people caught inside them.
 
-
+<p style="margin-top: 1rem;">
+  <a href="https://destroy.spritefusion.com/?from=badge&amp;url=https%3A%2F%2Fdanielye.net%2F"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Play Destroy Any Website with danielye.net">
+    <img src="https://destroy.spritefusion.com/badge.svg"
+         alt="Destroy this website"
+         width="180" height="40" loading="lazy" decoding="async"
+         style="max-width: 100%; height: auto;">
+  </a>
+</p>
