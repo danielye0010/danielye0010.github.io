@@ -51,7 +51,7 @@
         "@id": "https://danielye.net/#profile-page",
         "url": "https://danielye.net/",
         "name": "Daniel Ye | Ph.D. Candidate at Iowa State University",
-        "description": "Daniel Ye is a Ph.D. candidate in Industrial Engineering at Iowa State University, researching computational geometry, 3D deformation modeling, predictive compensation, and additive manufacturing.",
+        "description": "Daniel Ye (Yifei Ye, 叶逸飞) is a Ph.D. candidate in Industrial Engineering at Iowa State University, researching computational geometry, 3D deformation modeling, predictive compensation, and additive manufacturing.",
         "inLanguage": "en-US",
         "dateModified": "{{ site.time | date_to_xmlschema }}",
         "mainEntity": { "@id": "https://danielye.net/#person" }
@@ -60,6 +60,7 @@
         "@type": "Person",
         "@id": "https://danielye.net/#person",
         "name": "Daniel Ye",
+        "alternateName": ["Yifei Ye", "叶逸飞", "Ye Yifei"],
         "givenName": "Daniel",
         "familyName": "Ye",
         "url": "https://danielye.net/",
@@ -170,6 +171,9 @@
       {% endif %}
 
       <h1>{{ site.title }}</h1>
+      {% if site.alt_name_latin %}
+      <p class="alt-name" style="margin:-6px 0 6px;color:#6d6d6d;font-size:0.95rem;">{{ site.alt_name_latin }}{% if site.alt_name_native %} · <span lang="zh-Hans">{{ site.alt_name_native }}</span>{% endif %}</p>
+      {% endif %}
       {% if site.subtitle %}
       <h3>{{ site.subtitle }}</h3>
       {% endif %}

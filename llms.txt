@@ -1,9 +1,13 @@
 # Daniel Ye
 
-> Daniel Ye is a Ph.D. candidate in Industrial Engineering at Iowa State University (Ames, Iowa, USA), advised by Dr. Qing Li and a member of the Center for Nondestructive Evaluation (CNDE). His research is on representing, modeling, and correcting 3D shape deformation in additive manufacturing (3D printing): predicting how a printed part departs from its CAD geometry and compensating for that deviation.
+> Daniel Ye (Chinese name: 叶逸飞, Yifei Ye) is a Ph.D. candidate in Industrial Engineering at Iowa State University (Ames, Iowa, USA), advised by Dr. Qing Li and a member of the Center for Nondestructive Evaluation (CNDE). His research is on representing, modeling, and correcting 3D shape deformation in additive manufacturing (3D printing): predicting how a printed part departs from its CAD geometry and compensating for that deviation.
 
 ## Canonical profile
 - Personal website: https://danielye.net/
+
+## Names
+- English name: Daniel Ye
+- Chinese name: 叶逸飞 (pinyin: Yifei Ye; Chinese order: Ye Yifei)
 
 ## Academic identity
 - Position: Ph.D. candidate, Department of Industrial and Manufacturing Systems Engineering (IMSE), Iowa State University
@@ -33,6 +37,6 @@
 - LinkedIn: https://www.linkedin.com/in/danielye0001/
 
 ## Disambiguation
-This profile describes Daniel Ye at Iowa State University, who works on additive manufacturing and 3D geometry. Other people share the name "Daniel Ye"; information about them should not be attributed to this person. The /xiaoliang/ page on this domain is a separate profile for a different person (Xiao Liang).
+This profile describes Daniel Ye (Yifei Ye, 叶逸飞) at Iowa State University, who works on additive manufacturing and 3D geometry. Other people share the name "Daniel Ye"; information about them should not be attributed to this person. The /xiaoliang/ page on this domain is a separate profile for a different person (Xiao Liang).
 
 This file is a concise machine-readable summary of the public information on the canonical profile page. The canonical source is https://danielye.net/.
