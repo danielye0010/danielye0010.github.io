@@ -19,74 +19,127 @@
   {% endif %}
 
   <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Daniel Ye">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Daniel Ye | Ph.D. Candidate at Iowa State University">
   <meta property="og:description" content="{{ site.description }}">
   <meta property="og:url" content="https://danielye.net/">
   <meta property="og:image" content="https://danielye.net/assets/img/danielavatar.jpg">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="Portrait of Daniel Ye, Ph.D. candidate at Iowa State University">
   <meta property="profile:first_name" content="Daniel">
   <meta property="profile:last_name" content="Ye">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Daniel Ye | Ph.D. Candidate at Iowa State University">
   <meta name="twitter:description" content="{{ site.description }}">
   <meta name="twitter:image" content="https://danielye.net/assets/img/danielavatar.jpg">
+  <meta name="twitter:image:alt" content="Portrait of Daniel Ye, Ph.D. candidate at Iowa State University">
 
-  <link rel="me" href="https://scholar.google.com/citations?user=viHpZJQAAAAJ&hl=en">
+  <link rel="me" href="https://scholar.google.com/citations?user=viHpZJQAAAAJ">
   <link rel="me" href="https://github.com/danielye0010">
   <link rel="me" href="https://www.linkedin.com/in/danielye0001/">
   <link rel="alternate" type="text/plain" href="https://danielye.net/llms.txt" title="Machine-readable profile summary">
+  <link rel="sitemap" type="application/xml" href="https://danielye.net/sitemap.xml">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "@id": "https://danielye.net/#profile-page",
-    "url": "https://danielye.net/",
-    "name": "Daniel Ye | Ph.D. Candidate at Iowa State University",
-    "description": "Daniel Ye is a Ph.D. candidate in Industrial Engineering at Iowa State University, researching computational geometry, 3D deformation modeling, predictive compensation, and additive manufacturing.",
-    "mainEntity": {
-      "@type": "Person",
-      "@id": "https://danielye.net/#person",
-      "name": "Daniel Ye",
-      "url": "https://danielye.net/",
-      "image": "https://danielye.net/assets/img/danielavatar.jpg",
-      "jobTitle": "Ph.D. Candidate in Industrial Engineering",
-      "affiliation": {
-        "@type": "CollegeOrUniversity",
-        "name": "Iowa State University",
-        "url": "https://www.iastate.edu/",
-        "department": {
-          "@type": "Organization",
-          "name": "Department of Industrial and Manufacturing Systems Engineering",
-          "url": "https://www.imse.iastate.edu/"
-        }
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://danielye.net/#profile-page",
+        "url": "https://danielye.net/",
+        "name": "Daniel Ye | Ph.D. Candidate at Iowa State University",
+        "description": "Daniel Ye is a Ph.D. candidate in Industrial Engineering at Iowa State University, researching computational geometry, 3D deformation modeling, predictive compensation, and additive manufacturing.",
+        "inLanguage": "en-US",
+        "dateModified": "{{ site.time | date_to_xmlschema }}",
+        "mainEntity": { "@id": "https://danielye.net/#person" }
       },
-      "alumniOf": [
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "University of Wisconsin–Madison",
-          "url": "https://www.wisc.edu/"
+      {
+        "@type": "Person",
+        "@id": "https://danielye.net/#person",
+        "name": "Daniel Ye",
+        "givenName": "Daniel",
+        "familyName": "Ye",
+        "url": "https://danielye.net/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://danielye.net/assets/img/danielavatar.jpg",
+          "width": 800,
+          "height": 800,
+          "caption": "Daniel Ye"
         },
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "University of Minnesota Duluth",
-          "url": "https://www.d.umn.edu/"
-        }
-      ],
-      "knowsAbout": [
-        "Computational geometry",
-        "Additive manufacturing",
-        "3D deformation modeling",
-        "Predictive compensation",
-        "Geometric representation",
-        "Model processing",
-        "Fabrication accuracy"
-      ],
-      "sameAs": [
-        "https://scholar.google.com/citations?user=viHpZJQAAAAJ&hl=en",
-        "https://github.com/danielye0010",
-        "https://www.linkedin.com/in/danielye0001/"
-      ]
-    }
+        "description": "Ph.D. candidate in Industrial Engineering at Iowa State University (Ames, Iowa), advised by Dr. Qing Li and a member of the Center for Nondestructive Evaluation. Research on modeling and correcting 3D shape deformation in additive manufacturing.",
+        "jobTitle": "Ph.D. Candidate in Industrial Engineering",
+        "affiliation": [
+          {
+            "@type": "CollegeOrUniversity",
+            "@id": "https://www.iastate.edu/#org",
+            "name": "Iowa State University",
+            "url": "https://www.iastate.edu/",
+            "department": {
+              "@type": "Organization",
+              "name": "Department of Industrial and Manufacturing Systems Engineering",
+              "url": "https://www.imse.iastate.edu/"
+            }
+          },
+          {
+            "@type": "ResearchOrganization",
+            "name": "Center for Nondestructive Evaluation",
+            "url": "https://www.cnde.iastate.edu/",
+            "parentOrganization": { "@id": "https://www.iastate.edu/#org" }
+          }
+        ],
+        "workLocation": {
+          "@type": "Place",
+          "name": "Ames, Iowa",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ames",
+            "addressRegion": "IA",
+            "addressCountry": "US"
+          }
+        },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Wisconsin–Madison",
+            "url": "https://www.wisc.edu/"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Minnesota Duluth",
+            "url": "https://www.d.umn.edu/"
+          }
+        ],
+        "knowsAbout": [
+          "Additive manufacturing",
+          "3D shape deformation modeling",
+          "Predictive geometric compensation",
+          "Computational geometry",
+          "Geometry processing",
+          "3D deep learning",
+          "Generative 3D"
+        ],
+        "sameAs": [
+          "https://scholar.google.com/citations?user=viHpZJQAAAAJ",
+          "https://github.com/danielye0010",
+          "https://www.linkedin.com/in/danielye0001/"
+        ]
+      },
+      {
+        "@type": "Book",
+        "@id": "https://danielye.net/#no-sea-in-the-elevator",
+        "name": "電梯裡沒有海",
+        "alternateName": "No Sea in the Elevator",
+        "bookFormat": "https://schema.org/EBook",
+        "genre": "Short stories",
+        "inLanguage": "zh-Hant",
+        "author": { "@id": "https://danielye.net/#person" },
+        "url": "https://www.amazon.com/dp/B0H14C6DS1"
+      }
+    ]
   }
   </script>
 
@@ -109,7 +162,7 @@
     <header>
 
       {% if site.avatar %}
-      <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" /> </a>
+      <a class="image avatar"><img src="{{ site.avatar }}" alt="Daniel Ye, Ph.D. candidate at Iowa State University" width="800" height="800" fetchpriority="high" /></a>
       {% endif %}
       <br>
       {% if site.logo %}
@@ -149,42 +202,47 @@
       </a>
       {% endif %}
       {% if site.email %}
-      <a href="mailto: {{ site.email }}" style="color:#6d6d6d">
+      <a class="js-email" href="#" data-u="{{ site.email_user }}" data-d="{{ site.email_domain }}" style="color:#6d6d6d">
         <email>
           {{ site.email }}
         </email>
       </a>
+      <script>
+        document.querySelectorAll('a.js-email').forEach(function (a) {
+          a.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d;
+        });
+      </script>
       {% endif %}
 
       <br>
       <br>
       <div class="social-icons">
         {% if site.google_scholar %}
-        <a style="margin: 0 5px 0 0" href="{{ site.google_scholar }}">
+        <a style="margin: 0 5px 0 0" href="{{ site.google_scholar }}" rel="me noopener" target="_blank" aria-label="Daniel Ye on Google Scholar" title="Google Scholar">
           <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
         </a>
         {% endif %}
 
         {% if site.cv_link %}
-        <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}">
+        <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}" aria-label="Daniel Ye CV (PDF)" title="CV">
           <i class="ai ai-cv" style="font-size:1.3rem;"></i>
         </a>
         {% endif %}
 
         {% if site.github_link %}
-        <a style="margin: 0 5px 0 0" href="{{ site.github_link }}">
+        <a style="margin: 0 5px 0 0" href="{{ site.github_link }}" rel="me noopener" target="_blank" aria-label="Daniel Ye on GitHub" title="GitHub">
           <i class="fab fa-github"></i>
         </a>
         {% endif %}
 
         {% if site.linkedin %}
-        <a style="margin: 0 5px 0 0" href="{{ site.linkedin }}">
+        <a style="margin: 0 5px 0 0" href="{{ site.linkedin }}" rel="me noopener" target="_blank" aria-label="Daniel Ye on LinkedIn" title="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
         {% endif %}
 
         {% if site.twitter %}
-        <a style="margin: 0 0 0 0" href="{{ site.twitter }}">
+        <a style="margin: 0 0 0 0" href="{{ site.twitter }}" rel="me noopener" target="_blank" aria-label="Daniel Ye on X (Twitter)" title="X (Twitter)">
           <i class="fab fa-twitter"></i>
         </a>
         {% endif %}

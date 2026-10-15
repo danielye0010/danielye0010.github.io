@@ -10,6 +10,9 @@ subaffiliation: Department of Industrial and Manufacturing Systems Engineering
 affiliation_link: https://www.iastate.edu/
 subaffiliation_link: https://www.imse.iastate.edu/
 email: danielye0010 AT gmail DOT com
+# Used to build a working mailto link in the browser while keeping the address obfuscated in HTML
+email_user: danielye0010
+email_domain: gmail.com
 address: 2209 Therkildsen Industrial Engineering
 address_link: https://maps.app.goo.gl/gMN2vPth4yKYm7pVA
 
@@ -21,7 +24,7 @@ canonical: https://danielye.net/
 
 # Links
 # If you don't need one of them, you may delete the corresponding line.
-google_scholar: https://scholar.google.com/citations?user=viHpZJQAAAAJ&hl=en
+google_scholar: https://scholar.google.com/citations?user=viHpZJQAAAAJ
 github_link: https://github.com/danielye0010
 linkedin: https://www.linkedin.com/in/danielye0001/
 
@@ -54,8 +57,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - README_zh_Hans.md
-  - README_zh_Hant.md
-  - README_de.md
   - LICENSE
   - minimal-light.gemspec
+  - .github
+  - vendor
