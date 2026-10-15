@@ -1,3 +1,18 @@
+// Dark mode follows the system setting unless the visitor picks a theme with the
+// toggle (stored as <html data-theme="light|dark">). :where() adds no specificity,
+// so these rules cascade exactly like the original @media (prefers-color-scheme) blocks.
+@mixin dark {
+  @media (prefers-color-scheme: dark) {
+    :where(html:not([data-theme="light"])) {
+      @content;
+    }
+  }
+
+  :where(html[data-theme="dark"]) {
+    @content;
+  }
+}
+
 // Web fonts are loaded non-blocking from _layouts/homepage.html (a CSS @import of
 // Google Fonts blocks rendering, and can stall the page where Google is unreachable).
 
@@ -32,7 +47,7 @@ a.no-color {
   margin-right: 1rem
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark {
   .social-icons a {
     color: #b8b8b8 !important;
   }
@@ -64,7 +79,7 @@ a.no-color {
       }
      */
 
-@media (prefers-color-scheme: dark) {
+@include dark {
   .social-icons a:last-child {
     margin-right: 0
   }
@@ -219,7 +234,7 @@ papertitle {
   font-size: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark {
   body {
     background-color: #404040;
     color: #eee6f3;
@@ -344,7 +359,7 @@ h2 {
   font-size: 157%;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark {
 
   h1,
   h3 {
@@ -403,7 +418,7 @@ a:hover {
   color: #330662;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark {
   a {
     color: #ab82c5;
   }
@@ -468,7 +483,7 @@ th {
   color: #444;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark {
   th {
     color: rgb(62, 183, 240);
   }
@@ -541,7 +556,7 @@ strong {
   font-weight: 500;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark {
   strong {
     color: #eeeff0;
   }
@@ -755,13 +770,49 @@ screen and (max-width: 480px) {
   font-size: 0.95rem;
 }
 
-// Language switch: top-right of the content column on desktop,
+// Language switch + light/dark toggle: top-right of the content column on desktop,
 // top-right corner of the page on narrow screens.
-.lang-switch {
+.top-controls {
   position: absolute;
   top: 4.6em;
   right: 0;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  background: transparent;
+  color: #702b9d;
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: currentColor;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+
+  .icon-sun {
+    display: none;
+  }
+}
+
+.lang-switch {
   font-size: 0.95rem;
   line-height: 1;
   white-space: nowrap;
@@ -794,7 +845,20 @@ screen and (max-width: 480px) {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark {
+  .theme-toggle {
+    border-color: #5a5a5a;
+    color: #ab82c5;
+  }
+
+  .theme-toggle .icon-moon {
+    display: none;
+  }
+
+  .theme-toggle .icon-sun {
+    display: inline;
+  }
+
   .lang-switch .current {
     color: #eee;
   }
@@ -808,11 +872,29 @@ screen and (max-width: 480px) {
   }
 }
 
+// On narrow screens the header is centred and stacked, so give the controls
+// their own row instead of floating them over the avatar.
 @media print, screen and (max-width: 960px) {
-  .lang-switch {
-    top: 0;
-    right: 0;
+  .top-controls {
+    position: static;
+    justify-content: flex-end;
+    margin: 0 0 6px;
   }
+}
+
+@media print {
+  .top-controls {
+    display: none;
+  }
+}
+
+// Native form controls and scrollbars follow the active theme.
+:where(html) {
+  color-scheme: light;
+}
+
+@include dark {
+  color-scheme: dark;
 }
 
 // Simplified Chinese typography: keep Crimson Pro for Latin text and fall back to

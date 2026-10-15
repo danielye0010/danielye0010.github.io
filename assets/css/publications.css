@@ -32,9 +32,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  html:not([data-theme="light"]) {
     --global-theme-color: #7b5aa6;
   }
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: #7b5aa6;
 }
 
 blockquote {
@@ -147,7 +151,7 @@ screen and (min-width: 480px) {
 }
 
 @media (prefers-color-scheme: dark) {
-  .publications ol.bibliography li .links a.btn {
+  :where(html:not([data-theme="light"])) .publications ol.bibliography li .links a.btn {
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
     padding-left: 0.5rem;
@@ -156,6 +160,11 @@ screen and (min-width: 480px) {
     padding-bottom: 0.1rem;
   }
 
+}
+
+:where(html[data-theme="dark"]) .publications ol.bibliography li .links a.btn {
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 .publications ol.bibliography li .links a.btn:hover {

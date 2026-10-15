@@ -15,6 +15,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    /* Apply a saved light/dark choice before first paint (no flash). */
+    (function () {
+      try {
+        var t = localStorage.getItem('dy-theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <meta name="author" content="{{ site.author | default: site.title }}">
   <meta name="description" content="{{ page_desc }}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -182,20 +192,28 @@
 
 <body>
   <div class="wrapper">
-    {%- if translations and translations.size > 1 %}
-    <nav class="lang-switch" aria-label="{{ t.lang_nav }}">
-      {%- assign ordered = translations | sort: "lang_order" %}
-      {%- for tr in ordered %}
-      {%- assign tl = site.data.i18n[tr.lang] %}
-      {%- if tr.lang == lang %}
-      <span class="current" lang="{{ tl.html_lang }}" aria-current="page">{{ tl.switch_label }}</span>
-      {%- else %}
-      <a href="{{ tr.url | relative_url }}" hreflang="{{ tl.html_lang }}" lang="{{ tl.html_lang }}">{{ tl.switch_label }}</a>
+    <div class="top-controls">
+      {%- if translations and translations.size > 1 %}
+      <nav class="lang-switch" aria-label="{{ t.lang_nav }}">
+        {%- assign ordered = translations | sort: "lang_order" %}
+        {%- for tr in ordered %}
+        {%- assign tl = site.data.i18n[tr.lang] %}
+        {%- if tr.lang == lang %}
+        <span class="current" lang="{{ tl.html_lang }}" aria-current="page">{{ tl.switch_label }}</span>
+        {%- else %}
+        <a href="{{ tr.url | relative_url }}" hreflang="{{ tl.html_lang }}" lang="{{ tl.html_lang }}">{{ tl.switch_label }}</a>
+        {%- endif %}
+        {%- unless forloop.last %}<span class="sep" aria-hidden="true">/</span>{% endunless %}
+        {%- endfor %}
+      </nav>
       {%- endif %}
-      {%- unless forloop.last %}<span class="sep" aria-hidden="true">/</span>{% endunless %}
-      {%- endfor %}
-    </nav>
-    {%- endif %}
+      <button class="theme-toggle" type="button" hidden
+        data-to-dark="{{ t.to_dark }}" data-to-light="{{ t.to_light }}"
+        aria-label="{{ t.to_dark }}" title="{{ t.to_dark }}">
+        <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
+        <i class="fas fa-sun icon-sun" aria-hidden="true"></i>
+      </button>
+    </div>
     <header>
 
       {% if site.avatar %}
@@ -304,6 +322,34 @@
 
     </footer>
   </div>
+  <script>
+    /* Light/dark toggle: follows the system until the visitor chooses. */
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var root = document.documentElement;
+      var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+      function current() {
+        var t = root.getAttribute('data-theme');
+        if (t === 'dark' || t === 'light') return t;
+        return mq && mq.matches ? 'dark' : 'light';
+      }
+      function sync() {
+        var label = current() === 'dark' ? btn.getAttribute('data-to-light') : btn.getAttribute('data-to-dark');
+        btn.setAttribute('aria-label', label);
+        btn.setAttribute('title', label);
+      }
+      btn.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('dy-theme', next); } catch (e) {}
+        sync();
+      });
+      if (mq && mq.addEventListener) mq.addEventListener('change', sync);
+      btn.hidden = false;
+      sync();
+    })();
+  </script>
   <script src="{{ " /assets/js/scale.fix.js" | relative_url }}"></script>
   {% if site.google_analytics %}
   <script>

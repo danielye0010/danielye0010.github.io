@@ -19,6 +19,8 @@ en:
     github: Daniel Ye on GitHub
     linkedin: Daniel Ye on LinkedIn
   lang_nav: Language
+  to_dark: Switch to dark mode
+  to_light: Switch to light mode
 
 zh-Hans:
   html_lang: zh-Hans
@@ -37,3 +39,5 @@ zh-Hans:
     github: 叶逸飞的 GitHub
     linkedin: 叶逸飞的 LinkedIn
   lang_nav: 语言
+  to_dark: 切换到深色模式
+  to_light: 切换到浅色模式
