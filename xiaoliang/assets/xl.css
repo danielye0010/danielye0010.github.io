@@ -166,6 +166,45 @@ h1 {
   line-height: 1.1;
 }
 
+.tagline {
+  margin: 0 0 14px;
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-size: 1.12rem;
+  color: var(--accent);
+}
+
+.lead { font-size: 1.08rem; }
+
+.playground {
+  margin: 28px 0 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.playground canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 880 / 260;
+  border-radius: 12px;
+  cursor: crosshair;
+  touch-action: manipulation;
+}
+.playground figcaption {
+  margin-top: 10px;
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.pg-title {
+  margin-right: 6px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .affil { margin: 0 0 10px; color: var(--muted); line-height: 1.55; }
 .affil a { color: var(--text); }
 .affil a:hover { color: var(--accent); }

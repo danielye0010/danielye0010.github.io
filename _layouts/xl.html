@@ -106,6 +106,7 @@
       <div class="hero-text">
         <p class="eyebrow">{{ p.title }} &middot; {{ p.university }}</p>
         <h1>{{ p.name }}</h1>
+        <p class="tagline">{{ p.tagline }}</p>
         <p class="affil">
           <a href="{{ p.department_link }}" target="_blank" rel="noopener">{{ p.department }}</a><br>
           <a href="{{ p.university_link }}" target="_blank" rel="noopener">{{ p.university }}</a>, {{ p.location }}
@@ -134,6 +135,7 @@
               {%- when 'landscape' -%}{% include xl/thumb-landscape.svg %}
               {%- when 'muon' -%}{% include xl/thumb-muon.svg %}
               {%- when 'tubal' -%}{% include xl/thumb-tubal.svg %}
+              {%- when 'sphere' -%}{% include xl/thumb-sphere.svg %}
             {%- endcase -%}
             <span class="badge">{{ pub.badge }}</span>
           </div>

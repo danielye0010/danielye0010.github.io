@@ -6,23 +6,25 @@ sitemap: true
 {%- assign p = site.data.xl -%}
 <section class="section" id="about">
   <h2>About</h2>
-  <p>
-    I am a Ph.D. student in
+  <p class="lead">
+    Hi, I'm Xiao! I'm a Ph.D. student in
     <a href="{{ p.department_link }}" target="_blank" rel="noopener">Electrical and Computer Engineering</a>
-    at Iowa State University, advised by
+    at Iowa State University, working with
     <a href="{{ p.advisor_link }}" target="_blank" rel="noopener">{{ p.advisor }}</a>.
-    I work at the intersection of nonconvex optimization, signal processing, and tensor methods.
   </p>
   <p>
-    Much of my research asks a geometric question: when does a simple first-order method, started from a
-    generic point, provably reach the right answer for a structured low-rank recovery problem? I study the
-    optimization landscapes of these problems&mdash;spurious minima, strict saddles, and local curvature&mdash;in
-    settings such as simultaneous blind deconvolution and phase retrieval and low-tubal-rank tensor sensing.
-    I also design scalable algorithms for tensor-structured statistical models.
+    I'm fascinated by a question that sounds almost too simple: <em>why does plain gradient descent work so
+    well on problems that are, on paper, hopelessly nonconvex?</em> To find out, I map optimization
+    landscapes. I look for the valleys, ridges, and saddle points of structured low-rank problems, such as
+    recovering a signal and its blur kernel from magnitude-only measurements, or sensing tensors through
+    their Fourier slices. Once the geometry is clear, I like to make the algorithms fast. My most recent
+    one speeds up tensor regression with Muon-style orthogonalized updates.
   </p>
   <p>
-    Before Iowa State, I studied computer science at Washington University in St. Louis and data science at
-    North China University of Technology.
+    My path here has a few turns in it. I studied data science in Beijing at North China University of
+    Technology (2018&ndash;2022), then computer science at Washington University in St. Louis (2022&ndash;2024),
+    and spent some time as an intern at <strong>Huawei</strong> before starting my Ph.D. in Ames. Iowa is
+    famously flat, so these days the interesting terrain lives in my loss functions.
   </p>
 
   <ul class="interests" aria-label="Research interests">
@@ -30,4 +32,15 @@ sitemap: true
     <li>{{ i }}</li>
     {%- endfor %}
   </ul>
+
+  <figure class="playground" aria-label="Interactive optimization landscape">
+    <canvas id="landscape" width="880" height="260" role="img"
+      aria-label="Contour plot of a function with two global minima and a saddle point between them"></canvas>
+    <figcaption>
+      <span class="pg-title"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Try it</span>
+      Click anywhere to drop a ball and watch gradient descent roll downhill. The landscape has a saddle in
+      the middle, but no spurious minima, so every ball ends at one of the two global solutions, &plusmn;x&#9733;.
+      That sign ambiguity is exactly what phase retrieval has to live with.
+    </figcaption>
+  </figure>
 </section>
