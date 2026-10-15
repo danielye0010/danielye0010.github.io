@@ -40,6 +40,7 @@
       "name": "{{ p.name }}",
       "url": "{{ p.url }}",
       "image": "https://danielye.net{{ p.avatar }}",
+      "logo": "https://danielye.net/xiaoliang/assets/logo-512.png",
       "jobTitle": "Ph.D. Student in Electrical and Computer Engineering",
       "description": {{ p.description | strip | jsonify }},
       "affiliation": {
@@ -75,7 +76,10 @@
   ]
   </script>
 
-  <link rel="icon" href="{{ '/xiaoliang/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/xiaoliang/assets/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
+  <link rel="icon" href="{{ '/xiaoliang/assets/favicon-48.png' | relative_url }}" type="image/png" sizes="48x48">
+  <link rel="icon" href="{{ '/xiaoliang/assets/logo-512.png' | relative_url }}" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="{{ '/xiaoliang/assets/apple-touch-icon.png' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap">
