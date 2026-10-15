@@ -1,0 +1,162 @@
+# Content for the Xiao Liang homepage (/xiaoliang/).
+# Edit this file to update the page; the layout is _layouts/xl.html.
+
+name: Xiao Liang
+title: Ph.D. Student
+department: Department of Electrical and Computer Engineering
+department_link: https://www.ece.iastate.edu/
+university: Iowa State University
+university_link: https://www.iastate.edu/
+location: Ames, Iowa
+email_user: liangx
+email_domain: iastate
+email_tld: edu
+avatar: /xiaoliang/assets/avatar.jpg
+url: https://danielye.net/xiaoliang/
+
+advisor: Prof. Shuang Li
+advisor_link: https://www.ece.iastate.edu/~lishuang/
+
+links:
+  - label: Google Scholar
+    icon: ai ai-google-scholar
+    url: https://scholar.google.com/citations?user=hmGrf74AAAAJ
+  - label: GitHub
+    icon: fab fa-github
+    url: https://github.com/EliaLiang
+  - label: LinkedIn
+    icon: fab fa-linkedin-in
+    url: https://www.linkedin.com/in/xiao-liang-6a3975239/
+
+description: >-
+  Xiao Liang is a Ph.D. student in Electrical and Computer Engineering at Iowa State University,
+  advised by Prof. Shuang Li, working on nonconvex optimization landscapes and scalable algorithms
+  for low-rank tensor recovery, blind deconvolution, and phase retrieval.
+
+keywords: >-
+  Xiao Liang, Iowa State University, ECpE, Electrical and Computer Engineering, Shuang Li,
+  nonconvex optimization, optimization landscape, low-rank tensor recovery, tensor sensing,
+  blind deconvolution, phase retrieval, signal processing, ICASSP
+
+interests:
+  - Nonconvex optimization &amp; landscape analysis
+  - Low-rank matrix and tensor recovery
+  - Blind deconvolution &amp; phase retrieval
+  - Scalable algorithms for tensor models
+
+education:
+  - degree: Ph.D. in Electrical and Computer Engineering
+    school: Iowa State University
+    years: 2024 &ndash; present
+    note: Advisor&#58; Prof. Shuang Li
+  - degree: Master's in Computer Science
+    school: Washington University in St. Louis
+    years: ""
+    note: ""
+  - degree: Bachelor's in Data Science
+    school: North China University of Technology
+    years: ""
+    note: ""
+
+# Main research papers (shown as cards with an illustration).
+research:
+  - id: tubal
+    title: Strict-Saddle Landscapes and Multi-Rank Geometry in Low-Tubal-Rank Tensor Sensing
+    authors: "Eugene Agyei-Kodie<sup>*</sup>, Longxiu Huang<sup>*</sup>, Shuang Li<sup>&dagger;</sup>, <b>Xiao Liang</b><sup>&dagger;</sup>"
+    venue: arXiv preprint, 2026
+    badge: Preprint
+    year: 2026
+    thumb: tubal
+    note: "<sup>*</sup>, <sup>&dagger;</sup> equal contribution"
+    tldr: >-
+      Under a tubal restricted isometry condition, the balanced factorized objective has no spurious local
+      minima and a quantitative strict-saddle structure. Its local geometry is governed by the ranks of the
+      Fourier slices, not by the tubal rank alone.
+    links:
+      - { label: arXiv, url: "https://arxiv.org/abs/2609.37865" }
+      - { label: PDF, url: "https://arxiv.org/pdf/2609.37865" }
+    bibtex: |-
+      @article{agyeikodie2026strict,
+        title   = {Strict-Saddle Landscapes and Multi-Rank Geometry in Low-Tubal-Rank Tensor Sensing},
+        author  = {Agyei-Kodie, Eugene and Huang, Longxiu and Li, Shuang and Liang, Xiao},
+        journal = {arXiv preprint arXiv:2609.37865},
+        year    = {2026}
+      }
+
+  - id: lsrtrm
+    title: A Muon-Accelerated Algorithm for Low Separation Rank Tensor Generalized Linear Models
+    authors: "<b>Xiao Liang</b>, Shuang Li"
+    venue: arXiv preprint, 2026
+    badge: Preprint
+    year: 2026
+    thumb: muon
+    note: ""
+    tldr: >-
+      LSRTR-M replaces the QR-based projection steps of LSRTR with Muon (momentum orthogonalized by
+      Newton&ndash;Schulz) updates. On linear, logistic, and Poisson tensor GLMs it converges faster in both
+      iterations and wall-clock time, and it stays competitive on Vessel MNIST 3D classification.
+    links:
+      - { label: arXiv, url: "https://arxiv.org/abs/2604.04726" }
+      - { label: PDF, url: "https://arxiv.org/pdf/2604.04726" }
+      - { label: Code, url: "https://github.com/EliaLiang/LSRTR-M" }
+    bibtex: |-
+      @article{liang2026muon,
+        title   = {A Muon-Accelerated Algorithm for Low Separation Rank Tensor Generalized Linear Models},
+        author  = {Liang, Xiao and Li, Shuang},
+        journal = {arXiv preprint arXiv:2604.04726},
+        year    = {2026}
+      }
+
+  - id: bdpr
+    title: Landscape Analysis of Simultaneous Blind Deconvolution and Phase Retrieval
+    authors: "<b>Xiao Liang</b><sup>*</sup>, Zhen Qin<sup>*</sup>, Zhihui Zhu, Shuang Li"
+    venue: IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Barcelona, 2026
+    badge: ICASSP 2026
+    year: 2026
+    thumb: landscape
+    note: "<sup>*</sup> equal contribution"
+    tldr: >-
+      Recasts simultaneous blind deconvolution and phase retrieval as structured low-rank tensor recovery.
+      The work characterizes the global landscape of a tractable surrogate on the sphere, proves linear
+      convergence of Riemannian gradient descent, and extends local guarantees and noise robustness to the
+      full tensor sensing model.
+    links:
+      - { label: Paper, url: "https://ieeexplore.ieee.org/document/11461778" }
+      - { label: "Extended version (arXiv)", url: "https://arxiv.org/abs/2509.10834" }
+      - { label: PDF, url: "https://arxiv.org/pdf/2509.10834" }
+    bibtex: |-
+      @inproceedings{liang2026landscape,
+        title     = {Landscape Analysis of Simultaneous Blind Deconvolution and Phase Retrieval},
+        author    = {Liang, Xiao and Qin, Zhen and Zhu, Zhihui and Li, Shuang},
+        booktitle = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+        pages     = {511--515},
+        year      = {2026},
+        doi       = {10.1109/ICASSP55912.2026.11461778}
+      }
+
+# Other publications (compact list).
+other:
+  - title: "Not All Flows are Worth N Packets: Robust Encrypted Traffic Classification via Dynamic Patch-level Feature Learning"
+    authors: "Mingyu Qiao, Zulong Diao, Guangxing Zhang, Le Wang, Kai Lv, <b>Xiao Liang</b>, Yi Gong, Haiyang Jiang, Junwei Wang, Zhenyu Li, Gaogang Xie"
+    venue: Asia-Pacific Workshop on Networking (APNet), 2026
+    url: https://dl.acm.org/doi/10.1145/3820441.3820453
+  - title: "Not All Pretrained Representation has The Sweet Danger of Sugar: Robust and Trustworthy Representation Learning for Encrypted Malicious Traffic Identification"
+    authors: "Mingyu Qiao, Zulong Diao, Guangxing Zhang, Wanhua Li, Le Wang, Haiyang Jiang, <b>Xiao Liang</b>, Zhenyu Li, Gaogang Xie"
+    venue: Asia-Pacific Workshop on Networking (APNet), 2026
+    url: https://dl.acm.org/doi/10.1145/3820441.3820472
+  - title: An Undergraduate Course for FOSS and with FOSS
+    authors: "<b>Xiao Liang</b>, Weiying Hou, Hongzheng Li, Hongliang Liang"
+    venue: International Conference on Education and E-Learning (ICEEL), 2021
+    url: https://dl.acm.org/doi/10.1145/3502434.3502465
+  - title: Flower Data Set Expansion Based on DCGAN and ResNet Classification Algorithm Based on Transfer Learning
+    authors: "Mingyu Qiao, Minjie Chen, <b>Xiao Liang</b>, Ying Guo"
+    venue: International Symposium on Computer and Information Processing Technology (ISCIPT), 2021
+    url: https://ieeexplore.ieee.org/document/9644505
+  - title: Improved SIFT Algorithm Based on Image Filtering
+    authors: "Mingyu Qiao, <b>Xiao Liang</b>, Minjie Chen"
+    venue: Journal of Physics&#58; Conference Series, 2021
+    url: https://iopscience.iop.org/article/10.1088/1742-6596/1848/1/012069
+  - title: Student Performance Protection Based on Blockchain Technology
+    authors: "<b>Xiao Liang</b>, Shiyuan Xu"
+    venue: Journal of Physics&#58; Conference Series, 2021
+    url: https://iopscience.iop.org/article/10.1088/1742-6596/1748/2/022006

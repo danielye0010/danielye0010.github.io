@@ -1,0 +1,33 @@
+---
+layout: xl
+permalink: /xiaoliang/
+sitemap: true
+---
+{%- assign p = site.data.xl -%}
+<section class="section" id="about">
+  <h2>About</h2>
+  <p>
+    I am a Ph.D. student in
+    <a href="{{ p.department_link }}" target="_blank" rel="noopener">Electrical and Computer Engineering</a>
+    at Iowa State University, advised by
+    <a href="{{ p.advisor_link }}" target="_blank" rel="noopener">{{ p.advisor }}</a>.
+    I work at the intersection of nonconvex optimization, signal processing, and tensor methods.
+  </p>
+  <p>
+    Much of my research asks a geometric question: when does a simple first-order method, started from a
+    generic point, provably reach the right answer for a structured low-rank recovery problem? I study the
+    optimization landscapes of these problems&mdash;spurious minima, strict saddles, and local curvature&mdash;in
+    settings such as simultaneous blind deconvolution and phase retrieval and low-tubal-rank tensor sensing.
+    I also design scalable algorithms for tensor-structured statistical models.
+  </p>
+  <p>
+    Before Iowa State, I studied computer science at Washington University in St. Louis and data science at
+    North China University of Technology.
+  </p>
+
+  <ul class="interests" aria-label="Research interests">
+    {%- for i in p.interests %}
+    <li>{{ i }}</li>
+    {%- endfor %}
+  </ul>
+</section>

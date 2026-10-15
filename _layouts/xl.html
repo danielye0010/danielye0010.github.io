@@ -1,0 +1,197 @@
+{%- assign p = site.data.xl -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ p.name }} | Ph.D. Student in ECE at Iowa State University</title>
+  <meta name="author" content="{{ p.name }}">
+  <meta name="description" content="{{ p.description | strip }}">
+  <meta name="keywords" content="{{ p.keywords | strip }}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="{{ p.url }}">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{{ p.name }} | Iowa State University">
+  <meta property="og:description" content="{{ p.description | strip }}">
+  <meta property="og:url" content="{{ p.url }}">
+  <meta property="og:image" content="https://danielye.net{{ p.avatar }}">
+  <meta property="profile:first_name" content="Xiao">
+  <meta property="profile:last_name" content="Liang">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ p.name }} | Iowa State University">
+  <meta name="twitter:description" content="{{ p.description | strip }}">
+  <meta name="twitter:image" content="https://danielye.net{{ p.avatar }}">
+  {%- for l in p.links %}
+  <link rel="me" href="{{ l.url }}">
+  {%- endfor %}
+  <link rel="alternate" type="text/plain" href="{{ p.url }}llms.txt" title="Machine-readable profile summary">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "{{ p.url }}#profile-page",
+    "url": "{{ p.url }}",
+    "name": "{{ p.name }} | Ph.D. Student in ECE at Iowa State University",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "{{ p.url }}#person",
+      "name": "{{ p.name }}",
+      "url": "{{ p.url }}",
+      "image": "https://danielye.net{{ p.avatar }}",
+      "jobTitle": "Ph.D. Student in Electrical and Computer Engineering",
+      "description": {{ p.description | strip | jsonify }},
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Iowa State University",
+        "url": "https://www.iastate.edu/",
+        "department": {
+          "@type": "Organization",
+          "name": "Department of Electrical and Computer Engineering",
+          "url": "https://www.ece.iastate.edu/"
+        }
+      },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Washington University in St. Louis", "url": "https://wustl.edu/" },
+        { "@type": "CollegeOrUniversity", "name": "North China University of Technology", "url": "https://www.ncut.edu.cn/" }
+      ],
+      "knowsAbout": ["Nonconvex optimization", "Optimization landscape analysis", "Low-rank tensor recovery", "Tensor sensing", "Blind deconvolution", "Phase retrieval", "Signal processing"],
+      "sameAs": [{% for l in p.links %}"{{ l.url }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  [{% for pub in p.research %}
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": {{ pub.title | jsonify }},
+      "author": [{% assign names = pub.authors | strip_html | replace: "*", "" | replace: "&dagger;", "" | split: ", " %}{% for n in names %}{ "@type": "Person", "name": {{ n | strip | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "datePublished": "{{ pub.year }}",
+      "isPartOf": {{ pub.venue | jsonify }},
+      "url": "{{ pub.links[0].url }}"
+    }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]
+  </script>
+
+  <link rel="icon" href="{{ '/xiaoliang/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ '/xiaoliang/assets/xl.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('xl-theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+    <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+  </button>
+
+  <main class="page">
+    <header class="hero">
+      <div class="portrait">
+        <img src="{{ p.avatar | relative_url }}" alt="Portrait of {{ p.name }}" width="220" height="271">
+      </div>
+      <div class="hero-text">
+        <p class="eyebrow">{{ p.title }} &middot; {{ p.university }}</p>
+        <h1>{{ p.name }}</h1>
+        <p class="affil">
+          <a href="{{ p.department_link }}" target="_blank" rel="noopener">{{ p.department }}</a><br>
+          <a href="{{ p.university_link }}" target="_blank" rel="noopener">{{ p.university }}</a>, {{ p.location }}
+        </p>
+        <p class="email" aria-label="Email address">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          <span>{{ p.email_user }} [at] {{ p.email_domain }} [dot] {{ p.email_tld }}</span>
+        </p>
+        <nav class="links" aria-label="Profiles">
+          {%- for l in p.links %}
+          <a class="pill" href="{{ l.url }}" target="_blank" rel="noopener me"><i class="{{ l.icon }}" aria-hidden="true"></i>{{ l.label }}</a>
+          {%- endfor %}
+        </nav>
+      </div>
+    </header>
+
+    {{ content }}
+
+    <section class="section" id="publications">
+      <h2>Research</h2>
+      <ol class="papers">
+        {%- for pub in p.research %}
+        <li class="paper" id="{{ pub.id }}">
+          <div class="thumb">
+            {%- case pub.thumb -%}
+              {%- when 'landscape' -%}{% include xl/thumb-landscape.svg %}
+              {%- when 'muon' -%}{% include xl/thumb-muon.svg %}
+              {%- when 'tubal' -%}{% include xl/thumb-tubal.svg %}
+            {%- endcase -%}
+            <span class="badge">{{ pub.badge }}</span>
+          </div>
+          <div class="paper-body">
+            <h3><a href="{{ pub.links[0].url }}" target="_blank" rel="noopener">{{ pub.title }}</a></h3>
+            <p class="authors">{{ pub.authors }}</p>
+            <p class="venue">{{ pub.venue }}{% if pub.note != "" %} <span class="note">({{ pub.note }})</span>{% endif %}</p>
+            <p class="tldr">{{ pub.tldr }}</p>
+            <div class="actions">
+              {%- for l in pub.links %}
+              <a class="chip" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
+              {%- endfor %}
+              <details class="bib">
+                <summary class="chip">BibTeX</summary>
+                <div class="bib-box">
+                  <button class="copy" type="button" aria-label="Copy BibTeX">Copy</button>
+                  <pre><code>{{ pub.bibtex | xml_escape }}</code></pre>
+                </div>
+              </details>
+            </div>
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+
+      <h2 class="sub">Other Publications</h2>
+      <ul class="others">
+        {%- for o in p.other %}
+        <li>
+          <a href="{{ o.url }}" target="_blank" rel="noopener">{{ o.title }}</a>
+          <span class="authors">{{ o.authors }}</span>
+          <span class="venue">{{ o.venue }}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+
+    <section class="section" id="education">
+      <h2>Education</h2>
+      <ul class="timeline">
+        {%- for e in p.education %}
+        <li>
+          <span class="dot" aria-hidden="true"></span>
+          <div>
+            <p class="degree">{{ e.degree }}</p>
+            <p class="school">{{ e.school }}{% if e.years != "" %} <span class="years">&middot; {{ e.years }}</span>{% endif %}</p>
+            {%- if e.note != "" %}<p class="edu-note">{{ e.note }}</p>{% endif %}
+          </div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ p.name }} &middot; {{ p.department }}, {{ p.university }}</p>
+    </footer>
+  </main>
+
+  <script src="{{ '/xiaoliang/assets/xl.js' | relative_url }}" defer></script>
+</body>
+</html>

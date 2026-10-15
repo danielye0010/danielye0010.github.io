@@ -1,0 +1,36 @@
+---
+layout: null
+permalink: /xiaoliang/llms.txt
+---
+{%- assign p = site.data.xl -%}
+# {{ p.name }}
+
+> {{ p.description | strip }}
+
+## Canonical profile
+- Homepage: {{ p.url }}
+
+## Academic identity
+- Ph.D. student, Department of Electrical and Computer Engineering, Iowa State University (2024 - present)
+- Advisor: {{ p.advisor }} ({{ p.advisor_link }})
+{%- for l in p.links %}
+- {{ l.label }}: {{ l.url }}
+{%- endfor %}
+
+## Disambiguation
+This profile is for Xiao Liang at Iowa State University (ECE), who works on nonconvex optimization, tensor recovery, and signal processing. It is not the Xiao Liang at UCLA who works on large language models.
+
+## Research topics
+{%- for i in p.interests %}
+- {{ i | replace: "&amp;", "&" }}
+{%- endfor %}
+
+## Selected publications
+{%- for pub in p.research %}
+- {{ pub.title }}. {{ pub.authors | strip_html | replace: "&dagger;", "" | replace: "*", "" }}. {{ pub.venue }}. {{ pub.links[0].url }}
+{%- endfor %}
+
+## Education
+{%- for e in p.education %}
+- {{ e.degree }}, {{ e.school }}
+{%- endfor %}

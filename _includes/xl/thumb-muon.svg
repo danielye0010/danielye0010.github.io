@@ -1,0 +1,31 @@
+<svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A coefficient tensor factored into a small core and orthogonal factor matrices">
+  <!-- core tensor (isometric cube) -->
+  <g stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M100 62 L132 50 L160 62 L128 74 Z" fill="var(--thumb-fill-2)"/>
+    <path d="M100 62 L128 74 L128 106 L100 94 Z" fill="var(--thumb-fill-1)"/>
+    <path d="M128 74 L160 62 L160 94 L128 106 Z" fill="var(--thumb-fill-3)"/>
+  </g>
+  <!-- factor U1 (tall, left) -->
+  <rect x="44" y="40" width="20" height="76" rx="3" fill="none" stroke="var(--accent-2)" stroke-width="1.5"/>
+  <g stroke="var(--accent-2)" stroke-width="1" opacity=".55">
+    <line x1="51" y1="44" x2="51" y2="112"/><line x1="57" y1="44" x2="57" y2="112"/>
+  </g>
+  <!-- factor U2 (wide, top right) -->
+  <rect x="172" y="26" width="52" height="16" rx="3" fill="none" stroke="var(--accent-2)" stroke-width="1.5"/>
+  <g stroke="var(--accent-2)" stroke-width="1" opacity=".55">
+    <line x1="176" y1="31" x2="220" y2="31"/><line x1="176" y1="37" x2="220" y2="37"/>
+  </g>
+  <!-- factor U3 (diagonal, bottom right) -->
+  <g transform="translate(184 104) rotate(-24)">
+    <rect x="0" y="0" width="44" height="14" rx="3" fill="none" stroke="var(--accent-2)" stroke-width="1.5"/>
+    <line x1="4" y1="5" x2="40" y2="5" stroke="var(--accent-2)" stroke-width="1" opacity=".55"/>
+    <line x1="4" y1="10" x2="40" y2="10" stroke="var(--accent-2)" stroke-width="1" opacity=".55"/>
+  </g>
+  <g stroke="var(--thumb-line)" stroke-width="1.3" fill="none" stroke-dasharray="3 4">
+    <path d="M66 78 L98 78"/><path d="M160 58 L180 44"/><path d="M162 92 L184 100"/>
+  </g>
+  <!-- Newton-Schulz orthogonalization hint -->
+  <g transform="translate(26 132)" fill="var(--muted)" font-size="10.5" font-style="italic">
+    <text>U &#8592; NS(momentum)</text>
+  </g>
+</svg>
