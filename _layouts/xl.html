@@ -1,26 +1,59 @@
 {%- assign p = site.data.xl -%}
+{%- assign lang = page.lang | default: "en" -%}
+{%- assign ui = p.ui[lang] | default: p.ui["en"] -%}
+{%- if lang == "zh-Hans" -%}{%- assign L = p.zh -%}{%- else -%}{%- assign L = p -%}{%- endif -%}
+{%- assign url = L.url | default: p.url -%}
+{%- assign title = L.title | default: p.title -%}
+{%- assign tagline = L.tagline | default: p.tagline -%}
+{%- assign department = L.department | default: p.department -%}
+{%- assign university = L.university | default: p.university -%}
+{%- assign location = L.location | default: p.location -%}
+{%- assign description = L.description | default: p.description | strip -%}
+{%- assign keywords = L.keywords | default: p.keywords | strip -%}
+{%- assign education = L.education | default: p.education -%}
+{%- assign heading = p.name -%}
+{%- if L.name_native and L.name_native != "" -%}{%- assign heading = L.name_native -%}{%- endif -%}
+{%- if heading == p.name -%}
+  {%- assign page_title = p.name | append: " | " | append: ui.page_title -%}
+{%- else -%}
+  {%- assign page_title = heading | append: " " | append: p.name | append: " | " | append: ui.page_title -%}
+{%- endif -%}
+{%- if page.ref -%}{%- assign translations = site.pages | where: "ref", page.ref | sort: "lang_order" -%}{%- endif -%}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ ui.html_lang }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ p.name }} | Ph.D. Student in ECE at Iowa State University</title>
+  <title>{{ page_title }}</title>
   <meta name="author" content="{{ p.name }}">
-  <meta name="description" content="{{ p.description | strip }}">
-  <meta name="keywords" content="{{ p.keywords | strip }}">
+  <meta name="description" content="{{ description }}">
+  <meta name="keywords" content="{{ keywords }}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <link rel="canonical" href="{{ p.url }}">
+  <link rel="canonical" href="{{ url }}">
+  {%- if translations and translations.size > 1 %}
+  {%- for tr in translations %}
+  <link rel="alternate" hreflang="{{ tr.lang }}" href="{{ tr.url | absolute_url }}">
+  {%- endfor %}
+  {%- assign default_tr = translations | where: "lang", "en" | first %}
+  {%- if default_tr %}
+  <link rel="alternate" hreflang="x-default" href="{{ default_tr.url | absolute_url }}">
+  {%- endif %}
+  {%- endif %}
 
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="{{ p.name }} | Iowa State University">
-  <meta property="og:description" content="{{ p.description | strip }}">
-  <meta property="og:url" content="{{ p.url }}">
+  <meta property="og:locale" content="{{ ui.og_locale }}">
+  {%- for tr in translations %}{% if tr.lang != lang %}
+  <meta property="og:locale:alternate" content="{{ p.ui[tr.lang].og_locale }}">
+  {%- endif %}{% endfor %}
+  <meta property="og:title" content="{{ heading }} | {{ ui.og_title_suffix }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ url }}">
   <meta property="og:image" content="https://danielye.net{{ p.avatar }}">
   <meta property="profile:first_name" content="Xiao">
   <meta property="profile:last_name" content="Liang">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ p.name }} | Iowa State University">
-  <meta name="twitter:description" content="{{ p.description | strip }}">
+  <meta name="twitter:title" content="{{ heading }} | {{ ui.og_title_suffix }}">
+  <meta name="twitter:description" content="{{ description }}">
   <meta name="twitter:image" content="https://danielye.net{{ p.avatar }}">
   {%- for l in p.links %}
   <link rel="me" href="{{ l.url }}">
@@ -30,50 +63,57 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "@id": "{{ p.url }}#profile-page",
-    "url": "{{ p.url }}",
-    "name": "{{ p.name }} | Ph.D. Student in ECE at Iowa State University",
-    "mainEntity": {
-      "@type": "Person",
-      "@id": "{{ p.url }}#person",
-      "name": "{{ p.name }}",
-      "url": "{{ p.url }}",
-      "image": "https://danielye.net{{ p.avatar }}",
-      "logo": "https://danielye.net/xiaoliang/assets/logo-512.png",
-      "jobTitle": "Ph.D. Student in Electrical and Computer Engineering",
-      "description": {{ p.description | strip | jsonify }},
-      "affiliation": {
-        "@type": "CollegeOrUniversity",
-        "name": "Iowa State University",
-        "url": "https://www.iastate.edu/",
-        "department": {
-          "@type": "Organization",
-          "name": "Department of Electrical and Computer Engineering",
-          "url": "https://www.ece.iastate.edu/"
-        }
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "{{ url }}#profile-page",
+        "url": "{{ url }}",
+        "name": {{ page_title | jsonify }},
+        "description": {{ description | jsonify }},
+        "inLanguage": "{{ ui.html_lang }}",
+        "dateModified": "{{ site.time | date_to_xmlschema }}",
+        "mainEntity": { "@id": "{{ p.url }}#person" }
       },
-      "alumniOf": [
-        { "@type": "CollegeOrUniversity", "name": "Washington University in St. Louis", "url": "https://wustl.edu/" },
-        { "@type": "CollegeOrUniversity", "name": "North China University of Technology", "url": "https://www.ncut.edu.cn/" }
-      ],
-      "knowsAbout": ["Nonconvex optimization", "Optimization landscape analysis", "Low-rank tensor recovery", "Tensor sensing", "Blind deconvolution", "Phase retrieval", "Signal processing"],
-      "sameAs": [{% for l in p.links %}"{{ l.url }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]
-    }
+      {
+        "@type": "Person",
+        "@id": "{{ p.url }}#person",
+        "name": "{{ p.name }}",
+        {%- if p.zh.name_native and p.zh.name_native != "" %}
+        "alternateName": {{ p.zh.name_native | jsonify }},
+        {%- endif %}
+        "url": "{{ p.url }}",
+        "image": "https://danielye.net{{ p.avatar }}",
+        "logo": "https://danielye.net/xiaoliang/assets/logo-512.png",
+        "jobTitle": "Ph.D. Student in Electrical and Computer Engineering",
+        "description": {{ p.description | strip | jsonify }},
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Iowa State University",
+          "url": "https://www.iastate.edu/",
+          "department": {
+            "@type": "Organization",
+            "name": "Department of Electrical and Computer Engineering",
+            "url": "https://www.ece.iastate.edu/"
+          }
+        },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Washington University in St. Louis", "url": "https://wustl.edu/" },
+          { "@type": "CollegeOrUniversity", "name": "North China University of Technology", "url": "https://www.ncut.edu.cn/" }
+        ],
+        "knowsAbout": ["Nonconvex optimization", "Optimization landscape analysis", "Low-rank tensor recovery", "Tensor sensing", "Blind deconvolution", "Phase retrieval", "Signal processing"],
+        "sameAs": [{% for l in p.links %}"{{ l.url }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]
+      }{% for pub in p.research %},
+      {
+        "@type": "ScholarlyArticle",
+        "headline": {{ pub.title | jsonify }},
+        "inLanguage": "en",
+        "author": [{% assign names = pub.authors | strip_html | replace: "*", "" | replace: "&dagger;", "" | split: ", " %}{% for n in names %}{ "@type": "Person", "name": {{ n | strip | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "datePublished": "{{ pub.year }}",
+        "isPartOf": {{ pub.venue | jsonify }},
+        "url": "{{ pub.links[0].url }}"
+      }{% endfor %}
+    ]
   }
-  </script>
-  <script type="application/ld+json">
-  [{% for pub in p.research %}
-    {
-      "@context": "https://schema.org",
-      "@type": "ScholarlyArticle",
-      "headline": {{ pub.title | jsonify }},
-      "author": [{% assign names = pub.authors | strip_html | replace: "*", "" | replace: "&dagger;", "" | split: ", " %}{% for n in names %}{ "@type": "Person", "name": {{ n | strip | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
-      "datePublished": "{{ pub.year }}",
-      "isPartOf": {{ pub.venue | jsonify }},
-      "url": "{{ pub.links[0].url }}"
-    }{% unless forloop.last %},{% endunless %}{% endfor %}
-  ]
   </script>
 
   <link rel="icon" href="{{ '/xiaoliang/assets/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
@@ -82,7 +122,10 @@
   <link rel="apple-touch-icon" href="{{ '/xiaoliang/assets/apple-touch-icon.png' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap">
+  {%- comment %} Loaded non-blocking: a render-blocking Google Fonts request can stall the page where Google is unreachable. {% endcomment %}
+  {%- capture fonts_url %}https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap{% endcapture %}
+  <link rel="stylesheet" href="{{ fonts_url }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ fonts_url }}"></noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ '/xiaoliang/assets/xl.css' | relative_url }}?v={{ site.time | date: '%s' }}">
@@ -97,29 +140,47 @@
 </head>
 
 <body>
-  <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
-    <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
-    <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
-  </button>
+  <div class="top-controls">
+    {%- if translations and translations.size > 1 %}
+    <nav class="lang-switch" aria-label="{{ ui.lang_nav }}">
+      {%- for tr in translations %}
+      {%- assign tu = p.ui[tr.lang] %}
+      {%- if tr.lang == lang %}
+      <span class="current" lang="{{ tu.html_lang }}" aria-current="page">{{ tu.switch_label }}</span>
+      {%- else %}
+      <a href="{{ tr.url | relative_url }}" hreflang="{{ tu.html_lang }}" lang="{{ tu.html_lang }}">{{ tu.switch_label }}</a>
+      {%- endif %}
+      {%- unless forloop.last %}<span class="sep" aria-hidden="true">/</span>{% endunless %}
+      {%- endfor %}
+    </nav>
+    {%- endif %}
+    <button class="theme-toggle" type="button" aria-label="{{ ui.theme_label }}" title="{{ ui.theme_label }}">
+      <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+      <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+    </button>
+  </div>
 
   <main class="page">
     <header class="hero">
       <div class="portrait">
-        <img src="{{ p.avatar | relative_url }}" alt="Portrait of {{ p.name }}" width="220" height="271">
+        <img src="{{ p.avatar | relative_url }}" alt="{{ ui.portrait_alt }}" width="220" height="271">
       </div>
       <div class="hero-text">
-        <p class="eyebrow">{{ p.title }} &middot; {{ p.university }}</p>
-        <h1>{{ p.name }}</h1>
-        <p class="tagline">{{ p.tagline }}</p>
+        <p class="eyebrow">{{ title }} &middot; {{ university }}</p>
+        <h1>{{ heading }}</h1>
+        {%- if heading != p.name %}
+        <p class="alt-name" lang="en">{{ p.name }}</p>
+        {%- endif %}
+        <p class="tagline">{{ tagline }}</p>
         <p class="affil">
-          <a href="{{ p.department_link }}" target="_blank" rel="noopener">{{ p.department }}</a><br>
-          <a href="{{ p.university_link }}" target="_blank" rel="noopener">{{ p.university }}</a>, {{ p.location }}
+          <a href="{{ p.department_link }}" target="_blank" rel="noopener">{{ department }}</a><br>
+          <a href="{{ p.university_link }}" target="_blank" rel="noopener">{{ university }}</a>{% if lang == "en" %}, {% else %} · {% endif %}{{ location }}
         </p>
-        <p class="email" aria-label="Email address">
+        <p class="email" aria-label="{{ ui.email_label }}">
           <i class="fa-regular fa-envelope" aria-hidden="true"></i>
           <span>{{ p.email_user }} [at] {{ p.email_domain }} [dot] {{ p.email_tld }}</span>
         </p>
-        <nav class="links" aria-label="Profiles">
+        <nav class="links" aria-label="{{ ui.profiles_label }}">
           {%- for l in p.links %}
           <a class="pill" href="{{ l.url }}" target="_blank" rel="noopener me"><i class="{{ l.icon }}" aria-hidden="true"></i>{{ l.label }}</a>
           {%- endfor %}
@@ -130,8 +191,8 @@
     {{ content }}
 
     <section class="section" id="publications">
-      <h2>Research</h2>
-      <ol class="papers">
+      <h2>{{ ui.research }}</h2>
+      <ol class="papers" lang="en">
         {%- for pub in p.research %}
         <li class="paper" id="{{ pub.id }}">
           <div class="thumb">
@@ -155,7 +216,7 @@
               <details class="bib">
                 <summary class="chip">BibTeX</summary>
                 <div class="bib-box">
-                  <button class="copy" type="button" aria-label="Copy BibTeX">Copy</button>
+                  <button class="copy" type="button" aria-label="{{ ui.copy_label }}" data-copied="{{ ui.copied }}" lang="{{ ui.html_lang }}">{{ ui.copy }}</button>
                   <pre><code>{{ pub.bibtex | xml_escape }}</code></pre>
                 </div>
               </details>
@@ -165,8 +226,8 @@
         {%- endfor %}
       </ol>
 
-      <h2 class="sub">Other Publications</h2>
-      <ul class="others">
+      <h2 class="sub">{{ ui.other }}</h2>
+      <ul class="others" lang="en">
         {%- for o in p.other %}
         <li>
           <a href="{{ o.url }}" target="_blank" rel="noopener">{{ o.title }}</a>
@@ -178,9 +239,9 @@
     </section>
 
     <section class="section" id="education">
-      <h2>Education</h2>
+      <h2>{{ ui.education }}</h2>
       <ul class="timeline">
-        {%- for e in p.education %}
+        {%- for e in education %}
         <li>
           <span class="dot" aria-hidden="true"></span>
           <div>
@@ -194,7 +255,7 @@
     </section>
 
     <footer class="footer">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ p.name }} &middot; {{ p.department }}, {{ p.university }}</p>
+      <p>&copy; {{ site.time | date: '%Y' }} {{ heading }} &middot; {% if lang == "en" %}{{ department }}, {{ university }}{% else %}{{ university }}{{ department }}{% endif %}</p>
     </footer>
   </main>
 

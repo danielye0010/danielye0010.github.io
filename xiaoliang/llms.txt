@@ -9,6 +9,7 @@ permalink: /xiaoliang/llms.txt
 
 ## Canonical profile
 - Homepage: {{ p.url }}
+- Chinese version (简体中文): {{ p.zh.url }}
 
 ## Academic identity
 - Ph.D. student, Department of Electrical and Computer Engineering, Iowa State University (2024 - present)

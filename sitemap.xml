@@ -18,5 +18,15 @@
   <url>
     <loc>https://danielye.net/xiaoliang/</loc>
     <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielye.net/xiaoliang/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://danielye.net/xiaoliang/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielye.net/xiaoliang/"/>
+  </url>
+  <url>
+    <loc>https://danielye.net/xiaoliang/zh/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielye.net/xiaoliang/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://danielye.net/xiaoliang/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielye.net/xiaoliang/"/>
   </url>
 </urlset>

@@ -431,11 +431,16 @@ details.bib summary::-webkit-details-marker { display: none; }
   text-align: center;
 }
 
-.theme-toggle {
+.top-controls {
   position: fixed;
   top: 16px;
   right: 16px;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.theme-toggle {
   width: 40px;
   height: 40px;
   border: 1px solid var(--border);
@@ -453,6 +458,58 @@ details.bib summary::-webkit-details-marker { display: none; }
   :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: inline; }
   :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
 }
+
+/* Grid items default to min-width:auto, so a long BibTeX line used to widen the card
+   past the page; let the text column shrink and the code box scroll instead. */
+.paper-body { min-width: 0; }
+
+/* ---------- language switch ---------- */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font-size: .9rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+.lang-switch a,
+.lang-switch .current { padding: 4px 2px; }
+.lang-switch a { color: var(--accent); text-decoration: none; }
+.lang-switch a:hover,
+.lang-switch a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.lang-switch .current { color: var(--heading); font-weight: 700; }
+.lang-switch .sep { color: var(--muted); padding: 0 6px; }
+
+.alt-name {
+  margin: -4px 0 10px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ---------- Simplified Chinese typography ---------- */
+/* Latin text keeps the web fonts; CJK falls back to system fonts (no web-font download). */
+html[lang="zh-Hans"] body {
+  font-family: "Nunito Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC",
+    "Microsoft YaHei", system-ui, sans-serif;
+  line-height: 1.85;
+}
+html[lang="zh-Hans"] h1,
+html[lang="zh-Hans"] h2,
+html[lang="zh-Hans"] .tagline {
+  font-family: "Fraunces", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC",
+    "Microsoft YaHei", serif;
+}
+html[lang="zh-Hans"] .tagline { font-style: normal; text-wrap: balance; }
+/* CJK has no italic; emphasise with weight and colour instead of a synthetic slant. */
+html[lang="zh-Hans"] #about em { font-style: normal; font-weight: 600; color: var(--heading); }
+html[lang="zh-Hans"] .eyebrow { letter-spacing: .08em; }
+/* Paper cards stay in English on the Chinese page. */
+html[lang="zh-Hans"] [lang="en"] { line-height: 1.7; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 760px) {

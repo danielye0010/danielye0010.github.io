@@ -1,0 +1,36 @@
+---
+layout: xl
+lang: zh-Hans
+lang_order: 2
+ref: xiaoliang
+permalink: /xiaoliang/zh/
+sitemap: true
+---
+{%- assign p = site.data.xl -%}
+<section class="section" id="about">
+  <h2>关于我</h2>
+  <p class="lead">
+    你好，我是 Xiao！目前在爱荷华州立大学<a href="{{ p.department_link }}" target="_blank" rel="noopener">电气与计算机工程系</a>读博士，导师是 <a href="{{ p.advisor_link }}" target="_blank" rel="noopener">Shuang Li</a> 教授。
+  </p>
+  <p>
+    一直吸引我的，是一个听上去简单得有点过分的问题：<em>有些非凸问题在纸面上看起来毫无希望，为什么最朴素的梯度下降偏偏能把它们解得很好？</em>为了找到答案，我去刻画优化问题的“地形”：在结构化的低秩问题里寻找山谷、山脊和鞍点，比如只凭幅值测量同时恢复信号和模糊核，或是借助傅里叶切片研究张量感知。把几何结构弄清楚之后，我也喜欢把这些理解变成更快的算法。最近在研究 Muon 式的正交化更新，看它能把张量回归加速多少。
+  </p>
+  <p>
+    我的求学路线拐过几个弯：本科在北京的北方工业大学读数据科学（2018&ndash;2022），之后在圣路易斯华盛顿大学读计算机科学（2022&ndash;2024），读博前又在<strong>华为</strong>实习了一段时间，然后来到 Ames。爱荷华是出了名的一马平川，所以现在真正有起伏的地形，都在我的损失函数里。
+  </p>
+
+  <ul class="interests" aria-label="研究方向">
+    {%- for i in p.zh.interests %}
+    <li>{{ i }}</li>
+    {%- endfor %}
+  </ul>
+
+  <figure class="playground" aria-label="可交互的优化地形">
+    <canvas id="landscape" width="880" height="260" role="img"
+      aria-label="一个函数的等高线图：有两个全局极小值，中间隔着一个鞍点"></canvas>
+    <figcaption>
+      <span class="pg-title"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> 试一试</span>
+      在图上任意位置点一下，放下一个小球，看它沿着梯度一路滚下去。中间有一个鞍点，但没有伪局部极小值，所以每个小球最后都会落到两个全局最优解 &plusmn;x&#9733; 中的一个。这种正负号上的不确定性，正是相位恢复必须面对的问题。
+    </figcaption>
+  </figure>
+</section>

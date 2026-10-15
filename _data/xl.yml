@@ -182,3 +182,82 @@ other:
     authors: "<b>Xiao Liang</b>, Shiyuan Xu"
     venue: Journal of Physics&#58; Conference Series, 2021
     url: https://iopscience.iop.org/article/10.1088/1742-6596/1748/2/022006
+
+# ---------------------------------------------------------------------------
+# Simplified Chinese version (/xiaoliang/zh/).
+# Only narrative and UI text is translated. Paper titles, authors, venues,
+# TL;DRs and BibTeX stay in English on both pages (they are cited and searched
+# in English; a translated title could be mistaken for an official one).
+# Any field missing here falls back to the English value above.
+# ---------------------------------------------------------------------------
+zh:
+  url: https://danielye.net/xiaoliang/zh/
+  # Fill in Xiao's name in Chinese characters to show it as the page heading.
+  name_native: ""
+  title: 博士生
+  tagline: 一个鞍点接一个鞍点，绘制非凸优化的地形图。
+  department: 电气与计算机工程系
+  university: 爱荷华州立大学
+  location: 艾姆斯（Ames）
+  advisor: Shuang Li 教授
+  description: >-
+    Xiao Liang，爱荷华州立大学电气与计算机工程系博士生，导师为 Shuang Li 教授。
+    研究非凸优化的地形分析，以及低秩张量恢复、盲反卷积与相位恢复中的可扩展算法。
+  keywords: >-
+    Xiao Liang, 爱荷华州立大学, Iowa State University, 电气与计算机工程, Shuang Li,
+    非凸优化, 优化地形, 低秩张量恢复, 张量感知, 盲反卷积, 相位恢复, 信号处理
+  interests:
+    - 非凸优化与地形分析
+    - 低秩矩阵与张量恢复
+    - 盲反卷积与相位恢复
+    - 张量模型的可扩展算法
+  education:
+    - degree: 电气与计算机工程博士
+      school: 爱荷华州立大学
+      years: 2024 &ndash; 至今
+      note: 导师：Shuang Li 教授
+    - degree: 计算机科学硕士
+      school: 圣路易斯华盛顿大学
+      years: 2022 &ndash; 2024
+      note: ""
+    - degree: 数据科学学士
+      school: 北方工业大学（北京）
+      years: 2018 &ndash; 2022
+      note: ""
+
+# Interface strings per language.
+ui:
+  en:
+    html_lang: en
+    og_locale: en_US
+    switch_label: EN
+    page_title: Ph.D. Student in ECE at Iowa State University
+    og_title_suffix: Iowa State University
+    portrait_alt: Portrait of Xiao Liang
+    email_label: Email address
+    profiles_label: Profiles
+    theme_label: Toggle dark mode
+    lang_nav: Language
+    research: Research
+    other: Other Publications
+    education: Education
+    copy: Copy
+    copied: Copied
+    copy_label: Copy BibTeX
+  zh-Hans:
+    html_lang: zh-Hans
+    og_locale: zh_CN
+    switch_label: 中文
+    page_title: 爱荷华州立大学电气与计算机工程博士生
+    og_title_suffix: 爱荷华州立大学
+    portrait_alt: Xiao Liang 的照片
+    email_label: 邮箱地址
+    profiles_label: 个人主页
+    theme_label: 切换深色模式
+    lang_nav: 语言
+    research: 研究
+    other: 其他论文
+    education: 教育经历
+    copy: 复制
+    copied: 已复制
+    copy_label: 复制 BibTeX

@@ -144,9 +144,10 @@
       var code = btn.parentElement.querySelector('code');
       if (!code) return;
       var text = code.textContent;
+      var label = btn.textContent;
       var done = function () {
-        btn.textContent = 'Copied';
-        setTimeout(function () { btn.textContent = 'Copy'; }, 1500);
+        btn.textContent = btn.getAttribute('data-copied') || 'Copied';
+        setTimeout(function () { btn.textContent = label; }, 1500);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(done, function () {});
