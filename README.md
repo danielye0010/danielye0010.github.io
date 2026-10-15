@@ -10,7 +10,9 @@ Source for **[danielye.net](https://danielye.net/)**, the academic homepage of *
 
 | Path | Purpose |
 | --- | --- |
-| `index.md` | Homepage content |
+| `index.md` | English homepage (`lang: en`, `ref: home`) |
+| `zh/index.md` | Simplified Chinese homepage at `/zh/` (`lang: zh-Hans`, `ref: home`) |
+| `_data/i18n.yml` | Per-language header strings (name, position, affiliation, switch label) |
 | `_config.yml` | Name, affiliation, links, SEO description |
 | `_layouts/homepage.html` | Page template, meta tags, JSON-LD structured data |
 | `llms.txt` | Plain-text profile summary for LLM crawlers |
@@ -18,6 +20,8 @@ Source for **[danielye.net](https://danielye.net/)**, the academic homepage of *
 | `d48e99ff3f3e2223b56b1152af5fe7c8.txt` | IndexNow key (do not delete) |
 | `.github/workflows/indexnow.yml` | Pings IndexNow (Bing etc.) after each GitHub Pages build |
 | `xiaoliang/`, `_layouts/xl.html`, `_data/xl.yml` | Separate homepage for Xiao Liang at `/xiaoliang/` |
+
+To add a translated page, give it the same `ref` as its counterpart and a `lang` key that exists in `_data/i18n.yml`; the layout adds `hreflang` links and the language switch automatically.
 
 Deployed automatically by GitHub Pages (Jekyll). Local preview:
 

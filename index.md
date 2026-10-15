@@ -1,5 +1,8 @@
 ---
 layout: homepage
+lang: en
+lang_order: 1
+ref: home
 title: "Daniel Ye | Ph.D. Candidate at Iowa State University"
 keywords: "Daniel Ye, Industrial Engineering, Iowa State University, additive manufacturing, computational geometry, 3D deformation modeling, predictive compensation"
 ---

@@ -1,0 +1,39 @@
+# Per-language strings for the homepage layout (_layouts/homepage.html).
+# Each page sets `lang` (en / zh-Hans) and a shared `ref` in its front matter;
+# pages with the same `ref` are treated as translations of each other.
+
+en:
+  html_lang: en
+  og_locale: en_US
+  switch_label: EN
+  name: Daniel Ye
+  alt_name: Yifei Ye · <span lang="zh-Hans">叶逸飞</span>
+  position: Ph.D. Candidate
+  subaffiliation: Department of Industrial and Manufacturing Systems Engineering
+  affiliation: Iowa State University
+  address: 2209 Therkildsen Industrial Engineering
+  avatar_alt: Daniel Ye, Ph.D. candidate at Iowa State University
+  image_alt: Portrait of Daniel Ye, Ph.D. candidate at Iowa State University
+  links:
+    scholar: Daniel Ye on Google Scholar
+    github: Daniel Ye on GitHub
+    linkedin: Daniel Ye on LinkedIn
+  lang_nav: Language
+
+zh-Hans:
+  html_lang: zh-Hans
+  og_locale: zh_CN
+  switch_label: 中文
+  name: 叶逸飞
+  alt_name: Daniel Ye
+  position: 博士候选人
+  subaffiliation: 工业与制造系统工程系
+  affiliation: 爱荷华州立大学
+  address: Therkildsen 工业工程楼 2209 室
+  avatar_alt: 叶逸飞（Daniel Ye），爱荷华州立大学博士候选人
+  image_alt: 叶逸飞（Daniel Ye）的照片
+  links:
+    scholar: 叶逸飞的 Google Scholar 主页
+    github: 叶逸飞的 GitHub
+    linkedin: 叶逸飞的 LinkedIn
+  lang_nav: 语言

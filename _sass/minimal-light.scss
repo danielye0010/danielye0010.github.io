@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,500;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+// Web fonts are loaded non-blocking from _layouts/homepage.html (a CSS @import of
+// Google Fonts blocks rendering, and can stall the page where Google is unreachable).
 
 body {
   background-color: #fff;
@@ -739,4 +739,90 @@ screen and (max-width: 480px) {
   margin-left: 0px;
   display: none;
   font-family: monospace;
+}
+
+// ---------------------------------------------------------------------------
+// Bilingual support
+// ---------------------------------------------------------------------------
+
+.wrapper {
+  position: relative;
+}
+
+.alt-name {
+  margin: -6px 0 6px;
+  color: #6d6d6d;
+  font-size: 0.95rem;
+}
+
+// Language switch: top-right of the content column on desktop,
+// top-right corner of the page on narrow screens.
+.lang-switch {
+  position: absolute;
+  top: 4.6em;
+  right: 0;
+  z-index: 10;
+  font-size: 0.95rem;
+  line-height: 1;
+  white-space: nowrap;
+
+  a,
+  .current {
+    display: inline-block;
+    padding: 6px 4px;
+  }
+
+  a {
+    color: #702b9d;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  a:hover,
+  a:focus-visible {
+    border-bottom-color: currentColor;
+  }
+
+  .current {
+    color: #222;
+    font-weight: 600;
+  }
+
+  .sep {
+    color: #bbb;
+    padding: 0 2px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .lang-switch .current {
+    color: #eee;
+  }
+
+  .lang-switch a {
+    color: #ab82c5;
+  }
+
+  .alt-name {
+    color: #9a9a9a;
+  }
+}
+
+@media print, screen and (max-width: 960px) {
+  .lang-switch {
+    top: 0;
+    right: 0;
+  }
+}
+
+// Simplified Chinese typography: keep Crimson Pro for Latin text and fall back to
+// system CJK fonts (no web font, so the page stays fast where Google is blocked).
+html[lang="zh-Hans"] body {
+  font-family: "Crimson Pro", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC",
+    "Noto Serif SC", "PingFang SC", "Microsoft YaHei", serif;
+  line-height: 1.8;
+}
+
+html[lang="zh-Hans"] section p {
+  text-align: justify;
 }

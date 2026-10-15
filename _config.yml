@@ -4,9 +4,6 @@ author: Daniel Ye
 # baseurl: danielye.github.io
 # Basic Information
 title: "Daniel Ye"
-# Other names people may search for (shown under the name and in structured data)
-alt_name_latin: Yifei Ye
-alt_name_native: 叶逸飞
 position: Ph.D. Candidate
 affiliation: Iowa State University
 subaffiliation: Department of Industrial and Manufacturing Systems Engineering
@@ -23,7 +20,6 @@ address_link: https://maps.app.goo.gl/gMN2vPth4yKYm7pVA
 # The following information is used to improve the website traffic from search engines, e.g., Google.
 keywords: Daniel Ye, Yifei Ye, 叶逸飞, Industrial Engineering, Iowa State University, additive manufacturing, computational geometry, 3D deformation modeling, predictive compensation, digital manufacturing
 description: Daniel Ye (Yifei Ye, 叶逸飞) is a Ph.D. candidate in Industrial Engineering at Iowa State University, researching computational geometry, 3D deformation modeling, predictive compensation, and additive manufacturing.
-canonical: https://danielye.net/
 
 # Links
 # If you don't need one of them, you may delete the corresponding line.
@@ -33,10 +29,10 @@ linkedin: https://www.linkedin.com/in/danielye0001/
 
 # Images (e.g., your profile picture and your website's favicon)
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively.
-avatar: ./assets/img/danielavatar.jpg
+avatar: /assets/img/danielavatar.jpg
 # logo: ./assets/img/favicon_black.png
-favicon: ./assets/img/favicon_black.png
-favicon_dark: ./assets/img/favicon_black.png
+favicon: /assets/img/favicon_black.png
+favicon_dark: /assets/img/favicon_black.png
 
 # Footnote
 # You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."

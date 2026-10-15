@@ -4,6 +4,7 @@
 
 ## Canonical profile
 - Personal website: https://danielye.net/
+- Chinese version (简体中文): https://danielye.net/zh/
 
 ## Names
 - English name: Daniel Ye
