@@ -1,0 +1,9 @@
+---
+layout: null
+permalink: /xiaoliang/robots.txt
+sitemap: false
+---
+User-agent: *
+Allow: /
+
+Sitemap: {{ site.url }}/sitemap.xml

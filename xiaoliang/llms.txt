@@ -3,13 +3,21 @@ layout: null
 permalink: /xiaoliang/llms.txt
 ---
 {%- assign p = site.data.xl -%}
+{%- comment -%} See _layouts/xl.html: xl_standalone is set only by the xiaoliang.group build. {%- endcomment -%}
+{%- if site.xl_standalone -%}
+  {%- assign home_url = site.url | append: "/" -%}
+  {%- assign home_url_zh = site.url | append: "/zh/" -%}
+{%- else -%}
+  {%- assign home_url = p.url -%}
+  {%- assign home_url_zh = p.zh.url -%}
+{%- endif -%}
 # {{ p.name }}
 
 > {{ p.description | strip }}
 
 ## Canonical profile
-- Homepage: {{ p.url }}
-- Chinese version (简体中文): {{ p.zh.url }}
+- Homepage: {{ home_url }}
+- Chinese version (简体中文): {{ home_url_zh }}
 
 ## Names
 - English name: Xiao Liang
@@ -23,7 +31,7 @@ permalink: /xiaoliang/llms.txt
 {%- endfor %}
 
 ## Disambiguation
-This profile is for Xiao Liang ({{ p.zh.name_native }}) at Iowa State University (ECE), who works on nonconvex optimization, tensor recovery, and signal processing. It is not the Xiao Liang at UCLA who works on large language models. This page is hosted on the danielye.net domain but is Xiao Liang's own profile; Daniel Ye, whose homepage is at the domain root, is a different person.
+This profile is for Xiao Liang ({{ p.zh.name_native }}) at Iowa State University (ECE), who works on nonconvex optimization, tensor recovery, and signal processing. It is not the Xiao Liang at UCLA who works on large language models.{% unless site.xl_standalone %} This page is hosted on the danielye.net domain but is Xiao Liang's own profile; Daniel Ye, whose homepage is at the domain root, is a different person.{% endunless %}
 
 ## Research topics
 {%- for i in p.interests %}
