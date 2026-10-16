@@ -22,7 +22,7 @@ Content is edited in the usual places and both sites pick it up:
 - Root directory: `_deploy/xiaoliang-group`
 - Build command: `bash build.sh`
 - Build output directory: `dist`
-- Build watch paths (include): `xiaoliang/*`, `_layouts/xl.html`, `_data/xl.yml`, `_includes/xl/*`, `_deploy/xiaoliang-group/*`
+- Build watch paths: `*` (default)
 
 ## Local build
 

@@ -40,13 +40,13 @@ Cloudflare Pages settings:
 
 | Setting | Value |
 |---|---|
-| Project name | `xiaoliang-group` |
+| Project name | `danielye0010-github-io` (auto-named by Cloudflare; only affects the pages.dev test URL) |
 | Production branch | `master` |
 | Framework preset | None |
 | Root directory | `_deploy/xiaoliang-group` |
 | Build command | `bash build.sh` |
 | Build output directory | `dist` |
-| Build watch paths (include) | `xiaoliang/*`, `_layouts/xl.html`, `_data/xl.yml`, `_includes/xl/*`, `_deploy/xiaoliang-group/*` |
+| Build watch paths | `*` (default: every push builds; a build takes under a minute) |
 
 ## 3. Build and validation results
 
@@ -61,7 +61,7 @@ Not yet verified (needs the steps below): the real Cloudflare build, the pages.d
 ## 4. Production URLs and status
 
 - https://danielye.net/ and https://danielye.net/xiaoliang/: unchanged, live.
-- https://xiaoliang-group.pages.dev/: not created yet (step A).
+- https://danielye0010-github-io.pages.dev/: not created yet (step A).
 - https://xiaoliang.group/, https://xiaoliang.group/zh/: not live yet (step C). The apex currently has no A record.
 
 ## 5. Manual steps still required
@@ -72,11 +72,11 @@ Not yet verified (needs the steps below): the real Cloudflare build, the pages.d
 2. **Workers & Pages → Create → Pages → Connect to Git → GitHub**. If asked to install or configure the Cloudflare Pages GitHub app, choose **Only select repositories → danielye0010.github.io**.
 3. Select `danielye0010/danielye0010.github.io` and enter the settings from the table in section 2. Save and Deploy.
 4. The first production build of `master` will fail with "root directory not found". That is expected until the PR is merged and does not affect anything.
-5. Tell me it's connected. I'll push a commit to `xiaoliang-group` to trigger a preview build and verify `https://xiaoliang-group.xiaoliang-group.pages.dev/` over HTTP and in a browser. (Or in the project, **Deployments → Create deployment → branch `xiaoliang-group`**.)
+5. Tell me it's connected. I'll push a commit to `xiaoliang-group` to trigger a preview build and verify `https://xiaoliang-group.danielye0010-github-io.pages.dev/` over HTTP and in a browser. (Or in the project, **Deployments → Create deployment → branch `xiaoliang-group`**.)
 
 ### B. Merge the PR
 
-After the preview checks pass, merge the PR into `master`. Cloudflare then builds production (`xiaoliang-group.pages.dev`), and every later change to Xiao's files on `master` redeploys automatically. GitHub Pages also rebuilds danielye.net; its output is unchanged.
+After the preview checks pass, merge the PR into `master`. Cloudflare then builds production (`danielye0010-github-io.pages.dev`), and every later change to Xiao's files on `master` redeploys automatically. GitHub Pages also rebuilds danielye.net; its output is unchanged.
 
 ### C. Move xiaoliang.group DNS to Cloudflare (needs your go-ahead)
 
