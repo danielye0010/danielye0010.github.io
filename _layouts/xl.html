@@ -2,7 +2,28 @@
 {%- assign lang = page.lang | default: "en" -%}
 {%- assign ui = p.ui[lang] | default: p.ui["en"] -%}
 {%- if lang == "zh-Hans" -%}{%- assign L = p.zh -%}{%- else -%}{%- assign L = p -%}{%- endif -%}
-{%- assign url = L.url | default: p.url -%}
+{%- comment -%}
+  This layout serves two deployments of the same pages:
+  - danielye.net/xiaoliang/ (GitHub Pages, this repo's normal build): pages live under /xiaoliang/,
+    and canonical URLs come from url / zh.url in _data/xl.yml.
+  - xiaoliang.group (Cloudflare Pages, built by _deploy/xiaoliang-group/build.sh): the build sets
+    xl_standalone: true, the pages are moved to the domain root, and URLs are built from site.url.
+  Paths below are written as "/xiaoliang/..." | remove_first: "/xiaoliang" | prepend: xl_base,
+  which leaves them unchanged on danielye.net and maps them to the root on xiaoliang.group.
+{%- endcomment -%}
+{%- if site.xl_standalone -%}
+  {%- assign xl_base = "" -%}
+  {%- assign xl_origin = site.url -%}
+  {%- assign home_url = site.url | append: "/" -%}
+  {%- assign home_url_zh = site.url | append: "/zh/" -%}
+{%- else -%}
+  {%- assign xl_base = "/xiaoliang" -%}
+  {%- assign xl_origin = "https://danielye.net" -%}
+  {%- assign home_url = p.url -%}
+  {%- assign home_url_zh = p.zh.url | default: p.url -%}
+{%- endif -%}
+{%- if lang == "zh-Hans" -%}{%- assign url = home_url_zh -%}{%- else -%}{%- assign url = home_url -%}{%- endif -%}
+{%- assign avatar = p.avatar | remove_first: "/xiaoliang" | prepend: xl_base -%}
 {%- assign title = L.title | default: p.title -%}
 {%- assign tagline = L.tagline | default: p.tagline -%}
 {%- assign department = L.department | default: p.department -%}
@@ -32,11 +53,13 @@
   <link rel="canonical" href="{{ url }}">
   {%- if translations and translations.size > 1 %}
   {%- for tr in translations %}
-  <link rel="alternate" hreflang="{{ tr.lang }}" href="{{ tr.url | absolute_url }}">
+  {%- assign tr_path = tr.url | remove_first: "/xiaoliang" | prepend: xl_base %}
+  <link rel="alternate" hreflang="{{ tr.lang }}" href="{{ tr_path | absolute_url }}">
   {%- endfor %}
   {%- assign default_tr = translations | where: "lang", "en" | first %}
   {%- if default_tr %}
-  <link rel="alternate" hreflang="x-default" href="{{ default_tr.url | absolute_url }}">
+  {%- assign tr_path = default_tr.url | remove_first: "/xiaoliang" | prepend: xl_base %}
+  <link rel="alternate" hreflang="x-default" href="{{ tr_path | absolute_url }}">
   {%- endif %}
   {%- endif %}
 
@@ -49,18 +72,18 @@
   <meta property="og:title" content="{{ heading }} | {{ ui.og_title_suffix }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:url" content="{{ url }}">
-  <meta property="og:image" content="https://danielye.net{{ p.avatar }}">
+  <meta property="og:image" content="{{ xl_origin }}{{ avatar }}">
   <meta property="og:image:alt" content="{{ ui.portrait_alt }}">
   <meta property="profile:first_name" content="Xiao">
   <meta property="profile:last_name" content="Liang">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ heading }} | {{ ui.og_title_suffix }}">
   <meta name="twitter:description" content="{{ description }}">
-  <meta name="twitter:image" content="https://danielye.net{{ p.avatar }}">
+  <meta name="twitter:image" content="{{ xl_origin }}{{ avatar }}">
   {%- for l in p.links %}
   <link rel="me" href="{{ l.url }}">
   {%- endfor %}
-  <link rel="alternate" type="text/plain" href="{{ p.url }}llms.txt" title="Machine-readable profile summary">
+  <link rel="alternate" type="text/plain" href="{{ home_url }}llms.txt" title="Machine-readable profile summary">
 
   <script type="application/ld+json">
   {
@@ -74,21 +97,21 @@
         "description": {{ description | jsonify }},
         "inLanguage": "{{ ui.html_lang }}",
         "dateModified": "{{ site.time | date_to_xmlschema }}",
-        "mainEntity": { "@id": "{{ p.url }}#person" }
+        "mainEntity": { "@id": "{{ home_url }}#person" }
       },
       {
         "@type": "Person",
-        "@id": "{{ p.url }}#person",
+        "@id": "{{ home_url }}#person",
         "name": "{{ p.name }}",
         "givenName": "Xiao",
         "familyName": "Liang",
         {%- if p.zh.name_native and p.zh.name_native != "" %}
         "alternateName": [{{ p.zh.name_native | jsonify }}, "Liang Xiao"],
         {%- endif %}
-        "url": "{{ p.url }}",
-        "image": "https://danielye.net{{ p.avatar }}",
+        "url": "{{ home_url }}",
+        "image": "{{ xl_origin }}{{ avatar }}",
         "workLocation": { "@type": "Place", "name": "Ames, Iowa", "address": { "@type": "PostalAddress", "addressLocality": "Ames", "addressRegion": "IA", "addressCountry": "US" } },
-        "logo": "https://danielye.net/xiaoliang/assets/logo-512.png",
+        "logo": "{{ xl_origin }}{{ xl_base }}/assets/logo-512.png",
         "jobTitle": "Ph.D. Student in Electrical and Computer Engineering",
         "description": {{ p.description | strip | jsonify }},
         "affiliation": {
@@ -114,7 +137,7 @@
         "@type": "ScholarlyArticle",
         "headline": {{ pub.title | jsonify }},
         "inLanguage": "en",
-        "author": [{% assign names = pub.authors | strip_html | replace: "*", "" | replace: "&dagger;", "" | split: ", " %}{% for n in names %}{% assign nm = n | strip %}{% if nm == p.name %}{ "@id": "{{ p.url }}#person" }{% else %}{ "@type": "Person", "name": {{ nm | jsonify }} }{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "author": [{% assign names = pub.authors | strip_html | replace: "*", "" | replace: "&dagger;", "" | split: ", " %}{% for n in names %}{% assign nm = n | strip %}{% if nm == p.name %}{ "@id": "{{ home_url }}#person" }{% else %}{ "@type": "Person", "name": {{ nm | jsonify }} }{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}],
         {%- if pub.year %}
         "datePublished": "{{ pub.year }}",
         {%- else %}
@@ -132,10 +155,10 @@
   }
   </script>
 
-  <link rel="icon" href="{{ '/xiaoliang/assets/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
-  <link rel="icon" href="{{ '/xiaoliang/assets/favicon-48.png' | relative_url }}" type="image/png" sizes="48x48">
-  <link rel="icon" href="{{ '/xiaoliang/assets/logo-512.png' | relative_url }}" type="image/png" sizes="512x512">
-  <link rel="apple-touch-icon" href="{{ '/xiaoliang/assets/apple-touch-icon.png' | relative_url }}">
+  <link rel="icon" href="{{ xl_base | append: '/assets/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
+  <link rel="icon" href="{{ xl_base | append: '/assets/favicon-48.png' | relative_url }}" type="image/png" sizes="48x48">
+  <link rel="icon" href="{{ xl_base | append: '/assets/logo-512.png' | relative_url }}" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="{{ xl_base | append: '/assets/apple-touch-icon.png' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   {%- comment %} Loaded non-blocking: a render-blocking Google Fonts request can stall the page where Google is unreachable. {% endcomment %}
@@ -144,7 +167,7 @@
   <noscript><link rel="stylesheet" href="{{ fonts_url }}"></noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ '/xiaoliang/assets/xl.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <link rel="stylesheet" href="{{ xl_base | append: '/assets/xl.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <script>
     (function () {
       try {
@@ -164,7 +187,8 @@
       {%- if tr.lang == lang %}
       <span class="current" lang="{{ tu.html_lang }}" aria-current="page">{{ tu.switch_label }}</span>
       {%- else %}
-      <a href="{{ tr.url | relative_url }}" hreflang="{{ tu.html_lang }}" lang="{{ tu.html_lang }}">{{ tu.switch_label }}</a>
+      {%- assign tr_path = tr.url | remove_first: "/xiaoliang" | prepend: xl_base %}
+      <a href="{{ tr_path | relative_url }}" hreflang="{{ tu.html_lang }}" lang="{{ tu.html_lang }}">{{ tu.switch_label }}</a>
       {%- endif %}
       {%- unless forloop.last %}<span class="sep" aria-hidden="true">/</span>{% endunless %}
       {%- endfor %}
@@ -179,7 +203,7 @@
   <main class="page">
     <header class="hero">
       <div class="portrait">
-        <img src="{{ p.avatar | relative_url }}" alt="{{ ui.portrait_alt }}" width="220" height="271">
+        <img src="{{ avatar | relative_url }}" alt="{{ ui.portrait_alt }}" width="220" height="271">
       </div>
       <div class="hero-text">
         <p class="eyebrow">{{ title }} &middot; {{ university }}</p>
@@ -277,6 +301,6 @@
     </footer>
   </main>
 
-  <script src="{{ '/xiaoliang/assets/xl.js' | relative_url }}" defer></script>
+  <script src="{{ xl_base | append: '/assets/xl.js' | relative_url }}" defer></script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+# Jekyll config for the standalone xiaoliang.group build (Cloudflare Pages).
+# Used only by build.sh in this folder; the danielye.net build never reads it.
+
+url: "https://xiaoliang.group"
+
+# Tells _layouts/xl.html and xiaoliang/llms.txt to emit root-relative paths
+# (/assets/..., /zh/) and xiaoliang.group URLs instead of /xiaoliang/... on danielye.net.
+xl_standalone: true
+
+lang: en
+markdown: kramdown

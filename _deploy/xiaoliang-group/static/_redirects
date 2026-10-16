@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects for xiaoliang.group.
+# The site used to live at danielye.net/xiaoliang/; map any /xiaoliang/... path that
+# gets copied onto the new domain to its root equivalent.
+/xiaoliang      /      301
+/xiaoliang/     /      301
+/xiaoliang/*    /:splat  301
