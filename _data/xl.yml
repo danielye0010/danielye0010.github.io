@@ -30,12 +30,12 @@ links:
     url: https://www.linkedin.com/in/xiao-liang-6a3975239/
 
 description: >-
-  Xiao Liang is a Ph.D. student in Electrical and Computer Engineering at Iowa State University,
+  Xiao Liang (梁笑) is a Ph.D. student in Electrical and Computer Engineering at Iowa State University,
   advised by Prof. Shuang Li. She studies nonconvex optimization landscapes and scalable algorithms
   for low-rank tensor recovery, blind deconvolution, and phase retrieval.
 
 keywords: >-
-  Xiao Liang, Iowa State University, ECpE, Electrical and Computer Engineering, Shuang Li,
+  Xiao Liang, 梁笑, Liang Xiao, Iowa State University, ECpE, Electrical and Computer Engineering, Shuang Li,
   nonconvex optimization, optimization landscape, low-rank tensor recovery, tensor sensing,
   blind deconvolution, phase retrieval, signal processing, ICASSP
 
@@ -192,19 +192,21 @@ other:
 # ---------------------------------------------------------------------------
 zh:
   url: https://danielye.net/xiaoliang/zh/
-  # Fill in Xiao's name in Chinese characters to show it as the page heading.
-  name_native: ""
+  # Chinese-character name: shown as the heading on the Chinese page and under the
+  # English name on the English page; also used in structured data and llms.txt.
+  name_native: 梁笑
   title: 博士生
   tagline: 一个鞍点接一个鞍点，绘制非凸优化的地形图。
   department: 电气与计算机工程系
   university: 爱荷华州立大学
-  location: 艾姆斯（Ames）
+  # Place names stay in English, as on maps and addresses.
+  location: Ames, Iowa
   advisor: Shuang Li 教授
   description: >-
-    Xiao Liang，爱荷华州立大学电气与计算机工程系博士生，导师为 Shuang Li 教授。
+    梁笑（Xiao Liang），爱荷华州立大学电气与计算机工程系博士生，导师为 Shuang Li 教授。
     研究非凸优化的地形分析，以及低秩张量恢复、盲反卷积与相位恢复中的可扩展算法。
   keywords: >-
-    Xiao Liang, 爱荷华州立大学, Iowa State University, 电气与计算机工程, Shuang Li,
+    梁笑, Xiao Liang, 爱荷华州立大学, Iowa State University, 电气与计算机工程, Shuang Li,
     非凸优化, 优化地形, 低秩张量恢复, 张量感知, 盲反卷积, 相位恢复, 信号处理
   interests:
     - 非凸优化与地形分析

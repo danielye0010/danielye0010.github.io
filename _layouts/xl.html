@@ -41,6 +41,7 @@
   {%- endif %}
 
   <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="{{ p.name }}">
   <meta property="og:locale" content="{{ ui.og_locale }}">
   {%- for tr in translations %}{% if tr.lang != lang %}
   <meta property="og:locale:alternate" content="{{ p.ui[tr.lang].og_locale }}">
@@ -49,6 +50,7 @@
   <meta property="og:description" content="{{ description }}">
   <meta property="og:url" content="{{ url }}">
   <meta property="og:image" content="https://danielye.net{{ p.avatar }}">
+  <meta property="og:image:alt" content="{{ ui.portrait_alt }}">
   <meta property="profile:first_name" content="Xiao">
   <meta property="profile:last_name" content="Liang">
   <meta name="twitter:card" content="summary">
@@ -78,11 +80,14 @@
         "@type": "Person",
         "@id": "{{ p.url }}#person",
         "name": "{{ p.name }}",
+        "givenName": "Xiao",
+        "familyName": "Liang",
         {%- if p.zh.name_native and p.zh.name_native != "" %}
-        "alternateName": {{ p.zh.name_native | jsonify }},
+        "alternateName": [{{ p.zh.name_native | jsonify }}, "Liang Xiao"],
         {%- endif %}
         "url": "{{ p.url }}",
         "image": "https://danielye.net{{ p.avatar }}",
+        "workLocation": { "@type": "Place", "name": "Ames, Iowa", "address": { "@type": "PostalAddress", "addressLocality": "Ames", "addressRegion": "IA", "addressCountry": "US" } },
         "logo": "https://danielye.net/xiaoliang/assets/logo-512.png",
         "jobTitle": "Ph.D. Student in Electrical and Computer Engineering",
         "description": {{ p.description | strip | jsonify }},
@@ -102,15 +107,26 @@
         ],
         "knowsAbout": ["Nonconvex optimization", "Optimization landscape analysis", "Low-rank tensor recovery", "Tensor sensing", "Blind deconvolution", "Phase retrieval", "Signal processing"],
         "sameAs": [{% for l in p.links %}"{{ l.url }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]
-      }{% for pub in p.research %},
+      }
+      {%- assign all_pubs = p.research | concat: p.other %}
+      {%- for pub in all_pubs %},
       {
         "@type": "ScholarlyArticle",
         "headline": {{ pub.title | jsonify }},
         "inLanguage": "en",
-        "author": [{% assign names = pub.authors | strip_html | replace: "*", "" | replace: "&dagger;", "" | split: ", " %}{% for n in names %}{ "@type": "Person", "name": {{ n | strip | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "author": [{% assign names = pub.authors | strip_html | replace: "*", "" | replace: "&dagger;", "" | split: ", " %}{% for n in names %}{% assign nm = n | strip %}{% if nm == p.name %}{ "@id": "{{ p.url }}#person" }{% else %}{ "@type": "Person", "name": {{ nm | jsonify }} }{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        {%- if pub.year %}
         "datePublished": "{{ pub.year }}",
-        "isPartOf": {{ pub.venue | jsonify }},
-        "url": "{{ pub.links[0].url }}"
+        {%- else %}
+        "datePublished": {{ pub.venue | split: ", " | last | jsonify }},
+        {%- endif %}
+        "isPartOf": {{ pub.venue | replace: "&#58;", ":" | jsonify }},
+        {%- if pub.links %}
+        "url": "{{ pub.links[0].url }}",
+        "sameAs": [{% for l in pub.links %}"{{ l.url }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]
+        {%- else %}
+        "url": "{{ pub.url }}"
+        {%- endif %}
       }{% endfor %}
     ]
   }
@@ -170,6 +186,8 @@
         <h1>{{ heading }}</h1>
         {%- if heading != p.name %}
         <p class="alt-name" lang="en">{{ p.name }}</p>
+        {%- elsif p.zh.name_native and p.zh.name_native != "" %}
+        <p class="alt-name" lang="zh-Hans">{{ p.zh.name_native }}</p>
         {%- endif %}
         <p class="tagline">{{ tagline }}</p>
         <p class="affil">

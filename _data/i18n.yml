@@ -31,7 +31,8 @@ zh-Hans:
   position: 博士候选人
   subaffiliation: 工业与制造系统工程系
   affiliation: 爱荷华州立大学
-  address: Therkildsen 工业工程楼 2209 室
+  # Building names and street addresses stay in English (that is what is on the door and on maps).
+  address: 2209 Therkildsen Industrial Engineering
   avatar_alt: 叶逸飞（Daniel Ye），爱荷华州立大学博士候选人
   image_alt: 叶逸飞（Daniel Ye）的照片
   links:

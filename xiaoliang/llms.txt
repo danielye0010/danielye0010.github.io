@@ -11,6 +11,10 @@ permalink: /xiaoliang/llms.txt
 - Homepage: {{ p.url }}
 - Chinese version (简体中文): {{ p.zh.url }}
 
+## Names
+- English name: Xiao Liang
+- Chinese name: {{ p.zh.name_native }} (pinyin: Liang Xiao in Chinese order; Xiao Liang in English order)
+
 ## Academic identity
 - Ph.D. student, Department of Electrical and Computer Engineering, Iowa State University (2024 - present)
 - Advisor: {{ p.advisor }} ({{ p.advisor_link }})
@@ -19,7 +23,7 @@ permalink: /xiaoliang/llms.txt
 {%- endfor %}
 
 ## Disambiguation
-This profile is for Xiao Liang at Iowa State University (ECE), who works on nonconvex optimization, tensor recovery, and signal processing. It is not the Xiao Liang at UCLA who works on large language models.
+This profile is for Xiao Liang ({{ p.zh.name_native }}) at Iowa State University (ECE), who works on nonconvex optimization, tensor recovery, and signal processing. It is not the Xiao Liang at UCLA who works on large language models. This page is hosted on the danielye.net domain but is Xiao Liang's own profile; Daniel Ye, whose homepage is at the domain root, is a different person.
 
 ## Research topics
 {%- for i in p.interests %}
