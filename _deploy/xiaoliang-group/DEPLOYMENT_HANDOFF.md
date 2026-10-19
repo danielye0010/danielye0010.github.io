@@ -57,7 +57,7 @@ Cloudflare Pages settings:
 - Visual parity: full-page screenshots of the new build vs. live danielye.net/xiaoliang/ are pixel-identical (0 differing pixels) for all four page/viewport combinations.
 - Metadata: canonical, hreflang (en, zh-Hans, x-default), og:url, og:image, twitter:image, JSON-LD `@id`/`url`/`image`/`logo`, `llms.txt`, and sitemap all use `https://xiaoliang.group/...`.
 
-Not yet verified (needs the steps below): the real Cloudflare build, the pages.dev URL, HTTPS on the custom domain, and the live site.
+The real Cloudflare preview build was then checked the same way: its files matched the local build, and the full browser test above passed on desktop and mobile. Checks on the live custom domain are in section 4.
 
 ## 4. Production URLs and status
 
@@ -66,7 +66,19 @@ Verified 2026-10-18 in a real browser:
 - https://xiaoliang.group/zh/: 200, `lang="zh-Hans"`, canonical `https://xiaoliang.group/zh/`; EN ↔ 中文 switch works both ways.
 - http://www.xiaoliang.group/ → HTTPS, serves the same site (canonical points to the apex).
 - `/xiaoliang/...` on the new domain → 301 to the root; unknown paths → 404 page; `llms.txt`, `robots.txt`, `sitemap.xml` → 200.
-- Email DNS served by Cloudflare, identical to Northwest's: MX `10 mailserver.businessidentity.llc`, SPF, DMARC, DKIM `postal-bhzxxj._domainkey`, CNAME `psrp`, wildcard A `*` → 66.223.49.89 (DNS only).
+- Email DNS served by Cloudflare, identical to Northwest's original zone (all DNS only, not proxied):
+
+| Name | Type | Value |
+|---|---|---|
+| `xiaoliang.group` | MX | `10 mailserver.businessidentity.llc` |
+| `xiaoliang.group` | TXT | `v=spf1 a mx include:spf.postal.businessidentity.llc ~all` |
+| `_dmarc` | TXT | `v=DMARC1; p=quarantine; rua=mailto:bounce@dmarc.businessidentity.llc; ruf=mailto:bounce@dmarc.businessidentity.llc; fo=1` |
+| `postal-bhzxxj._domainkey` | TXT | `v=DKIM1; t=s; h=sha256; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDh74REvn7N8c/RSqSYiRnuCB2uvjAo0/qIq3+V6gqLPCLVCTFXbvFKpYSdPs125TKdVaUAj+FgpLMqmGsN119NDVnd6g+1ohRcsyOCnW3SETCGx+fSv2X1J+sGs5ewJUs99qy1v6z82s/cyBPE3vsogU7AGRm8SEn+S/iasxH5pwIDAQAB;` |
+| `psrp` | CNAME | `rp.postal.businessidentity.llc` |
+| `*` | A | `66.223.49.89` (covers `mail`, `webmail`, `smtp`, `imap`, `pop`, `autodiscover`, ...) |
+| `_acme-challenge` | TXT | `DDO4MqXQSfJOUADSLXoncSUmm-7NzVNPLo6XtOf2oYo` and `z-LKqwzosy1cIEZRwSpKI9U_6426kgil6RL72CueFVM` (Northwest's certificate validation; harmless) |
+
+  Added by Cloudflare Pages for the website: `xiaoliang.group` and `www.xiaoliang.group` (proxied, managed by the Pages custom-domain setup).
 - https://danielye.net/, `/xiaoliang/`, `/xiaoliang/zh/`: 200, unchanged. danielye.net DNS untouched.
 - pages.dev: https://danielye0010-github-io.pages.dev/
 
@@ -80,5 +92,5 @@ Verified 2026-10-18 in a real browser:
 
 - **Code**: the only shared files touched are `_layouts/xl.html` and `xiaoliang/llms.txt`. `git revert <merge commit>` on `master` restores them; danielye.net output is the same either way.
 - **Cloudflare Pages**: **Deployments → (earlier deployment) → Rollback**, or delete the project. danielye.net is unaffected.
-- **DNS**: at Northwest (Domains → xiaoliang.group → General → Nameserver Settings), switch back to "Use our nameservers" (`ns1/ns2.hosting.businessidentity.llc`). Northwest's own DNS records were not edited and were still present when the switch was made; the full list is in section 4 as a fallback.
+- **DNS**: at Northwest (Domains → xiaoliang.group → General → Nameserver Settings), switch back to "Use our nameservers" (`ns1/ns2.hosting.businessidentity.llc`). Northwest's own DNS records were not edited and were still present when the switch was made; the complete record table in section 4 is the fallback if they need to be re-entered.
 - danielye.net's DNS, `CNAME`, and GitHub Pages settings are never touched.
