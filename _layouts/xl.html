@@ -5,7 +5,8 @@
 {%- comment -%}
   This layout serves two deployments of the same pages:
   - danielye.net/xiaoliang/ (GitHub Pages, this repo's normal build): pages live under /xiaoliang/,
-    and canonical URLs come from url / zh.url in _data/xl.yml.
+    and canonical / hreflang URLs come from url / zh.url in _data/xl.yml (set to xiaoliang.group,
+    so the old pages stay reachable but point search engines at the new domain).
   - xiaoliang.group (Cloudflare Pages, built by _deploy/xiaoliang-group/build.sh): the build sets
     xl_standalone: true, the pages are moved to the domain root, and URLs are built from site.url.
   Paths below are written as "/xiaoliang/..." | remove_first: "/xiaoliang" | prepend: xl_base,
@@ -53,14 +54,10 @@
   <link rel="canonical" href="{{ url }}">
   {%- if translations and translations.size > 1 %}
   {%- for tr in translations %}
-  {%- assign tr_path = tr.url | remove_first: "/xiaoliang" | prepend: xl_base %}
-  <link rel="alternate" hreflang="{{ tr.lang }}" href="{{ tr_path | absolute_url }}">
+  {%- if tr.lang == "zh-Hans" %}{% assign tr_href = home_url_zh %}{% else %}{% assign tr_href = home_url %}{% endif %}
+  <link rel="alternate" hreflang="{{ tr.lang }}" href="{{ tr_href }}">
   {%- endfor %}
-  {%- assign default_tr = translations | where: "lang", "en" | first %}
-  {%- if default_tr %}
-  {%- assign tr_path = default_tr.url | remove_first: "/xiaoliang" | prepend: xl_base %}
-  <link rel="alternate" hreflang="x-default" href="{{ tr_path | absolute_url }}">
-  {%- endif %}
+  <link rel="alternate" hreflang="x-default" href="{{ home_url }}">
   {%- endif %}
 
   <meta property="og:type" content="profile">
