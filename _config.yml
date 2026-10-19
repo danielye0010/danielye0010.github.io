@@ -60,3 +60,5 @@ exclude:
   - minimal-light.gemspec
   - .github
   - vendor
+  - PORTFOLIO_HANDOFF.md
+  - _portfolio_dev

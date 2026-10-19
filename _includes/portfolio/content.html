@@ -1,0 +1,29 @@
+{% assign p = site.data.portfolio[lang] %}{% assign prefix = '/' %}{% if lang == 'zh-Hans' %}{% assign prefix = '/zh/' %}{% endif %}
+<main id="portfolio-main" class="pf-main">
+{% case page.portfolio %}
+{% when 'home' %}
+<div class="pf-bio pf-bio-first">{{ content }}</div>
+<p class="pf-capabilities">{{ p.capabilities }}</p>
+<div class="pf-section"><div class="pf-section-heading"><h2>{{ p.nav[1] }}</h2><a href="{{ prefix | append: 'research/' | relative_url }}">{{ p.explore }} →</a></div>{% include portfolio/paper.html %}
+<div class="pf-theme-preview"><span class="pf-eyebrow">{{ p.ongoing }}</span><p>{{ p.themes[0][0] }} · {{ p.themes[1][0] }}</p></div></div>
+<div class="pf-section"><div class="pf-section-heading"><h2>{{ p.nav[2] }}</h2><a href="{{ prefix | append: 'manufacturing/' | relative_url }}">{{ p.gallery }} →</a></div><div class="pf-photo-strip">{% for photo in p.processes %}<figure><a href="{{ prefix | append: 'manufacturing/#' | append: photo.id | relative_url }}">{% include portfolio/photo.html photo=photo %}<figcaption><strong>{{ photo.name }}</strong><span>{{ photo.title }}</span></figcaption></a></figure>{% endfor %}</div></div>
+<div class="pf-section"><div class="pf-section-heading"><h2>{{ p.nav[3] }}</h2><a href="{{ prefix | append: 'projects/' | relative_url }}">{{ p.all_projects }} →</a></div><div class="pf-project-briefs">{% for project in p.software limit:3 %}<article>{% include portfolio/project-image.html %}<p class="pf-eyebrow">{{ project.kind }}</p><h3><a href="{{ project.url }}">{{ project.name }} ↗</a></h3><p>{{ project.text }}</p></article>{% endfor %}</div></div>
+
+{% when 'research' %}
+<div class="pf-intro"><p class="pf-eyebrow">{{ p.nav[1] }}</p><h2>{{ p.research }}</h2><p class="pf-lead">{{ p.research_intro }}</p></div>
+{% include portfolio/paper.html %}
+<div class="pf-section"><h2>{{ p.ongoing }}</h2>{% for theme in p.themes %}<article class="pf-theme"><span class="pf-number">0{{ forloop.index }}</span><div><h3>{{ theme[0] }}</h3><p>{{ theme[1] }}</p></div></article>{% endfor %}</div>
+{% when 'manufacturing' %}
+<div class="pf-intro"><p class="pf-eyebrow">{{ p.nav[2] }}</p><h2>{{ p.manufacturing }}</h2><p class="pf-lead">{{ p.manufacturing_intro }}</p></div>
+{% for photo in p.processes limit:2 %}<article class="pf-process" id="{{ photo.id }}"><figure>{% include portfolio/photo.html photo=photo %}<figcaption>{{ photo.alt }}</figcaption></figure><div><p class="pf-eyebrow">0{{ forloop.index }} / {{ photo.name }}</p><h2>{{ photo.title }}</h2><p>{{ photo.text }}</p></div></article>{% endfor %}
+<article class="pf-metrology-feature" id="metrology"><div><p class="pf-eyebrow">3D METROLOGY</p><h2>{{ p.metrology }}</h2><p>{{ p.metrology_text }}</p></div><figure><img src="{{ "/assets/img/manufacturing/metrology-scanning.webp" | relative_url }}" width="1707" height="1280" loading="lazy" alt="{{ p.metrology_alt }}"></figure></article>
+<div class="pf-section" id="fdm"><p class="pf-eyebrow">03 / FDM</p><h2>{{ p.selected }}</h2><p>{{ p.prints_note }}</p><p class="pf-modeling-tools">{{ p.modeling_tools }}</p><ol class="pf-modeling-workflow">{% for step in p.modeling_steps %}<li>{{ step }}</li>{% endfor %}</ol><div class="pf-print-gallery">
+<figure class="pf-pagoda"><img src="{{ '/assets/img/manufacturing/fdm_pagoda_full.webp' | relative_url }}" width="1100" height="1467" loading="lazy" alt="{{ p.processes[2].alt }}"><figcaption>{% if lang == 'en' %}Pagoda · FDM{% else %}宝塔 · FDM{% endif %}</figcaption></figure>
+<figure><img src="{{ '/assets/img/manufacturing/fdm_duluth_bridge.webp' | relative_url }}" width="1500" height="1125" loading="lazy" alt="{% if lang == 'en' %}White Duluth bridge miniature with truss details{% else %}带有桁架细节的白色德卢斯桥梁微缩打印件{% endif %}"><figcaption>{% if lang == 'en' %}Duluth bridge · FDM{% else %}德卢斯桥梁 · FDM{% endif %}</figcaption></figure>
+</div></div>
+
+{% when 'projects' %}
+<div class="pf-intro"><p class="pf-eyebrow">{{ p.nav[3] }}</p><h2>{{ p.projects }}</h2><p class="pf-lead">{{ p.projects_intro }}</p></div>
+{% for project in p.software %}<article class="pf-project">{% include portfolio/project-image.html %}<div><p class="pf-eyebrow">{{ project.kind }}</p><h2>{{ project.name }}</h2><p>{{ project.text }}</p><div class="pf-links"><a href="{{ project.url }}">{{ p.repo }} ↗</a>{% if project.credit %}<span class="pf-credit">{{ project.credit }}</span>{% endif %}{% if project.upstream %}<a href="{{ project.upstream }}">{{ p.upstream }} ↗</a>{% endif %}</div></div></article>{% endfor %}
+{% endcase %}
+</main>

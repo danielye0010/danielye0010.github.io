@@ -188,10 +188,14 @@
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/css/publications.css" | relative_url }}">
 
+{% if page.portfolio %}<link rel="stylesheet" href="{{ "/assets/css/portfolio.css" | relative_url }}">{% endif %}
 </head>
 
-<body>
+<body{% if page.portfolio %} class="portfolio"{% endif %}>
+{% if page.portfolio %}<a class="pf-skip" href="#portfolio-main">{% if lang == "en" %}Skip to content{% else %}跳至正文{% endif %}</a>{% endif %}
   <div class="wrapper">
+    {% if page.portfolio %}{% assign p = site.data.portfolio[lang] %}{% assign prefix = '/' %}{% if lang == 'zh-Hans' %}{% assign prefix = '/zh/' %}{% endif %}
+    <nav class="pf-nav" aria-label="{% if lang == 'en' %}Main navigation{% else %}主导航{% endif %}">{% assign kinds = 'home,research,manufacturing,projects' | split: ',' %}{% for kind in kinds %}{% assign path = prefix %}{% unless kind == 'home' %}{% assign path = prefix | append: kind | append: '/' %}{% endunless %}<a href="{{ path | relative_url }}"{% if page.portfolio == kind %} aria-current="page"{% endif %}>{{ p.nav[forloop.index0] }}</a>{% endfor %}{% if site.cv_link %}<a href="{{ site.cv_link }}">CV</a>{% endif %}</nav>{% endif %}
     <div class="top-controls">
       {%- if translations and translations.size > 1 %}
       <nav class="lang-switch" aria-label="{{ t.lang_nav }}">
@@ -217,7 +221,7 @@
     <header>
 
       {% if site.avatar %}
-      <a class="image avatar"><img src="{{ site.avatar }}" alt="{{ t.avatar_alt }}" width="800" height="800" fetchpriority="high" /></a>
+      <a class="image avatar"><img src="{{ site.avatar | relative_url }}" alt="{{ t.avatar_alt }}" width="800" height="800" fetchpriority="high" /></a>
       {% endif %}
       <br>
       {% if site.logo %}
@@ -308,7 +312,7 @@
     </header>
     <section>
 
-      {{ content }}
+      {% if page.portfolio %}{% include portfolio/content.html %}{% else %}{{ content }}{% endif %}
 
       <br>
 
@@ -350,7 +354,7 @@
       sync();
     })();
   </script>
-  <script src="{{ " /assets/js/scale.fix.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   {% if site.google_analytics %}
   <script>
     (function (i, s, o, g, r, a, m) {

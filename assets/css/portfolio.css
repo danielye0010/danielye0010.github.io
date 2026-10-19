@@ -1,0 +1,57 @@
+/* Scoped to opt-in personal portfolio pages. */
+.portfolio{--pf-ink:#29222f;--pf-muted:#645b6b;--pf-accent:#57068c;--pf-line:#ded7e3;--pf-panel:#f4f0f6;font-size:18px;line-height:1.6}
+.portfolio .wrapper{width:min(1280px,calc(100% - 80px));margin:0 auto;padding:42px 0;display:grid;grid-template-columns:225px minmax(0,1fr);column-gap:65px}
+.portfolio .wrapper>header{position:sticky;top:40px;float:none;width:auto;align-self:start;grid-column:1;grid-row:2;padding:28px 0;text-align:left}
+.portfolio .wrapper>section{float:none;width:auto;grid-column:2;grid-row:2;padding:0;min-width:0}
+.portfolio .wrapper>footer{display:none}.portfolio .top-controls{position:static;grid-column:1;grid-row:1;justify-content:flex-start;align-self:center;margin:0;padding:0}
+.portfolio .pf-nav{grid-column:2;grid-row:1;display:flex;gap:28px;flex-wrap:wrap;border-bottom:1px solid var(--pf-line);padding:0 0 20px;margin-bottom:25px;font:14px/1.5 Arial,sans-serif}
+.portfolio .pf-nav a{padding:8px 0;color:var(--pf-muted)}.portfolio .pf-nav a[aria-current]{color:var(--pf-accent);box-shadow:0 2px var(--pf-accent)}
+.portfolio .avatar img{width:124px;height:124px;border-radius:50%;object-fit:cover}.portfolio header h1{font-size:32px;margin-bottom:2px}.portfolio header .alt-name{margin-bottom:18px}.portfolio header h4{font-size:14px;line-height:1.5;margin-top:16px}.portfolio header autocolor{font-size:15px}.portfolio header .social-icons{display:flex;gap:8px}.portfolio .social-icons a{display:grid;place-items:center;flex:none}
+.portfolio a{color:var(--pf-accent)}.portfolio h2,.portfolio h3{color:var(--pf-ink);font-weight:500;line-height:1.18}.portfolio h2{font-size:29px}.portfolio h3{font-size:24px}.portfolio p{color:var(--pf-muted);margin:0 0 18px}.portfolio .pf-intro{padding:28px 0 42px;max-width:780px}.portfolio .pf-intro h2{font-size:clamp(36px,4vw,57px);letter-spacing:-1.5px;margin:16px 0 23px;max-width:740px}.portfolio .pf-lead{font-size:21px;max-width:700px}.portfolio .pf-eyebrow{font:11px/1.6 Arial,sans-serif;text-transform:uppercase;letter-spacing:1.4px;color:var(--pf-accent);margin-bottom:14px}
+.portfolio .pf-section{margin:30px 0 55px}.portfolio .pf-section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:15px;margin:0 0 20px}.portfolio .pf-section-heading h2{margin:0}.portfolio .pf-section-heading>a,.portfolio .pf-links{font:13px/1.6 Arial,sans-serif}.portfolio .pf-links{display:flex;gap:24px;flex-wrap:wrap}
+.portfolio .pf-paper{display:grid;grid-template-columns:120px 1fr;gap:28px;padding:30px 0;border-top:2px solid var(--pf-accent);border-bottom:1px solid var(--pf-line)}.portfolio .pf-paper h3{margin-top:0}.portfolio .pf-paper h3 a{color:var(--pf-ink)}.portfolio .pf-paper-index>span{font-size:68px;line-height:1;color:var(--pf-accent)}.portfolio .pf-paper-index p{font:11px/1.7 Arial,sans-serif;margin-top:16px}.portfolio .pf-authors{font-size:15px}.portfolio .pf-theme-preview{padding:20px 0;border-bottom:1px solid var(--pf-line)}.portfolio .pf-theme-preview p{margin:5px 0 0;font-size:16px}
+.portfolio figure{margin:0}.portfolio figure img{display:block;width:100%;height:auto;border-radius:3px}.portfolio figcaption{font:12px/1.5 Arial,sans-serif;color:var(--pf-muted);padding-top:12px}.portfolio .pf-photo-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}.portfolio .pf-photo-strip img{height:auto;aspect-ratio:4/3;object-fit:contain;background:var(--pf-panel)}.portfolio .pf-photo-strip strong{display:block;font-size:15px;color:var(--pf-ink);margin-bottom:5px}.portfolio .pf-photo-strip span{display:block}
+.portfolio .pf-project-briefs{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.portfolio .pf-project-briefs article{border-top:1px solid var(--pf-line);padding-top:18px}.portfolio .pf-project-briefs h3{font-size:22px}.portfolio .pf-project-briefs p{font-size:16px}.portfolio .pf-project-briefs .pf-eyebrow{font-size:10px}.portfolio .pf-bio{border-top:1px solid var(--pf-line);padding-top:35px;font-size:17px}.portfolio .pf-bio p{max-width:720px}
+.portfolio .pf-theme,.portfolio .pf-project{display:grid;grid-template-columns:65px 1fr;gap:20px;border-top:1px solid var(--pf-line);padding:28px 0}.portfolio .pf-number{font:14px/1.6 Arial,sans-serif;color:var(--pf-accent)}.portfolio .pf-theme h3{margin:0 0 12px}.portfolio .pf-project h2{margin-top:0}.portfolio .pf-project>div{max-width:640px}
+.portfolio .pf-process{display:grid;grid-template-columns:1.7fr 1fr;gap:30px;align-items:center;margin:10px 0 55px;scroll-margin-top:25px}.portfolio .pf-process h2{font-size:30px}.portfolio .pf-print-gallery{display:grid;grid-template-columns:1fr 1fr;gap:28px}.portfolio .pf-pagoda{grid-row:span 2}.portfolio .pf-print-gallery img{max-height:420px;object-fit:contain;background:var(--pf-panel)}.portfolio .pf-print-gallery .pf-pagoda img{max-height:none}.portfolio .pf-metrology{border-left:3px solid var(--pf-accent);padding:8px 25px;margin:40px 0}.portfolio .pf-metrology h2{margin-top:0}
+.portfolio .pf-skip{position:absolute;left:12px;top:-80px;background:var(--pf-panel);padding:10px;z-index:10}.portfolio .pf-skip:focus{top:12px}.portfolio a:focus-visible,.portfolio button:focus-visible{outline:3px solid var(--pf-accent);outline-offset:5px}
+html[data-theme="dark"] .portfolio{--pf-ink:#eee7f4;--pf-muted:#c2b8cb;--pf-accent:#cba0ee;--pf-line:#493e51;--pf-panel:#28232f;background:#17141d;color:var(--pf-muted)}
+@media(prefers-color-scheme:dark){html:not([data-theme="light"]) .portfolio{--pf-ink:#eee7f4;--pf-muted:#c2b8cb;--pf-accent:#cba0ee;--pf-line:#493e51;--pf-panel:#28232f;background:#17141d;color:var(--pf-muted)}}
+@media(max-width:1000px){.portfolio .wrapper{width:calc(100% - 48px);grid-template-columns:185px minmax(0,1fr);column-gap:35px}.portfolio .pf-nav{gap:20px}.portfolio .pf-project-briefs{grid-template-columns:1fr}.portfolio .pf-process{grid-template-columns:1fr}.portfolio .pf-paper{grid-template-columns:85px 1fr;gap:20px}}
+@media(max-width:700px){.portfolio .wrapper{width:calc(100% - 36px);display:flex;flex-direction:column;padding:20px 0}.portfolio .top-controls{order:0;align-self:flex-end}.portfolio .pf-nav{order:2;gap:22px;margin-top:15px;margin-bottom:0;font-size:13px}.portfolio .wrapper>header{position:static;order:1;width:100%;padding:12px 0 0}.portfolio .wrapper>header .avatar{float:left;margin-right:22px}.portfolio .avatar img{width:90px;height:90px}.portfolio header>br{display:none}.portfolio header h1{margin-top:8px}.portfolio header .alt-name{margin-bottom:20px}.portfolio header position,.portfolio header autocolor{font-size:14px!important}.portfolio header .social-icons{margin:16px 0 5px}.portfolio header h4{margin:8px 0}.portfolio .wrapper>section{order:3}.portfolio .pf-intro{padding:32px 0 22px}.portfolio .pf-intro h2{letter-spacing:-.7px}.portfolio .pf-lead{font-size:19px}.portfolio .pf-section-heading{align-items:flex-start;flex-direction:column;gap:8px}.portfolio .pf-paper{grid-template-columns:1fr;gap:10px}.portfolio .pf-paper-index{display:flex;align-items:center;gap:18px}.portfolio .pf-paper-index>span{font-size:42px}.portfolio .pf-paper-index p{margin:0}.portfolio .pf-photo-strip{gap:12px;grid-template-columns:1fr}.portfolio .pf-photo-strip figure{margin-bottom:12px}.portfolio .pf-photo-strip img{aspect-ratio:auto}.portfolio .pf-theme,.portfolio .pf-project{grid-template-columns:30px 1fr;gap:12px}.portfolio .pf-print-gallery{grid-template-columns:1fr}.portfolio .pf-pagoda{grid-row:auto}.portfolio .pf-print-gallery img{max-height:none}.portfolio .pf-section{margin-bottom:38px}}
+/* Override legacy narrow-screen body padding and keep affiliation lines legible. */
+.portfolio{padding:0}.portfolio .wrapper>section{border:0}
+@media(max-width:700px){.portfolio header position{display:block}.portfolio header>a:not(.avatar):not(.logo){display:block}.portfolio header .avatar{margin-bottom:12px}}
+.portfolio header autocolor,.portfolio header .alt-name,.portfolio header h4{color:var(--pf-muted)}.portfolio header a.js-email{color:var(--pf-muted)!important}
+.portfolio .pf-intro h2{text-wrap:balance}
+@media(max-width:700px){
+.portfolio .wrapper>header{display:grid;grid-template-columns:90px minmax(0,1fr);column-gap:20px}
+.portfolio .wrapper>header>*{grid-column:1 / -1}
+.portfolio .wrapper>header .avatar{grid-column:1;grid-row:1 / 4;float:none;margin:0}
+.portfolio .wrapper>header h1{grid-column:2;grid-row:1;margin:6px 0 0}
+.portfolio .wrapper>header .alt-name{grid-column:2;grid-row:2;margin:0}
+.portfolio .wrapper>header position{grid-column:2;grid-row:3;margin-bottom:16px}
+}
+
+/* Biography leads the personal homepage; projects provide supporting evidence. */
+.portfolio .pf-bio-first{border:0;padding-top:28px;margin-bottom:20px;font-size:18px}
+.portfolio .pf-bio-first h2{font-size:38px;margin-bottom:22px}
+.portfolio .pf-bio-first p{max-width:790px}
+.portfolio .pf-bio-first strong{color:var(--pf-ink);font-weight:600}
+.portfolio .pf-capabilities{font:12px/1.8 Arial,sans-serif;letter-spacing:.7px;color:var(--pf-accent);border-top:1px solid var(--pf-line);padding-top:18px;margin-bottom:38px}
+.portfolio .pf-metrology-feature{margin:45px 0;border-top:2px solid var(--pf-accent);padding-top:28px}
+.portfolio .pf-metrology-feature>div{max-width:680px;margin-bottom:22px}
+.portfolio .pf-credit{color:var(--pf-muted);font-size:11px}
+
+.portfolio .pf-project{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:35px;align-items:center;padding:32px 0}
+.portfolio .pf-project-image{margin-bottom:20px;min-width:0}
+.portfolio .pf-project-image img{width:100%;height:auto;aspect-ratio:900/520;object-fit:contain;background:#f3eff8}
+.portfolio .pf-project-image figcaption{font-size:10px;padding-top:7px}
+@media(max-width:700px){.portfolio .pf-project{grid-template-columns:1fr;gap:8px}}
+
+.portfolio .pf-modeling-tools{font:13px/1.7 Arial,sans-serif;color:var(--pf-accent);margin:18px 0}
+.portfolio .pf-modeling-workflow{display:grid;grid-template-columns:repeat(4,1fr);list-style:none;counter-reset:step;padding:0;margin:24px 0 32px;gap:16px}
+.portfolio .pf-modeling-workflow li{counter-increment:step;border-top:1px solid var(--pf-line);padding-top:12px;font:13px/1.6 Arial,sans-serif;color:var(--pf-ink)}
+.portfolio .pf-modeling-workflow li:before{content:'0' counter(step);display:block;color:var(--pf-accent);font-size:11px;margin-bottom:7px}
+.portfolio .pf-print-gallery .pf-pagoda{grid-row:auto}
+@media(max-width:700px){.portfolio .pf-modeling-workflow{grid-template-columns:1fr 1fr}}

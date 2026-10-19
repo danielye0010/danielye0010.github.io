@@ -1,0 +1,292 @@
+{
+  "en": {
+    "nav": [
+      "Home",
+      "Research",
+      "Manufacturing",
+      "Projects"
+    ],
+    "kicker": "Research & engineering portfolio",
+    "headline": "Geometry, mechanics, and the shapes we make.",
+    "intro": "I develop computational approaches to understand, represent, and correct three-dimensional shape deformation, connecting geometry and mechanics with physical manufacturing.",
+    "research": "Understanding shape. Accounting for deformation.",
+    "research_intro": "My research connects geometric representations with the physical behavior of manufactured structures.",
+    "published": "Published · 2026",
+    "ongoing": "Working Papers",
+    "paper_summary": "A structural-modal approach to representing and compensating warpage in additive manufacturing.",
+    "paper": "Structure-Aligned Geometric Compensation for Additive Manufacturing Warpage via Vibrational Modal Analysis",
+    "paper_link": "Read paper",
+    "code": "Public code",
+    "explore": "Explore research",
+    "manufacturing": "Build it. Scan it. Understand it.",
+    "manufacturing_intro": "From metal and polymer printing to 3D scanning and geometric analysis: bringing computation into the workshop.",
+    "gallery": "Explore manufacturing",
+    "selected": "From 3D modeling to physical prints",
+    "prints_note": "Modeled and printed by me. Bringing AI-assisted shape creation, 3D editing, and FDM fabrication together—from digital design to physical objects.",
+    "metrology": "3D scanning & geometric inspection",
+    "metrology_text": "Capture physical parts in 3D. Connect scanned geometry with CAD to understand manufacturing deviations.",
+    "projects": "Scientific computing. 3D intelligence. AI automation.",
+    "projects_intro": "Building software that turns complex data and geometry into working tools.",
+    "all_projects": "View projects",
+    "repo": "Repository",
+    "upstream": "Fork of idealab-isu/NURBSDiff",
+    "about": "A little more about me",
+    "themes": [
+      [
+        "Response-Aware Geometric Compensation",
+        "Investigating how structural response influences geometric pre-compensation, and how nominal CAD, manufactured shapes, and measured 3D geometry can be brought into correspondence."
+      ],
+      [
+        "Nonlinear Modal Geometry & Mechanics",
+        "Studying compact structural representations for nonlinear deformation, large rotations, and finite deformation."
+      ],
+      [
+        "Geometric Inversion & Solid Modeling",
+        "Exploring inverse deformation maps and robust geometric modeling operations."
+      ]
+    ],
+    "processes": [
+      {
+        "id": "lpbf",
+        "name": "LPBF",
+        "title": "Laser powder bed fusion",
+        "text": "Metal additive manufacturing, thin-wall specimens, and geometry-focused experimental work.",
+        "image": "lpbf_build_hero.webp",
+        "alt": "Metal specimens arranged on a circular build plate in a laboratory",
+        "w": 1600,
+        "h": 1067
+      },
+      {
+        "id": "ded",
+        "name": "DED",
+        "title": "Directed energy deposition",
+        "text": "Metal deposition builds and practical assessment of fabricated geometry.",
+        "image": "ded_deposited_samples.webp",
+        "alt": "Four DED metal samples on rectangular substrates",
+        "w": 1440,
+        "h": 959
+      },
+      {
+        "id": "fdm",
+        "name": "FDM",
+        "title": "3D modeling & printing",
+        "text": "Modeled and printed by me. Bringing AI-assisted shape creation, 3D editing, and FDM fabrication together—from digital design to physical objects.",
+        "image": "fdm_pagoda_card.webp",
+        "alt": "Green printed pagoda with its spire inside a desktop printer",
+        "w": 1152,
+        "h": 864
+      }
+    ],
+    "software": [
+      {
+        "name": "TradeAgent",
+        "kind": "AI agents · Automation",
+        "text": "An AI trading agent combining market analysis, execution workflows, and an operator dashboard.",
+        "url": "https://github.com/danielye0010/TradeAgent",
+        "image": "tradeagent-dashboard.png",
+        "image_alt": "TradeAgent operator dashboard screenshot",
+        "image_caption": "Project interface"
+      },
+      {
+        "name": "Adaptive Bubble Selection VR",
+        "kind": "Unity · C# · HCI",
+        "text": "Intent-aware object selection for virtual reality, combining hand motion, target proximity, and scene density.",
+        "url": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
+        "image": "vr-selection.svg",
+        "image_alt": "Adaptive Bubble Selection VR workflow illustration",
+        "image_caption": "Workflow illustration"
+      },
+      {
+        "name": "Topology-Aware Point Cloud Completion",
+        "kind": "3D deep learning · Reconstruction",
+        "text": "Reconstructing complete 3D shapes from partial point clouds with topology-aware learning.",
+        "url": "https://github.com/danielye0010/Topology-3D-Completion",
+        "image": "topology-completion.svg",
+        "image_alt": "Topology-Aware Point Cloud Completion workflow illustration",
+        "image_caption": "Workflow illustration",
+        "credit": "Team project"
+      },
+      {
+        "name": "Distributed Spectral Search",
+        "kind": "Distributed computing · HTCondor",
+        "text": "Searching astronomical spectra at scale with parallel jobs and global candidate ranking.",
+        "url": "https://github.com/danielye0010/CB58-Galaxy-Search",
+        "image": "spectral-search.svg",
+        "image_alt": "Distributed Spectral Search workflow illustration",
+        "image_caption": "Workflow illustration"
+      },
+      {
+        "name": "Java Takeout System",
+        "kind": "Java · Spring Boot · Redis",
+        "text": "A restaurant-ordering backend spanning authentication, order lifecycle, caching, and real-time notifications.",
+        "url": "https://github.com/danielye0010/full-stack-takeout-system",
+        "image": "java-backend.svg",
+        "image_alt": "Java Takeout System workflow illustration",
+        "image_caption": "Workflow illustration"
+      },
+      {
+        "name": "Our Wisconsin Survey Explorer",
+        "kind": "R Shiny · Data visualization",
+        "text": "Interactive survey exploration for UW–Madison, connecting question selection, group comparisons, and visual analysis.",
+        "url": "https://github.com/danielye0010/OurWisconsin-ShinyApp",
+        "image": "survey-explorer.svg",
+        "image_alt": "Our Wisconsin Survey Explorer workflow illustration",
+        "image_caption": "Workflow illustration"
+      }
+    ],
+    "capabilities": "Computational geometry · Mechanics · Additive manufacturing",
+    "metrology_alt": "Handheld 3D scanner capturing a metal specimen beside a laptop displaying scanned geometry",
+    "modeling_tools": "Modeling toolkit: Meshy · Hunyuan3D · Blender",
+    "modeling_steps": [
+      "Shape creation",
+      "Modeling & editing",
+      "Print preparation",
+      "FDM fabrication"
+    ]
+  },
+  "zh-Hans": {
+    "nav": [
+      "首页",
+      "研究",
+      "制造",
+      "项目"
+    ],
+    "kicker": "研究与工程实践",
+    "headline": "从几何与力学，走向真实制造。",
+    "intro": "我研究如何用计算方法理解、表示和补偿三维形变，将几何、力学与实际制造联系起来。",
+    "research": "理解形状，研究形变。",
+    "research_intro": "我的研究关注几何表示与制造结构物理行为之间的联系。",
+    "published": "已发表 · 2026",
+    "ongoing": "研究论文（撰写中）",
+    "paper_summary": "通过结构模态表示增材制造中的翘曲，并研究相应的几何补偿。",
+    "paper": "Structure-Aligned Geometric Compensation for Additive Manufacturing Warpage via Vibrational Modal Analysis",
+    "paper_link": "阅读论文",
+    "code": "公开代码",
+    "explore": "了解研究方向",
+    "manufacturing": "制造实物，测量形状，理解偏差。",
+    "manufacturing_intro": "从金属与聚合物打印，到三维扫描与几何分析，把计算能力带入制造现场。",
+    "gallery": "查看制造实践",
+    "selected": "从三维建模到实体打印",
+    "prints_note": "自己建模，自己打印。将 AI 辅助形体创作、三维编辑与 FDM 制造串成完整流程，让数字设计成为实物。",
+    "metrology": "三维扫描与几何检测",
+    "metrology_text": "将实物转化为三维几何数据，连接扫描与 CAD，分析制造偏差。",
+    "projects": "科学计算、三维智能与 AI 自动化。",
+    "projects_intro": "把复杂数据与几何问题，变成可用的软件工具。",
+    "all_projects": "查看项目",
+    "repo": "代码仓库",
+    "upstream": "派生自 idealab-isu/NURBSDiff",
+    "about": "关于我的更多故事",
+    "themes": [
+      [
+        "响应感知几何补偿",
+        "研究结构响应如何影响几何预补偿，以及如何建立名义 CAD、制造形状与三维测量数据之间的对应关系。"
+      ],
+      [
+        "非线性模态几何与力学",
+        "研究适用于非线性形变、大转动与有限变形的紧凑结构表示。"
+      ],
+      [
+        "几何逆映射与实体建模",
+        "探索逆形变映射与稳健的几何建模运算。"
+      ]
+    ],
+    "processes": [
+      {
+        "id": "lpbf",
+        "name": "LPBF",
+        "title": "激光粉末床熔融",
+        "text": "金属增材制造、薄壁试样与围绕几何问题的实验实践。",
+        "image": "lpbf_build_hero.webp",
+        "alt": "实验室中排列在圆形基板上的金属试样",
+        "w": 1600,
+        "h": 1067
+      },
+      {
+        "id": "ded",
+        "name": "DED",
+        "title": "定向能量沉积",
+        "text": "金属沉积试样制作与成形几何的实际观察。",
+        "image": "ded_deposited_samples.webp",
+        "alt": "四个矩形基板上的 DED 金属试样",
+        "w": 1440,
+        "h": 959
+      },
+      {
+        "id": "fdm",
+        "name": "FDM",
+        "title": "三维建模与打印",
+        "text": "自己建模，自己打印。将 AI 辅助形体创作、三维编辑与 FDM 制造串成完整流程，让数字设计成为实物。",
+        "image": "fdm_pagoda_card.webp",
+        "alt": "桌面打印机内带有完整塔尖的绿色宝塔打印件",
+        "w": 1152,
+        "h": 864
+      }
+    ],
+    "software": [
+      {
+        "name": "TradeAgent",
+        "kind": "AI 智能体 · 自动化",
+        "text": "集市场分析、交易执行流程与操作面板于一体的 AI 交易智能体。",
+        "url": "https://github.com/danielye0010/TradeAgent",
+        "image": "tradeagent-dashboard.png",
+        "image_alt": "TradeAgent 操作面板截图",
+        "image_caption": "项目界面"
+      },
+      {
+        "name": "自适应气泡选择 VR",
+        "kind": "Unity · C# · 人机交互",
+        "text": "结合手部运动、目标距离与场景密度，实现感知交互意图的 VR 对象选择。",
+        "url": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
+        "image": "vr-selection.svg",
+        "image_alt": "自适应气泡选择 VR项目流程示意图",
+        "image_caption": "流程示意"
+      },
+      {
+        "name": "拓扑感知点云补全",
+        "kind": "三维深度学习 · 几何重建",
+        "text": "融合拓扑信息与深度学习，从不完整点云重建完整三维形状。",
+        "url": "https://github.com/danielye0010/Topology-3D-Completion",
+        "image": "topology-completion.svg",
+        "image_alt": "拓扑感知点云补全项目流程示意图",
+        "image_caption": "流程示意",
+        "credit": "团队项目"
+      },
+      {
+        "name": "分布式光谱检索",
+        "kind": "分布式计算 · HTCondor",
+        "text": "通过并行任务与全局候选排序，实现大规模天文光谱检索。",
+        "url": "https://github.com/danielye0010/CB58-Galaxy-Search",
+        "image": "spectral-search.svg",
+        "image_alt": "分布式光谱检索项目流程示意图",
+        "image_caption": "流程示意"
+      },
+      {
+        "name": "Java 外卖系统",
+        "kind": "Java · Spring Boot · Redis",
+        "text": "覆盖身份认证、订单生命周期、缓存与实时通知的餐饮订购后端。",
+        "url": "https://github.com/danielye0010/full-stack-takeout-system",
+        "image": "java-backend.svg",
+        "image_alt": "Java 外卖系统项目流程示意图",
+        "image_caption": "流程示意"
+      },
+      {
+        "name": "Our Wisconsin 调查分析平台",
+        "kind": "R Shiny · 数据可视化",
+        "text": "为威斯康星大学麦迪逊分校开发交互式调查分析工具，连接问题筛选、分组比较与可视化分析。",
+        "url": "https://github.com/danielye0010/OurWisconsin-ShinyApp",
+        "image": "survey-explorer.svg",
+        "image_alt": "Our Wisconsin 调查分析平台项目流程示意图",
+        "image_caption": "流程示意"
+      }
+    ],
+    "capabilities": "计算几何 · 力学建模 · 增材制造",
+    "metrology_alt": "手持三维扫描仪扫描金属试样，旁边的电脑显示扫描几何",
+    "modeling_tools": "建模工具：Meshy · Hunyuan3D · Blender",
+    "modeling_steps": [
+      "形体创作",
+      "建模与编辑",
+      "打印准备",
+      "FDM 制造"
+    ]
+  }
+}

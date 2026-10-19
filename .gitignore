@@ -16,4 +16,12 @@ vendor/bundle/
 .DS_Store
 git-update.sh
 
+# Portfolio preview-only build comparisons and private source provenance.
+_portfolio_dev/*-site/
+_portfolio_dev/ASSET_MANIFEST.json
+_portfolio_dev/*.json
+_portfolio_dev/*.log
+_portfolio_dev/*.jpg
+_portfolio_dev/screenshots/
+
 # Gemfile.lock is intentionally tracked for reproducible site builds.
