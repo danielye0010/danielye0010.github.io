@@ -15,12 +15,22 @@
 <div class="pf-section"><h2>{{ p.ongoing }}</h2>{% for theme in p.themes %}<article class="pf-theme"><span class="pf-number">0{{ forloop.index }}</span><div><h3>{{ theme[0] }}</h3><p>{{ theme[1] }}</p></div></article>{% endfor %}</div>
 {% when 'manufacturing' %}
 <div class="pf-intro"><p class="pf-eyebrow">{{ p.nav[2] }}</p><h2>{{ p.manufacturing }}</h2><p class="pf-lead">{{ p.manufacturing_intro }}</p></div>
-{% for photo in p.processes limit:2 %}<article class="pf-process" id="{{ photo.id }}"><figure>{% include portfolio/photo.html photo=photo %}<figcaption>{{ photo.alt }}</figcaption></figure><div><p class="pf-eyebrow">0{{ forloop.index }} / {{ photo.name }}</p><h2>{{ photo.title }}</h2><p>{{ photo.text }}</p></div></article>{% endfor %}
-<article class="pf-metrology-feature" id="metrology"><div><p class="pf-eyebrow">3D METROLOGY</p><h2>{{ p.metrology }}</h2><p>{{ p.metrology_text }}</p></div><figure><img src="{{ "/assets/img/manufacturing/metrology-scanning.webp" | relative_url }}" width="1707" height="1280" loading="lazy" alt="{{ p.metrology_alt }}"></figure></article>
-<div class="pf-section" id="fdm"><p class="pf-eyebrow">03 / FDM</p><h2>{{ p.selected }}</h2><p>{{ p.prints_note }}</p><p class="pf-modeling-tools">{{ p.modeling_tools }}</p><ol class="pf-modeling-workflow">{% for step in p.modeling_steps %}<li>{{ step }}</li>{% endfor %}</ol><div class="pf-print-gallery">
-<figure class="pf-pagoda"><img src="{{ '/assets/img/manufacturing/fdm_pagoda_full.webp' | relative_url }}" width="1100" height="1467" loading="lazy" alt="{{ p.processes[2].alt }}"><figcaption>{% if lang == 'en' %}Pagoda · FDM{% else %}宝塔 · FDM{% endif %}</figcaption></figure>
+<h2 class="pf-am-heading">{{ p.am_heading }}</h2><div class="pf-am-processes">{% for photo in p.processes %}<article class="pf-process" id="{{ photo.id }}"><figure>{% include portfolio/photo.html photo=photo %}<figcaption>{{ photo.alt }}</figcaption></figure><div><p class="pf-eyebrow">0{{ forloop.index }} / {{ photo.name }}</p><h2>{{ photo.title }}</h2><p>{{ photo.text }}</p></div></article>{% endfor %}</div>
+<div class="pf-section" id="fdm-modeling"><p class="pf-eyebrow">FDM · DESIGN TO PRINT</p><h2>{{ p.selected }}</h2><p>{{ p.prints_note }}</p><p class="pf-modeling-tools">{{ p.modeling_tools }}</p><ol class="pf-modeling-workflow">{% for step in p.modeling_steps %}<li>{{ step }}</li>{% endfor %}</ol><div class="pf-print-gallery">
+<figure class="pf-pagoda"><img src="{{ '/assets/img/manufacturing/fdm_pagoda_full.webp' | relative_url }}" width="1100" height="1467" loading="lazy" alt="{{ p.processes[2].alt }}"><figcaption>{% if lang == 'en' %}Tiger Hill Pagoda, Suzhou · FDM{% else %}苏州虎丘塔 · FDM{% endif %}</figcaption></figure>
 <figure><img src="{{ '/assets/img/manufacturing/fdm_duluth_bridge.webp' | relative_url }}" width="1500" height="1125" loading="lazy" alt="{% if lang == 'en' %}White Duluth bridge miniature with truss details{% else %}带有桁架细节的白色德卢斯桥梁微缩打印件{% endif %}"><figcaption>{% if lang == 'en' %}Duluth bridge · FDM{% else %}德卢斯桥梁 · FDM{% endif %}</figcaption></figure>
 </div></div>
+
+<div class="pf-equipment" id="metrology">
+  <p class="pf-eyebrow">MACHINING &amp; METROLOGY</p>
+  <h2>{{ p.metrology }}</h2><p>{{ p.metrology_text }}</p>
+  <div class="pf-equipment-grid">
+    {% for instrument in p.equipment %}
+    <article><figure><img src="{{ '/assets/img/manufacturing/' | append: instrument.image | relative_url }}" width="1400" height="1050" loading="lazy" decoding="async" alt="{{ instrument.alt }}"></figure><p class="pf-eyebrow">{{ instrument.type }}</p><h3>{{ instrument.name }}</h3><p>{{ instrument.text }}</p></article>
+    {% endfor %}
+  </div>
+  <p class="pf-equipment-extra">{{ p.spider_experience }}</p>
+</div>
 
 {% when 'projects' %}
 <div class="pf-intro"><p class="pf-eyebrow">{{ p.nav[3] }}</p><h2>{{ p.projects }}</h2><p class="pf-lead">{{ p.projects_intro }}</p></div>

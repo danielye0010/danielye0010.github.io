@@ -49,7 +49,7 @@ Ruby/Jekyll were installed in WSL; locked gems are in `/home/danielye/.cache/por
 ## Validation
 
 - Latest Jekyll build passes: `_portfolio_dev/build.log`.
-- 150 internal page/asset/fragment references pass: `_portfolio_dev/link-check.json`.
+- 156 internal page/asset/fragment references pass: `_portfolio_dev/link-check.json`.
 - All eight routes rendered at 1440 and 390 pixels, with no overflow, missing images, or missing alt text. Dark-mode persistence passes: `_portfolio_dev/visual-check.json`.
 - 18 refreshed screenshots: `_portfolio_dev/screenshots/`; desktop/mobile EN/ZH pages plus dark Home.
 - Gallery proof: `_portfolio_dev/gallery-proof.jpg`.
@@ -62,3 +62,9 @@ No edits to Xiaoliang, deployment workflows, DNS, CNAME, analytics, redirects, o
 ## Next review
 
 Review the local presentation and final bilingual copy. Real VR/app screenshots can replace workflow illustrations when available. The owner approved this version for publication on 2026-10-19. The sitemap now includes all eight bilingual routes. Development screenshots, logs and provenance JSON stay local and are ignored by Git; reusable check scripts remain in the source, excluded from the generated site. Publication uses the existing master branch without changes to Pages configuration, DNS, analytics, or IndexNow.
+
+## Manufacturing organization update
+
+The green FDM model is labeled Tiger Hill Pagoda, Suzhou / 苏州虎丘塔 following owner identification. The updated bilingual pages passed the Jekyll build, all 156 local links, and desktop/mobile checks across all eight routes with no overflow or missing images.
+
+LPBF, DED and FDM now form one equal-weight Additive Manufacturing group. FDM modeling/printing details follow, then the compact machining/metrology gallery. Added the supplied ZEISS DuraMax CMM and HAAS CNC photos; labeled the original scanner Creaform and listed Artec Spider experience following owner confirmation. Equipment images are capped at 200px desktop / 220px mobile. Descriptions emphasize operation and capability with concise bilingual wording. Source photos are resized/re-encoded without generative changes. This update follows the existing authorized publication workflow.

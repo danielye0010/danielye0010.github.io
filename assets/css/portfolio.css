@@ -55,3 +55,23 @@ html[data-theme="dark"] .portfolio{--pf-ink:#eee7f4;--pf-muted:#c2b8cb;--pf-acce
 .portfolio .pf-modeling-workflow li:before{content:'0' counter(step);display:block;color:var(--pf-accent);font-size:11px;margin-bottom:7px}
 .portfolio .pf-print-gallery .pf-pagoda{grid-row:auto}
 @media(max-width:700px){.portfolio .pf-modeling-workflow{grid-template-columns:1fr 1fr}}
+
+/* Compact equipment gallery: equal image weight, clear instrument names. */
+.portfolio .pf-equipment{margin:40px 0;padding:28px 0 0;border-top:1px solid var(--pf-line)}
+.portfolio .pf-equipment-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:26px 0 20px}
+.portfolio .pf-equipment-grid figure{margin:0 0 18px}
+.portfolio .pf-equipment-grid img{display:block;width:100%;height:200px;object-fit:contain;background:var(--pf-panel)}
+.portfolio .pf-equipment-grid h3{font-size:23px;margin:5px 0 12px}
+.portfolio .pf-equipment-grid p{font-size:16px}.portfolio .pf-equipment-grid .pf-eyebrow{font-size:10px;margin-bottom:5px}
+.portfolio .pf-equipment-extra{font-size:15px;padding-top:14px;border-top:1px solid var(--pf-line)}
+@media(max-width:700px){.portfolio .pf-equipment-grid{grid-template-columns:1fr;gap:26px}.portfolio .pf-equipment-grid img{height:220px}}
+
+.portfolio .pf-am-heading{margin-bottom:22px}
+.portfolio .pf-am-processes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.portfolio .pf-am-processes .pf-process{display:block;margin:0}
+.portfolio .pf-am-processes figure img{height:200px;object-fit:contain;background:var(--pf-panel)}
+.portfolio .pf-am-processes figcaption{display:none}
+.portfolio .pf-am-processes .pf-eyebrow{margin:18px 0 7px}
+.portfolio .pf-am-processes h2{font-size:24px;margin-bottom:12px}
+.portfolio .pf-am-processes p{font-size:16px}
+@media(max-width:700px){.portfolio .pf-am-processes{grid-template-columns:1fr}.portfolio .pf-am-processes figure img{height:220px}}
