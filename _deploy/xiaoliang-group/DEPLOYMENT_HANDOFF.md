@@ -1,15 +1,16 @@
 # Deployment handoff: xiaoliang.group
 
-Status as of 2026-10-16. Branch `xiaoliang-group`, PR into `master` (not merged).
+Status as of 2026-10-18: **live**. PR #2 merged into `master`.
 
 | Item | Status |
 |---|---|
 | Standalone build, local + emulated Cloudflare Pages | Done, all checks pass |
-| danielye.net regression check | Done, output byte-identical |
-| Cloudflare Pages project + pages.dev preview | **Needs you** (Cloudflare sign-in) |
-| Merge to `master` (enables auto-deploy) | **Needs you**, after preview check |
-| xiaoliang.group DNS move to Cloudflare | **Needs you + confirmation** (email is live on this domain) |
-| Live verification of https://xiaoliang.group | Pending the steps above |
+| danielye.net regression check | Done: build output byte-identical; live `/xiaoliang/` pixel-identical before vs after merge |
+| Cloudflare Pages project (`danielye0010-github-io`) + preview | Done, verified |
+| Merge to `master` (auto-deploy on push) | Done (PR #2) |
+| xiaoliang.group DNS moved to Cloudflare | Done: nameservers `heidi.ns.cloudflare.com`, `mario.ns.cloudflare.com`; all email records copied and verified |
+| Custom domains `xiaoliang.group`, `www.xiaoliang.group` | Active, HTTPS certificates issued |
+| Live verification | Done (see section 4) |
 
 ## 1. Architecture and why it is safe
 
@@ -56,60 +57,40 @@ Cloudflare Pages settings:
 - Visual parity: full-page screenshots of the new build vs. live danielye.net/xiaoliang/ are pixel-identical (0 differing pixels) for all four page/viewport combinations.
 - Metadata: canonical, hreflang (en, zh-Hans, x-default), og:url, og:image, twitter:image, JSON-LD `@id`/`url`/`image`/`logo`, `llms.txt`, and sitemap all use `https://xiaoliang.group/...`.
 
-Not yet verified (needs the steps below): the real Cloudflare build, the pages.dev URL, HTTPS on the custom domain, and the live site.
+The real Cloudflare preview build was then checked the same way: its files matched the local build, and the full browser test above passed on desktop and mobile. Checks on the live custom domain are in section 4.
 
 ## 4. Production URLs and status
 
-- https://danielye.net/ and https://danielye.net/xiaoliang/: unchanged, live.
-- https://danielye0010-github-io.pages.dev/: not created yet (step A).
-- https://xiaoliang.group/, https://xiaoliang.group/zh/: not live yet (step C). The apex currently has no A record.
-
-## 5. Manual steps still required
-
-### A. Create the Cloudflare Pages project (about 5 minutes)
-
-1. Sign in at https://dash.cloudflare.com (the account you use for danielye.net's Web Analytics is fine).
-2. **Workers & Pages → Create → Pages → Connect to Git → GitHub**. If asked to install or configure the Cloudflare Pages GitHub app, choose **Only select repositories → danielye0010.github.io**.
-3. Select `danielye0010/danielye0010.github.io` and enter the settings from the table in section 2. Save and Deploy.
-4. The first production build of `master` will fail with "root directory not found". That is expected until the PR is merged and does not affect anything.
-5. Tell me it's connected. I'll push a commit to `xiaoliang-group` to trigger a preview build and verify `https://xiaoliang-group.danielye0010-github-io.pages.dev/` over HTTP and in a browser. (Or in the project, **Deployments → Create deployment → branch `xiaoliang-group`**.)
-
-### B. Merge the PR
-
-After the preview checks pass, merge the PR into `master`. Cloudflare then builds production (`danielye0010-github-io.pages.dev`), and every later change to Xiao's files on `master` redeploys automatically. GitHub Pages also rebuilds danielye.net; its output is unchanged.
-
-### C. Move xiaoliang.group DNS to Cloudflare (needs your go-ahead)
-
-Cloudflare Pages only serves an apex domain (`xiaoliang.group`, not `www.`) when the domain's DNS is on Cloudflare, so the nameservers must change. Email for this domain is hosted by Northwest (Business Identity), so every email record must be recreated exactly in Cloudflare before switching.
-
-Current public DNS (queried 2026-10-16; nameservers `ns1/ns2.hosting.businessidentity.llc`, no DNSSEC):
+Verified 2026-10-18 in a real browser:
+- https://xiaoliang.group/: 200 over HTTPS, canonical `https://xiaoliang.group/`, avatar/CSS/JS load, 4 paper cards, landscape canvas interactive, no failed requests.
+- https://xiaoliang.group/zh/: 200, `lang="zh-Hans"`, canonical `https://xiaoliang.group/zh/`; EN ↔ 中文 switch works both ways.
+- http://www.xiaoliang.group/ → HTTPS, serves the same site (canonical points to the apex).
+- `/xiaoliang/...` on the new domain → 301 to the root; unknown paths → 404 page; `llms.txt`, `robots.txt`, `sitemap.xml` → 200.
+- Email DNS served by Cloudflare, identical to Northwest's original zone (all DNS only, not proxied):
 
 | Name | Type | Value |
 |---|---|---|
 | `xiaoliang.group` | MX | `10 mailserver.businessidentity.llc` |
 | `xiaoliang.group` | TXT | `v=spf1 a mx include:spf.postal.businessidentity.llc ~all` |
 | `_dmarc` | TXT | `v=DMARC1; p=quarantine; rua=mailto:bounce@dmarc.businessidentity.llc; ruf=mailto:bounce@dmarc.businessidentity.llc; fo=1` |
-| `*` (wildcard; covers `mail`, `webmail`, `smtp`, `imap`, `pop`, `autodiscover`, `autoconfig`, `www`, ...) | A | `66.223.49.89` |
-| DKIM | TXT | **Unknown selector; not discoverable from outside.** Copy it from Northwest's DNS panel. |
+| `postal-bhzxxj._domainkey` | TXT | `v=DKIM1; t=s; h=sha256; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDh74REvn7N8c/RSqSYiRnuCB2uvjAo0/qIq3+V6gqLPCLVCTFXbvFKpYSdPs125TKdVaUAj+FgpLMqmGsN119NDVnd6g+1ohRcsyOCnW3SETCGx+fSv2X1J+sGs5ewJUs99qy1v6z82s/cyBPE3vsogU7AGRm8SEn+S/iasxH5pwIDAQAB;` |
+| `psrp` | CNAME | `rp.postal.businessidentity.llc` |
+| `*` | A | `66.223.49.89` (covers `mail`, `webmail`, `smtp`, `imap`, `pop`, `autodiscover`, ...) |
+| `_acme-challenge` | TXT | `DDO4MqXQSfJOUADSLXoncSUmm-7NzVNPLo6XtOf2oYo` and `z-LKqwzosy1cIEZRwSpKI9U_6426kgil6RL72CueFVM` (Northwest's certificate validation; harmless) |
 
-Steps:
-1. In Northwest's DNS panel for xiaoliang.group, screenshot or copy **every** record, including the DKIM `..._domainkey` TXT record and any SRV/CNAME records. Send it to me if you'd like me to check it against the list above.
-2. In Cloudflare: **Add a domain → xiaoliang.group → Free plan**. Let it scan, then compare its imported records with Northwest's list and add anything missing (DKIM is the most likely gap).
-3. Set every imported mail-related record to **DNS only (grey cloud)**: MX targets can't be proxied, and `mail`/`smtp`/`imap`/`pop`/`autodiscover`/`autoconfig`/`webmail` must not go through Cloudflare's proxy. The wildcard `*` record should also be DNS only.
-4. Do not add an apex A record yourself; step 6 creates it.
-5. At Northwest, replace the nameservers with the two Cloudflare shows you. Leave DNSSEC off. Email keeps working as long as step 2 copied all records (mail TTLs are 60 s).
-6. Once Cloudflare marks the zone **Active**: Pages project → **Custom domains → Set up a domain → `xiaoliang.group`**, then again for `www.xiaoliang.group` (this replaces the `www` wildcard match, which currently points at Northwest). Cloudflare creates the records and the HTTPS certificate.
-7. Tell me, and I'll verify `https://xiaoliang.group/`, `/zh/`, HTTPS, redirects, and that MX/SPF/DMARC/DKIM still resolve to the same values.
+  Added by Cloudflare Pages for the website: `xiaoliang.group` and `www.xiaoliang.group` (proxied, managed by the Pages custom-domain setup).
+- https://danielye.net/, `/xiaoliang/`, `/xiaoliang/zh/`: 200, unchanged. danielye.net DNS untouched.
+- pages.dev: https://danielye0010-github-io.pages.dev/
 
-Optional, recommended: in **Bulk Redirects** (or a Redirect Rule), send `www.xiaoliang.group/*` → `https://xiaoliang.group/$1` with 301, so the site has one canonical host.
+## 5. Remaining optional steps
 
-### D. After go-live: point the old pages at the new domain (your decision)
-
-`danielye.net/xiaoliang/` still declares itself canonical, so search engines see two copies. Once xiaoliang.group is live, change `url` and `zh.url` in `_data/xl.yml` to `https://xiaoliang.group/` and `https://xiaoliang.group/zh/`, and remove the two `/xiaoliang/` entries from the root `sitemap.xml`. The old URLs keep working but point search engines to the new domain. I left this off so nothing points at a domain that doesn't resolve yet.
+- **Test email once**: send from the xiaoliang.group mailbox to an outside address and reply back. DNS is verified; whether the mailbox itself exists is set in Northwest's email service.
+- **www → apex redirect** (optional): www already serves the site with the apex as canonical. To redirect instead: Cloudflare → xiaoliang.group → Rules → Redirect Rules → `www.xiaoliang.group/*` → `https://xiaoliang.group/${1}`, 301.
+- **Point the old pages at the new domain** (your decision): `danielye.net/xiaoliang/` still declares itself canonical. To consolidate search ranking, set `url` and `zh.url` in `_data/xl.yml` to `https://xiaoliang.group/` and `https://xiaoliang.group/zh/`, and drop the two `/xiaoliang/` entries from the root `sitemap.xml`. Old URLs keep working.
 
 ## 6. Rollback
 
 - **Code**: the only shared files touched are `_layouts/xl.html` and `xiaoliang/llms.txt`. `git revert <merge commit>` on `master` restores them; danielye.net output is the same either way.
 - **Cloudflare Pages**: **Deployments → (earlier deployment) → Rollback**, or delete the project. danielye.net is unaffected.
-- **DNS**: set the nameservers at Northwest back to `ns1.hosting.businessidentity.llc` and `ns2.hosting.businessidentity.llc`. This process doesn't edit Northwest's records, so if Northwest keeps the zone after the nameserver change (check in their panel before switching), mail resumes as before once caches expire. The saved record list from step C.1 is the fallback.
+- **DNS**: at Northwest (Domains → xiaoliang.group → General → Nameserver Settings), switch back to "Use our nameservers" (`ns1/ns2.hosting.businessidentity.llc`). Northwest's own DNS records were not edited and were still present when the switch was made; the complete record table in section 4 is the fallback if they need to be re-entered.
 - danielye.net's DNS, `CNAME`, and GitHub Pages settings are never touched.
