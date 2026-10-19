@@ -13,7 +13,8 @@ email_user: liangx
 email_domain: iastate
 email_tld: edu
 avatar: /xiaoliang/assets/avatar.jpg
-url: https://danielye.net/xiaoliang/
+# Canonical homepage. The pages are also served at danielye.net/xiaoliang/, which points here.
+url: https://xiaoliang.group/
 
 advisor: Prof. Shuang Li
 advisor_link: https://www.ece.iastate.edu/~lishuang/
@@ -191,7 +192,7 @@ other:
 # Any field missing here falls back to the English value above.
 # ---------------------------------------------------------------------------
 zh:
-  url: https://danielye.net/xiaoliang/zh/
+  url: https://xiaoliang.group/zh/
   # Chinese-character name: shown as the heading on the Chinese page and under the
   # English name on the English page; also used in structured data and llms.txt.
   name_native: 梁笑

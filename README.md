@@ -19,7 +19,7 @@ Source for **[danielye.net](https://danielye.net/)**, the academic homepage of *
 | `sitemap.xml`, `robots.txt` | Crawling and indexing (update `<lastmod>` when content changes) |
 | `d48e99ff3f3e2223b56b1152af5fe7c8.txt` | IndexNow key (do not delete) |
 | `.github/workflows/indexnow.yml` | Pings IndexNow (Bing etc.) after each GitHub Pages build |
-| `xiaoliang/`, `_layouts/xl.html`, `_data/xl.yml` | Separate homepage for Xiao Liang at `/xiaoliang/` |
+| `xiaoliang/`, `_layouts/xl.html`, `_data/xl.yml` | Separate homepage for Xiao Liang at `/xiaoliang/`; canonical copy at https://xiaoliang.group/ (built from `_deploy/xiaoliang-group/`) |
 
 To add a translated page, give it the same `ref` as its counterpart and a `lang` key that exists in `_data/i18n.yml`; the layout adds `hreflang` links and the language switch automatically.
 
