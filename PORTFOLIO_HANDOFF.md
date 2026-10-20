@@ -82,3 +82,5 @@ Removed the separate FDM design-to-print section and Artec Spider sentence in bo
 Latest copy adjustment: manufacturing and TradeAgent use concise capability/action phrasing without first-person openings, matching the other cards. Contribution is conveyed by Developed, original modeling, and hands-on practice.
 
 Project stack refinement: removed the Team project label from the portfolio and added four concise technical tags beneath each description in both locales. Tags were checked against the public READMEs and TradeAgent architecture/package metadata: MCP/LLM orchestration/SQLite/systemd; Unity/OpenXR/intent scoring/adaptive selection; PyTorch/GUDHI/persistent homology/PointNet; HTCondor/FITSio/template matching/distributed reduction.
+
+Latest refinement: three technology labels per project, rendered as a single noninteractive tab-style strip. Replaced the list markup to avoid bullet fallback and added a build-version query to the portfolio stylesheet to refresh cached CSS. No separate Skills section was added; that part of the request is advice only.

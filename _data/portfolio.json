@@ -88,8 +88,7 @@
         "tags": [
           "MCP",
           "LLM Orchestration",
-          "SQLite",
-          "systemd"
+          "SQLite"
         ]
       },
       {
@@ -103,8 +102,7 @@
         "tags": [
           "Unity",
           "OpenXR",
-          "Intent Scoring",
-          "Adaptive Selection"
+          "Intent Scoring"
         ]
       },
       {
@@ -118,8 +116,7 @@
         "tags": [
           "PyTorch",
           "GUDHI",
-          "Persistent Homology",
-          "PointNet"
+          "Persistent Homology"
         ]
       },
       {
@@ -133,8 +130,7 @@
         "tags": [
           "HTCondor",
           "FITSio",
-          "Template Matching",
-          "Distributed Reduction"
+          "Template Matching"
         ]
       }
     ],
@@ -255,8 +251,7 @@
         "tags": [
           "MCP",
           "LLM Orchestration",
-          "SQLite",
-          "systemd"
+          "SQLite"
         ]
       },
       {
@@ -270,8 +265,7 @@
         "tags": [
           "Unity",
           "OpenXR",
-          "Intent Scoring",
-          "Adaptive Selection"
+          "Intent Scoring"
         ]
       },
       {
@@ -285,8 +279,7 @@
         "tags": [
           "PyTorch",
           "GUDHI",
-          "Persistent Homology",
-          "PointNet"
+          "Persistent Homology"
         ]
       },
       {
@@ -300,8 +293,7 @@
         "tags": [
           "HTCondor",
           "FITSio",
-          "Template Matching",
-          "Distributed Reduction"
+          "Template Matching"
         ]
       }
     ],
