@@ -19,12 +19,10 @@
     "code": "Public code",
     "explore": "Explore research",
     "manufacturing": "Build it. Scan it. Understand it.",
-    "manufacturing_intro": "From metal and polymer printing to 3D scanning and geometric analysis: bringing computation into the workshop.",
+    "manufacturing_intro": "My hands-on work in additive manufacturing, CNC machining, and 3D metrology. Photos from my own fabrication and measurement sessions.",
     "gallery": "Explore manufacturing",
-    "selected": "From 3D modeling to physical prints",
-    "prints_note": "Modeled and printed by me. Bringing AI-assisted shape creation, 3D editing, and FDM fabrication together—from digital design to physical objects.",
     "metrology": "Machining & 3D metrology",
-    "metrology_text": "Hands-on CNC machining, dimensional inspection, and optical 3D scanning—connecting physical parts with geometric analysis.",
+    "metrology_text": "I operate CNC machining centers, coordinate measuring machines, and handheld 3D scanners to connect fabrication with geometric inspection.",
     "projects": "Selected Projects",
     "projects_intro": "AI agents, spatial interaction, 3D learning, and computing at scale.",
     "all_projects": "View projects",
@@ -50,7 +48,7 @@
         "id": "lpbf",
         "name": "LPBF",
         "title": "Laser powder bed fusion",
-        "text": "Metal builds and thin-wall specimens.",
+        "text": "Hands-on metal printing and thin-wall specimen fabrication.",
         "image": "lpbf_build_hero.webp",
         "alt": "Metal specimens arranged on a circular build plate in a laboratory",
         "w": 1600,
@@ -60,7 +58,7 @@
         "id": "ded",
         "name": "DED",
         "title": "Directed energy deposition",
-        "text": "Metal deposition and specimen fabrication.",
+        "text": "Hands-on metal deposition and specimen fabrication.",
         "image": "ded_deposited_samples.webp",
         "alt": "Four DED metal samples on rectangular substrates",
         "w": 1440,
@@ -70,7 +68,7 @@
         "id": "fdm",
         "name": "FDM",
         "title": "Fused deposition modeling",
-        "text": "3D modeling through polymer-part printing.",
+        "text": "I modeled and printed this Tiger Hill Pagoda, Suzhou.",
         "image": "fdm_pagoda_card.webp",
         "alt": "Green FDM model of Tiger Hill Pagoda, Suzhou, inside a desktop printer",
         "w": 1152,
@@ -81,7 +79,7 @@
       {
         "name": "TradeAgent",
         "kind": "AI agents · Automation",
-        "text": "Your own GPT- or Claude-powered trading agent: from news analysis to automated Robinhood execution, with a public record of its decisions.",
+        "text": "I built an open-source AI trading system: GPT/Claude research agents, automated Robinhood execution, an operator dashboard, and a public decision record.",
         "url": "https://danielye0010.github.io/TradeAgent/",
         "image": "tradeagent-website.png",
         "image_alt": "TradeAgent public website",
@@ -119,13 +117,6 @@
     ],
     "capabilities": "Computational geometry · Mechanics · Additive manufacturing",
     "metrology_alt": "Handheld 3D scanner capturing a metal specimen beside a laptop displaying scanned geometry",
-    "modeling_tools": "Modeling toolkit: Meshy · Hunyuan3D · Blender",
-    "modeling_steps": [
-      "Shape creation",
-      "Modeling & editing",
-      "Print preparation",
-      "FDM fabrication"
-    ],
     "equipment": [
       {
         "name": "ZEISS DuraMax CMM",
@@ -149,7 +140,6 @@
         "alt": "Handheld 3D scanner capturing a metal specimen beside a laptop displaying scanned geometry"
       }
     ],
-    "spider_experience": "Also operated: Artec Spider 3D scanner.",
     "am_heading": "Additive manufacturing",
     "more_projects": "More on GitHub"
   },
@@ -173,12 +163,10 @@
     "code": "公开代码",
     "explore": "了解研究方向",
     "manufacturing": "制造实物，测量形状，理解偏差。",
-    "manufacturing_intro": "从金属与聚合物打印，到三维扫描与几何分析，把计算能力带入制造现场。",
+    "manufacturing_intro": "我的增材制造、CNC 加工与三维测量实践。以下照片来自我亲手参与的制造与测量现场。",
     "gallery": "查看制造实践",
-    "selected": "从三维建模到实体打印",
-    "prints_note": "自己建模，自己打印。将 AI 辅助形体创作、三维编辑与 FDM 制造串成完整流程，让数字设计成为实物。",
     "metrology": "加工与三维测量",
-    "metrology_text": "从 CNC 加工、接触式尺寸检测到光学三维扫描，将实物制造与几何分析连接起来。",
+    "metrology_text": "我操作数控加工中心、三坐标测量机与手持三维扫描仪，贯通实物加工与几何检测。",
     "projects": "精选项目",
     "projects_intro": "AI 智能体、空间交互、三维学习与大规模计算。",
     "all_projects": "查看项目",
@@ -204,7 +192,7 @@
         "id": "lpbf",
         "name": "LPBF",
         "title": "激光粉末床熔融",
-        "text": "金属薄壁试样打印。",
+        "text": "亲手参与金属打印与薄壁试样制造。",
         "image": "lpbf_build_hero.webp",
         "alt": "实验室中排列在圆形基板上的金属试样",
         "w": 1600,
@@ -214,7 +202,7 @@
         "id": "ded",
         "name": "DED",
         "title": "定向能量沉积",
-        "text": "金属沉积与试样制造。",
+        "text": "亲手参与金属沉积与试样制造。",
         "image": "ded_deposited_samples.webp",
         "alt": "四个矩形基板上的 DED 金属试样",
         "w": 1440,
@@ -224,7 +212,7 @@
         "id": "fdm",
         "name": "FDM",
         "title": "熔融沉积成形",
-        "text": "从三维建模到聚合物零件打印。",
+        "text": "自己建模、自己打印的苏州虎丘塔。",
         "image": "fdm_pagoda_card.webp",
         "alt": "桌面打印机内的绿色苏州虎丘塔 FDM 模型",
         "w": 1152,
@@ -235,7 +223,7 @@
       {
         "name": "TradeAgent",
         "kind": "AI 智能体 · 自动化",
-        "text": "让 GPT 或 Claude 驱动自己的交易智能体：从新闻分析到 Robinhood 自动执行，每次决策都有公开记录。",
+        "text": "我开发了开源 AI 交易系统：集成 GPT/Claude 研究智能体、Robinhood 自动执行、操作面板与公开决策记录。",
         "url": "https://danielye0010.github.io/TradeAgent/",
         "image": "tradeagent-website.png",
         "image_alt": "TradeAgent 项目官网",
@@ -273,13 +261,6 @@
     ],
     "capabilities": "计算几何 · 力学建模 · 增材制造",
     "metrology_alt": "手持三维扫描仪扫描金属试样，旁边的电脑显示扫描几何",
-    "modeling_tools": "建模工具：Meshy · Hunyuan3D · Blender",
-    "modeling_steps": [
-      "形体创作",
-      "建模与编辑",
-      "打印准备",
-      "FDM 制造"
-    ],
     "equipment": [
       {
         "name": "ZEISS DuraMax CMM",
@@ -303,7 +284,6 @@
         "alt": "手持三维扫描仪扫描金属试样，旁边的电脑显示扫描几何"
       }
     ],
-    "spider_experience": "其他操作经验：Artec Spider 三维扫描仪。",
     "am_heading": "增材制造",
     "more_projects": "更多项目 · GitHub"
   }
