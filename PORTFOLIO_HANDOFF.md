@@ -78,3 +78,5 @@ TradeAgent links directly to https://danielye0010.github.io/TradeAgent/ and uses
 ## 2026-10-20 content simplification
 
 Removed the separate FDM design-to-print section and Artec Spider sentence in both languages. FDM remains alongside LPBF and DED, with its card identifying the personally modeled and printed Tiger Hill Pagoda. Manufacturing introduction now identifies the owner's hands-on fabrication/measurement work and the photos as coming from those sessions. TradeAgent copy now leads with what the owner built: research agents, automated execution, dashboard, and public decision record. Build and all 124 internal links pass. The preview server needed restarting; the final bilingual manufacturing/projects pages pass image loading and overflow checks at 1440px and 390px.
+
+Latest copy adjustment: manufacturing and TradeAgent use concise capability/action phrasing without first-person openings, matching the other cards. Contribution is conveyed by Developed, original modeling, and hands-on practice.
