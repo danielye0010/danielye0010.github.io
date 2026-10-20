@@ -15,9 +15,9 @@
 <div class="pf-simulation-grid">{% for item in p.simulation %}
 <article id="{{ item.id }}"><figure>
 {% if item.video %}<video class="pf-method-video" controls autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/img/engineering/' | append: item.image | relative_url }}" aria-label="{{ item.alt }}"><source src="{{ '/assets/img/engineering/' | append: item.video | relative_url }}" type="video/mp4"><a href="{{ '/assets/img/engineering/' | append: item.video | relative_url }}">{{ item.alt }}</a></video>
-<figcaption>{{ item.caption }}<span class="pf-media-credit"><a href="{{ '/assets/img/engineering/CREDITS.txt' | relative_url }}">{{ p.method_demo }}</a> · <a href="{{ item.source }}">{{ item.author }}</a> · <a href="{{ item.license_url }}">{{ item.license }}</a></span></figcaption>
-{% else %}<img src="{{ '/assets/img/engineering/' | append: item.image | relative_url }}" width="900" height="520" loading="lazy" alt="{{ item.alt }}"><figcaption>{{ p.schematic }}</figcaption>{% endif %}
-</figure><p class="pf-eyebrow">0{{ forloop.index }} / {{ item.name }}</p><h3>{{ item.title }}</h3><p class="pf-engineering-skills">{{ item.skills | join: ' · ' }}</p></article>{% endfor %}</div></div>
+{% else %}<img src="{{ '/assets/img/engineering/' | append: item.image | relative_url }}" width="900" height="520" loading="lazy" alt="{{ item.alt }}">{% endif %}
+</figure><p class="pf-eyebrow">0{{ forloop.index }} / {{ item.name }}</p><h3>{{ item.title }}</h3><p class="pf-engineering-skills">{{ item.skills | join: ' · ' }}</p>{% if item.applied %}<p class="pf-applied"><span>{{ p.applied_label }}</span> <a href="{% if item.applied.url contains '://' %}{{ item.applied.url }}{% else %}{{ item.applied.url | relative_url }}{% endif %}">{{ item.applied.text }}</a></p>{% endif %}</article>{% endfor %}</div>
+<p class="pf-simulation-credit"><a href="{{ '/assets/img/engineering/CREDITS.txt' | relative_url }}">{{ p.simulation_credit }}</a></p></div>
 <div class="pf-engineering-section pf-fabrication" id="manufacturing">
 <h2>{{ p.fabrication_heading }}</h2><p class="pf-engineering-intro">{{ p.fabrication_intro }}</p>
 <h3 class="pf-engineering-group">{{ p.am_heading }}</h3><div class="pf-am-processes">{% for photo in p.processes %}<article class="pf-process" id="{{ photo.id }}"><figure>{% include portfolio/photo.html photo=photo %}</figure><div><h3>{{ photo.name }}</h3><p class="pf-process-title">{{ photo.title }}</p><p>{{ photo.text }}</p></div></article>{% endfor %}</div>

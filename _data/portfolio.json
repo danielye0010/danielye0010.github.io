@@ -166,11 +166,9 @@
     "engineering": "Model it. Make it. Measure it.",
     "engineering_intro": "Computational analysis, mechanical design, and hands-on manufacturing—from physics-based simulation to fabrication and 3D inspection.",
     "simulation_heading": "Simulation & Design",
-    "simulation_intro": "Computational engineering and mechanical modeling",
+    "simulation_intro": "Analysis and design tools I use in my own research and builds",
     "fabrication_heading": "Manufacturing & Metrology",
     "fabrication_intro": "Hands-on fabrication, machining, and dimensional inspection",
-    "method_demo": "Method demo",
-    "schematic": "Parametric solid · schematic",
     "simulation": [
       {
         "id": "cfd",
@@ -178,13 +176,11 @@
         "title": "CFD & Thermal-Fluid Analysis",
         "skills": [
           "Fluid Mechanics",
-          "Heat Transfer",
-          "Numerical Simulation"
+          "Heat Transfer"
         ],
         "video": "cfd-heat-sink.mp4",
         "image": "cfd-heat-sink.png",
         "alt": "Forced-convection heat sink with surface temperature contours and airflow trajectories",
-        "caption": "Forced-convection cooling",
         "author": "Isofilm",
         "source": "https://commons.wikimedia.org/wiki/File:CFD_Forced_Convection_Heat_Sink_v4.gif",
         "license": "CC BY-SA 3.0",
@@ -196,17 +192,19 @@
         "title": "FEA & Structural Analysis",
         "skills": [
           "Structural Mechanics",
-          "Stress Analysis",
           "Modal Analysis"
         ],
         "video": "fea-truss-modes.mp4",
         "image": "fea-truss-modes.png",
         "alt": "Truss bridge eigenmodes with modal displacement magnitude contours",
-        "caption": "Truss-bridge eigenmodes",
         "author": "Ajay B Harish",
         "source": "https://commons.wikimedia.org/wiki/File:ModalAnalysis_TrussBridge.gif",
         "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "applied": {
+          "text": "Modal-based warpage compensation (ASME JMSE, 2026)",
+          "url": "https://doi.org/10.1115/1.4072276"
+        }
       },
       {
         "id": "cad",
@@ -214,13 +212,18 @@
         "title": "CAD & Mechanical Design",
         "skills": [
           "3D Solid Modeling",
-          "Parametric Design",
-          "Geometric Modeling"
+          "Parametric Design"
         ],
         "image": "parametric-bracket.svg",
-        "alt": "Isometric solid-modeling schematic of a bracket with mounting holes and dimensional parameters"
+        "alt": "Isometric solid-modeling schematic of a bracket with mounting holes and dimensional parameters",
+        "applied": {
+          "text": "Comparing nominal CAD with as-built scans in my compensation research",
+          "url": "/research/"
+        }
       }
-    ]
+    ],
+    "applied_label": "Applied in",
+    "simulation_credit": "Illustrative animations: Isofilm (CC BY-SA 3.0) and Ajay B Harish (CC BY-SA 4.0), Wikimedia Commons."
   },
   "zh-Hans": {
     "nav": [
@@ -389,11 +392,9 @@
     "engineering": "建模、制造、测量。",
     "engineering_intro": "计算分析、机械设计与制造实操，从物理仿真到实物制造与三维检测。",
     "simulation_heading": "仿真与设计",
-    "simulation_intro": "计算工程与机械建模",
+    "simulation_intro": "我在自己的研究和实际项目中使用的分析与设计工具",
     "fabrication_heading": "制造与测量",
     "fabrication_intro": "制造、加工与尺寸检测实操",
-    "method_demo": "方法演示",
-    "schematic": "参数化实体 · 示意",
     "simulation": [
       {
         "id": "cfd",
@@ -401,13 +402,11 @@
         "title": "CFD 与热流体分析",
         "skills": [
           "流体力学",
-          "传热分析",
-          "数值仿真"
+          "传热分析"
         ],
         "video": "cfd-heat-sink.mp4",
         "image": "cfd-heat-sink.png",
         "alt": "散热器表面温度分布与风扇驱动的空气流动轨迹",
-        "caption": "强制对流冷却",
         "author": "Isofilm",
         "source": "https://commons.wikimedia.org/wiki/File:CFD_Forced_Convection_Heat_Sink_v4.gif",
         "license": "CC BY-SA 3.0",
@@ -419,17 +418,19 @@
         "title": "FEA 与结构分析",
         "skills": [
           "结构力学",
-          "应力分析",
           "模态分析"
         ],
         "video": "fea-truss-modes.mp4",
         "image": "fea-truss-modes.png",
         "alt": "带模态位移幅值云图的桁架桥振型",
-        "caption": "桁架桥模态振型",
         "author": "Ajay B Harish",
         "source": "https://commons.wikimedia.org/wiki/File:ModalAnalysis_TrussBridge.gif",
         "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "applied": {
+          "text": "基于模态的增材制造翘曲补偿（ASME JMSE，2026）",
+          "url": "https://doi.org/10.1115/1.4072276"
+        }
       },
       {
         "id": "cad",
@@ -437,12 +438,17 @@
         "title": "CAD 与机械设计",
         "skills": [
           "三维实体建模",
-          "参数化设计",
-          "几何建模"
+          "参数化设计"
         ],
         "image": "parametric-bracket.svg",
-        "alt": "带安装孔与尺寸参数的支架等轴测实体建模示意图"
+        "alt": "带安装孔与尺寸参数的支架等轴测实体建模示意图",
+        "applied": {
+          "text": "补偿研究中名义 CAD 与实测扫描几何的对比",
+          "url": "/zh/research/"
+        }
       }
-    ]
+    ],
+    "applied_label": "应用于",
+    "simulation_credit": "示意动画：Isofilm（CC BY-SA 3.0）与 Ajay B Harish（CC BY-SA 4.0），来自 Wikimedia Commons。"
   }
 }
