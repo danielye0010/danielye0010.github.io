@@ -106,8 +106,9 @@ html[data-theme="dark"] .portfolio{--pf-ink:#eee7f4;--pf-muted:#c2b8cb;--pf-acce
 .portfolio .pf-engineering-skills{font:13px/1.8 Arial,sans-serif}
 .portfolio .pf-engineering-skills{margin:0 0 4px}
 .portfolio .pf-engineering-tools{font:12px/1.8 Arial,sans-serif;letter-spacing:.4px;color:var(--pf-accent);margin:0}
-.portfolio .pf-simulation-credit{font:10px/1.5 Arial,sans-serif;margin:22px 0 0}
-.portfolio .pf-simulation-credit a{color:var(--pf-muted)}
+.portfolio .pf-simulation-credit{font:9.5px/1.5 Arial,sans-serif;letter-spacing:.2px;margin:18px 0 0;opacity:.45;transition:opacity .2s}
+.portfolio .pf-simulation-credit:hover{opacity:.85}
+.portfolio .pf-simulation-credit a{color:var(--pf-muted);text-decoration:none}
 .portfolio .pf-fabrication{padding-top:32px;border-top:1px solid var(--pf-line)}
 .portfolio .pf-engineering-group{font:11px/1.6 Arial,sans-serif;text-transform:uppercase;letter-spacing:1.4px;color:var(--pf-accent);margin:30px 0 18px}
 .portfolio .pf-am-processes .pf-process h3{font-size:24px;margin:18px 0 8px}
