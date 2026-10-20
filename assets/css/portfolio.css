@@ -104,9 +104,8 @@ html[data-theme="dark"] .portfolio{--pf-ink:#eee7f4;--pf-muted:#c2b8cb;--pf-acce
 .portfolio .pf-simulation-grid .pf-eyebrow{margin:0 0 8px}
 .portfolio .pf-simulation-grid h3{font-size:24px;margin:0 0 12px}
 .portfolio .pf-engineering-skills{font:13px/1.8 Arial,sans-serif}
-.portfolio .pf-engineering-skills{margin-bottom:12px}
-.portfolio .pf-applied{text-align:left;font-size:15px;line-height:1.5;border-left:2px solid var(--pf-accent);padding-left:12px;margin:0}
-.portfolio .pf-applied span{display:block;font:10px/1.6 Arial,sans-serif;text-transform:uppercase;letter-spacing:1.2px;color:var(--pf-accent)}
+.portfolio .pf-engineering-skills{margin:0 0 4px}
+.portfolio .pf-engineering-tools{font:12px/1.8 Arial,sans-serif;letter-spacing:.4px;color:var(--pf-accent);margin:0}
 .portfolio .pf-simulation-credit{font:10px/1.5 Arial,sans-serif;margin:22px 0 0}
 .portfolio .pf-simulation-credit a{color:var(--pf-muted)}
 .portfolio .pf-fabrication{padding-top:32px;border-top:1px solid var(--pf-line)}

@@ -19,7 +19,7 @@
     "code": "Public code",
     "explore": "Explore research",
     "metrology": "Machining & 3D Metrology",
-    "projects": "Fun Projects",
+    "projects": "From idea to working code.",
     "projects_intro": "AI agents, spatial interaction, 3D learning, and computing at scale.",
     "all_projects": "View projects",
     "repo": "Repository",
@@ -134,31 +134,31 @@
     "metrology_alt": "Handheld 3D scanner capturing a metal specimen beside a laptop displaying scanned geometry",
     "equipment": [
       {
-        "name": "ZEISS CMM",
+        "name": "Dimensional Inspection",
         "type": "Coordinate metrology",
         "text": "CMM operation and dimensional inspection of manufactured parts.",
         "image": "zeiss-duramax.webp",
-        "alt": "ZEISS DuraMax coordinate measuring machines in the laboratory",
-        "model": "ZEISS DuraMax CMM",
-        "subtitle": "Dimensional Inspection"
+        "alt": "Coordinate measuring machines in the laboratory",
+        "model": "Coordinate measuring machine",
+        "subtitle": "Coordinate measuring machine (CMM)"
       },
       {
-        "name": "HAAS CNC",
+        "name": "Precision Machining",
         "type": "CNC machining center",
         "text": "Machining-center operation and subtractive fabrication.",
         "image": "haas-cnc.webp",
-        "alt": "Spindle and work area inside a HAAS CNC machining center",
-        "model": "HAAS CNC",
-        "subtitle": "Precision Machining"
+        "alt": "Spindle and work area inside a CNC machining center",
+        "model": "CNC machining center",
+        "subtitle": "CNC machining center"
       },
       {
-        "name": "Creaform",
+        "name": "3D Scanning",
         "type": "Optical 3D metrology",
         "text": "Part scanning, 3D geometry capture, and CAD comparison.",
         "image": "metrology-scanning.webp",
         "alt": "Handheld 3D scanner capturing a metal specimen beside a laptop displaying scanned geometry",
-        "model": "Creaform 3D scanner",
-        "subtitle": "3D Scanning"
+        "model": "Handheld 3D scanner",
+        "subtitle": "Handheld 3D scanner"
       }
     ],
     "am_heading": "Additive manufacturing",
@@ -184,7 +184,11 @@
         "author": "Isofilm",
         "source": "https://commons.wikimedia.org/wiki/File:CFD_Forced_Convection_Heat_Sink_v4.gif",
         "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "tools": [
+          "ANSYS Fluent",
+          "COMSOL"
+        ]
       },
       {
         "id": "fea",
@@ -201,10 +205,10 @@
         "source": "https://commons.wikimedia.org/wiki/File:ModalAnalysis_TrussBridge.gif",
         "license": "CC BY-SA 4.0",
         "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "applied": {
-          "text": "Modal-based warpage compensation (ASME JMSE, 2026)",
-          "url": "https://doi.org/10.1115/1.4072276"
-        }
+        "tools": [
+          "ANSYS Mechanical",
+          "COMSOL"
+        ]
       },
       {
         "id": "cad",
@@ -216,13 +220,13 @@
         ],
         "image": "parametric-bracket.svg",
         "alt": "Isometric solid-modeling schematic of a bracket with mounting holes and dimensional parameters",
-        "applied": {
-          "text": "Comparing nominal CAD with as-built scans in my compensation research",
-          "url": "/research/"
-        }
+        "tools": [
+          "SolidWorks",
+          "Creo",
+          "NX"
+        ]
       }
     ],
-    "applied_label": "Applied in",
     "simulation_credit": "Illustrative animations: Isofilm (CC BY-SA 3.0) and Ajay B Harish (CC BY-SA 4.0), Wikimedia Commons."
   },
   "zh-Hans": {
@@ -245,7 +249,7 @@
     "code": "公开代码",
     "explore": "了解研究方向",
     "metrology": "加工与三维测量",
-    "projects": "趣味项目",
+    "projects": "从想法到可运行的代码。",
     "projects_intro": "AI 智能体、空间交互、三维学习与大规模计算。",
     "all_projects": "查看项目",
     "repo": "代码仓库",
@@ -360,31 +364,31 @@
     "metrology_alt": "手持三维扫描仪扫描金属试样，旁边的电脑显示扫描几何",
     "equipment": [
       {
-        "name": "ZEISS CMM",
+        "name": "尺寸检测",
         "type": "三坐标测量",
         "text": "三坐标测量机操作与零件尺寸检测。",
         "image": "zeiss-duramax.webp",
-        "alt": "实验室内的 ZEISS DuraMax 三坐标测量机",
-        "model": "ZEISS DuraMax CMM",
-        "subtitle": "尺寸检测"
+        "alt": "实验室内的三坐标测量机",
+        "model": "三坐标测量机",
+        "subtitle": "三坐标测量机（CMM）"
       },
       {
-        "name": "HAAS CNC",
+        "name": "精密加工",
         "type": "数控加工中心",
         "text": "数控加工中心操作与零件切削加工。",
         "image": "haas-cnc.webp",
-        "alt": "HAAS 数控加工中心的主轴与加工工作区",
-        "model": "HAAS CNC",
-        "subtitle": "精密加工"
+        "alt": "数控加工中心的主轴与加工工作区",
+        "model": "数控加工中心",
+        "subtitle": "数控加工中心"
       },
       {
-        "name": "Creaform",
+        "name": "三维扫描",
         "type": "光学三维测量",
         "text": "实物扫描、三维几何采集与 CAD 对比。",
         "image": "metrology-scanning.webp",
         "alt": "手持三维扫描仪扫描金属试样，旁边的电脑显示扫描几何",
-        "model": "Creaform 三维扫描仪",
-        "subtitle": "三维扫描"
+        "model": "手持三维扫描仪",
+        "subtitle": "手持三维扫描仪"
       }
     ],
     "am_heading": "增材制造",
@@ -410,7 +414,11 @@
         "author": "Isofilm",
         "source": "https://commons.wikimedia.org/wiki/File:CFD_Forced_Convection_Heat_Sink_v4.gif",
         "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "tools": [
+          "ANSYS Fluent",
+          "COMSOL"
+        ]
       },
       {
         "id": "fea",
@@ -427,10 +435,10 @@
         "source": "https://commons.wikimedia.org/wiki/File:ModalAnalysis_TrussBridge.gif",
         "license": "CC BY-SA 4.0",
         "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "applied": {
-          "text": "基于模态的增材制造翘曲补偿（ASME JMSE，2026）",
-          "url": "https://doi.org/10.1115/1.4072276"
-        }
+        "tools": [
+          "ANSYS Mechanical",
+          "COMSOL"
+        ]
       },
       {
         "id": "cad",
@@ -442,13 +450,13 @@
         ],
         "image": "parametric-bracket.svg",
         "alt": "带安装孔与尺寸参数的支架等轴测实体建模示意图",
-        "applied": {
-          "text": "补偿研究中名义 CAD 与实测扫描几何的对比",
-          "url": "/zh/research/"
-        }
+        "tools": [
+          "SolidWorks",
+          "Creo",
+          "NX"
+        ]
       }
     ],
-    "applied_label": "应用于",
     "simulation_credit": "示意动画：Isofilm（CC BY-SA 3.0）与 Ajay B Harish（CC BY-SA 4.0），来自 Wikimedia Commons。"
   }
 }
