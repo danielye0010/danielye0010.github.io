@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">AutoReport System</title>
+  <desc id="desc">Architecture illustration: laboratory usage data flows through API collection and AWS S3 and Athena analytics into PDF reports and delivery.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#211c35"/><stop offset="1" stop-color="#11141f"/></linearGradient>
+    <linearGradient id="flow" gradientUnits="userSpaceOnUse" x1="0" x2="900"><stop stop-color="#a995f2"/><stop offset="1" stop-color="#d7efa4"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".035"/></pattern>
+  </defs>
+  <rect width="900" height="520" rx="12" fill="url(#bg)"/>
+  <rect width="900" height="520" rx="12" fill="url(#grid)"/>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <rect x="48" y="45" width="10" height="10" rx="3" fill="#d7efa4"/>
+    <text x="73" y="55" font-size="14" letter-spacing="3" fill="#bfb6d5">REPORTING AUTOMATION</text>
+    <text x="47" y="119" font-size="46" font-weight="700" letter-spacing="-1.5" fill="#f7f4fc">AutoReport<tspan dx="12" fill="#c1b0f5">System</tspan></text>
+    <text x="49" y="155" font-size="21" fill="#b4adbf">From raw usage to reports ready to share.</text>
+    <path d="M128 294H778" stroke="url(#flow)" stroke-width="3" fill="none"/>
+    <path d="m301 288 7 6-7 6m294-12 7 6-7 6" stroke="#b8a6e8" stroke-width="2" fill="none"/>
+    <g>
+      <rect x="48" y="214" width="230" height="175" rx="12" fill="#2c253f" stroke="#5d4c7d"/>
+      <text x="70" y="245" fill="#aa9fc3" font-size="13" letter-spacing="2">01 / COLLECT</text>
+      <g stroke="#c5b2fa" stroke-width="2.5" fill="none"><rect x="72" y="269" width="39" height="42" rx="5"/><path d="M82 281h19m-19 9h19m-19 9h10"/><path d="m126 279 9 10-9 10"/></g>
+      <text x="70" y="345" fill="#f3eefb" font-size="25" font-weight="600">Usage data</text>
+      <text x="70" y="371" fill="#b5a8cc" font-size="15">API collection</text>
+    </g>
+    <g>
+      <rect x="335" y="214" width="230" height="175" rx="12" fill="#302847" stroke="#8f78be"/>
+      <text x="357" y="245" fill="#b6a7d2" font-size="13" letter-spacing="2">02 / ANALYZE</text>
+      <g stroke="#cfbef9" stroke-width="2.5" fill="none"><ellipse cx="380" cy="276" rx="20" ry="7"/><path d="M360 276v26c0 10 40 10 40 0v-26m-40 13c0 10 40 10 40 0"/></g>
+      <text x="357" y="345" fill="#f3eefb" font-size="25" font-weight="600">Cloud analytics</text>
+      <text x="357" y="371" fill="#c4b4df" font-size="15">Amazon S3 + Athena</text>
+    </g>
+    <g>
+      <rect x="622" y="214" width="230" height="175" rx="12" fill="#262e29" stroke="#78945a"/>
+      <text x="644" y="245" fill="#bad19f" font-size="13" letter-spacing="2">03 / DELIVER</text>
+      <g stroke="#d7efa4" stroke-width="2.5" fill="none"><rect x="651" y="268" width="32" height="39" rx="3" opacity=".45"/><rect x="644" y="274" width="32" height="39" rx="3" fill="#262e29"/><path d="M653 285h14m-14 8h14m-14 8h8"/></g>
+      <text x="644" y="345" fill="#e8f7d9" font-size="25" font-weight="600">Reports</text>
+      <text x="644" y="371" fill="#bed0ad" font-size="15">PDF generation + delivery</text>
+    </g>
+    <path d="M48 428H852" stroke="#81768f" stroke-opacity=".3"/>
+    <text x="48" y="465" fill="#c8bed5" font-size="16">Monthly reporting</text>
+    <circle cx="221" cy="459" r="2" fill="#6d5d84"/>
+    <text x="239" y="465" fill="#c8bed5" font-size="16">Unit-level views</text>
+    <text x="852" y="465" fill="#a89db9" font-size="12" text-anchor="end" letter-spacing="1">SYSTEM WORKFLOW</text>
+  </g>
+</svg>
