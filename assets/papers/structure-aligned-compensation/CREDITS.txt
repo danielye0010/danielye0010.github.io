@@ -1,0 +1,2 @@
+Figures reproduced from Ye et al., Structure-Aligned Geometric Compensation for Additive Manufacturing Warpage via Vibrational Modal Analysis, Journal of Manufacturing Science and Engineering 148(11), 111003 (2026). DOI: 10.1115/1.4072276. Copyright 2026 ASME. Licensed CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Changes: figure panels cropped from the published PDF and converted to WebP; original captions are restated in the webpage. Figure 6 displacements are exaggerated 5x in the source for visualization. No scientific image content was altered.
