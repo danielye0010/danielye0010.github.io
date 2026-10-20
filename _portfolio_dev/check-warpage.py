@@ -27,6 +27,8 @@ for value in ('0.014','0.0061','2.94','2.07'):
 for lang in ('','zh/'):
     research=(root/lang/'research/index.html').read_text(encoding='utf-8')
     if 'href="/papers/structure-aligned-compensation/">Website' not in research: errors.append('Missing Website link '+lang)
+    entry=research.split('<div class="pf-links">',1)[1].split('</div>',1)[0]
+    if not entry.startswith('<a href="/papers/structure-aligned-compensation/">Website'): errors.append('Website is not first '+lang)
 if (root/'responsive-qa.html').exists(): errors.append('QA harness leaked into final build')
 report={'links_checked':len(p.urls),'table_values_checked':4,'errors':errors}
 print(json.dumps(report,indent=2))

@@ -19,44 +19,45 @@ layout: null
   <meta name="citation_publication_date" content="2026/07/22"><meta name="citation_journal_title" content="Journal of Manufacturing Science and Engineering"><meta name="citation_volume" content="148"><meta name="citation_issue" content="11"><meta name="citation_doi" content="10.1115/1.4072276">
   <meta name="citation_pdf_url" content="{{ '/assets/papers/structure-aligned-compensation/paper.pdf' | absolute_url }}">
   <link rel="icon" href="{{ '/assets/img/favicon_black.png' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/papers/structure-aligned-compensation/style.css' | relative_url }}">
-  <script defer src="{{ '/assets/papers/structure-aligned-compensation/site.js' | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/papers/structure-aligned-compensation/style.css' | relative_url }}?v=launch2">
+  <script defer src="{{ '/assets/papers/structure-aligned-compensation/site.js' | relative_url }}?v=launch2"></script>
 </head>
 <body>
+<div class="hero-backdrop" aria-hidden="true"></div>
 <a class="skip" href="#main">Skip to content</a>
-<header class="topbar"><a class="home" href="{{ '/research/' | relative_url }}"><span class="brand-mark" aria-hidden="true">≋</span> Yifei Ye <span class="back">/ Research</span></a><nav aria-label="Paper navigation"><a href="#idea">Idea</a><a href="#results">Results</a><a href="#citation">Cite</a></nav></header>
+<header class="topbar"><a class="home" href="{{ '/research/' | relative_url }}"><span class="brand-mark" aria-hidden="true">S<span>/</span>A</span> <span class="back">Yifei Ye / Research</span></a><nav aria-label="Paper navigation"><a href="#idea">Idea</a><a href="#results">Results</a><a href="#citation">Cite</a></nav></header>
 <main id="main">
   <section class="hero wrap" aria-labelledby="paper-title">
-    <p class="eyebrow"><span class="dot"></span> ASME · Journal of Manufacturing Science and Engineering · 2026</p>
-    <h1 id="paper-title">Structure-Aligned<br><span>Geometric Compensation</span></h1>
-    <p class="subtitle">for Additive Manufacturing Warpage<br>via Vibrational Modal Analysis</p>
+    <p class="eyebrow venue"><span class="venue-badge">ASME · JMSE 2026</span><span>Journal of Manufacturing Science and Engineering</span></p>
+    <h1 id="paper-title"><span class="title-top">Structure-Aligned</span><br><span>Geometric Compensation</span></h1>
+    <p class="subtitle">for Additive Manufacturing Warpage via Vibrational Modal Analysis</p><p class="hero-intro">Let structure lead the correction.</p>
     <p class="authors"><a href="{{ '/' | relative_url }}">Yifei Ye</a><sup>1,*</sup><span>Lijie Liu<sup>1</sup></span><span>Yiliang Liao<sup>1</sup></span><span>Stephen Holland<sup>2</sup></span><span>Adarsh Krishnamurthy<sup>3</sup></span><span>Qing Li<sup>1</sup></span></p>
     <p class="institution">Iowa State University</p>
     <p class="departments"><sup>1</sup> Industrial &amp; Manufacturing Systems Engineering &nbsp; <sup>2</sup> Aerospace Engineering &nbsp; <sup>3</sup> Mechanical Engineering<br><span>* Corresponding author</span></p>
     <div class="resources"><a class="button primary" href="{{ '/assets/papers/structure-aligned-compensation/paper.pdf' | relative_url }}">Read the paper <span aria-hidden="true">↗</span></a><a class="button" href="https://github.com/danielye0010/modal-based-geometric-compensation">Code <span aria-hidden="true">↗</span></a><a class="button" href="https://doi.org/10.1115/1.4072276">ASME publication <span aria-hidden="true">↗</span></a></div>
     <figure class="hero-figure">
-      <div class="figure-top"><span>FROM OBSERVED WARPAGE TO STRUCTURAL CORRECTION</span><span class="figure-tag">Plate benchmark</span></div>
+      <div class="figure-top"><span><i class="live-mark" aria-hidden="true"></i> STRUCTURE IN FOCUS</span><span class="figure-tag">Plate benchmark / Fig. 6</span></div>
       <a class="zoom" href="{{ '/assets/papers/structure-aligned-compensation/plate-compensation.webp' | relative_url }}" aria-label="Enlarge plate compensation comparison"><img src="{{ '/assets/papers/structure-aligned-compensation/plate-compensation.webp' | relative_url }}" width="1452" height="369" alt="Paper Figure 6: nominal plate and red direct-inversion surface overlaid with blue modal compensation; separate direct and modal views at right." fetchpriority="high"></a>
       <figcaption><span><i class="swatch red"></i> Direct inversion &nbsp; <i class="swatch blue"></i> Modal compensation</span><span>Fig. 6 · Displacements exaggerated 5×</span></figcaption>
     </figure>
-    <p class="takeaway">Compensate the <em>structural deformation</em><br>within the observed geometric deviation.</p>
+    <a class="discover" href="#idea">Explore the idea <span aria-hidden="true">↓</span></a>
   </section>
 
   <section class="section wrap split" id="idea">
-    <div><p class="eyebrow">The core idea</p><h2>Represent first.<br>Compensate second.</h2><p>Measured deformation contains both structural warpage and local artifacts. We project it onto a small set of the part’s vibration modes, then reverse only the retained structural component.</p><p class="method-line">Nominal geometry → Vibration modes → Project deformation → Compensate</p></div>
+    <div><p class="eyebrow"><span class="section-number">01</span> The insight</p><h2>Compensation starts<br>with representation.</h2><p>Measured deformation contains both structural warpage and local artifacts. We project it onto a small set of the part’s vibration modes, then reverse only the retained structural component.</p><ol class="method-line" aria-label="Method overview"><li>Geometry</li><li>Modes</li><li>Projection</li><li>Compensation</li></ol></div>
     <figure class="paper-figure"><a class="zoom" href="{{ '/assets/papers/structure-aligned-compensation/representation.webp' | relative_url }}" aria-label="Enlarge deformation representation comparison"><img src="{{ '/assets/papers/structure-aligned-compensation/representation.webp' | relative_url }}" width="1446" height="708" loading="lazy" alt="Nominal plate, built geometry, noisy full-field deformation, and smooth reduced modal representation."></a><figcaption>Fig. 1 · Nominal (a), built (b), full-field (c), and reduced modal (d) representations.</figcaption></figure>
   </section>
 
   <section class="section wrap compact-results" id="results">
-    <div class="section-heading"><div><p class="eyebrow">Key results</p><h2>Structural correction.<br>Fewer local artifacts.</h2></div><p>Finite-element studies on a plate and an L-bracket show lower residual deformation than direct inversion.</p></div>
+    <div class="section-heading"><div><p class="eyebrow"><span class="section-number">02</span> The evidence</p><h2>Less residual warpage.<br>Smoother correction.</h2></div><p>Finite-element studies on a plate and an L-bracket show lower residual deformation than direct inversion.</p></div>
     <div class="result-highlights">
-      <div><span class="eyebrow">Plate · Global residual RMS</span><strong>0.014 → 0.0061 <small>mm</small></strong><p>Direct inversion → Modal · Table 3</p></div>
-      <div><span class="eyebrow">L-bracket · Peak residual</span><strong>2.94 → 2.07 <small>mm</small></strong><p>Direct inversion → Modal · Table 4</p></div>
+      <div><span class="eyebrow">Plate benchmark</span><strong>56<span>%</span><span class="metric-arrow" aria-hidden="true">↘</span></strong><h3>Lower residual RMS</h3><p>0.014 → 0.0061 mm<br>Direct inversion → Modal · Table 3</p></div>
+      <div><span class="eyebrow">L-bracket benchmark</span><strong>30<span>%</span><span class="metric-arrow" aria-hidden="true">↘</span></strong><h3>Lower peak residual</h3><p>2.94 → 2.07 mm<br>Direct inversion → Modal · Table 4</p></div>
     </div>
-    <div class="compact-comparison"><figure class="paper-figure"><a class="zoom" href="{{ '/assets/papers/structure-aligned-compensation/scan-compensation.webp' | relative_url }}" aria-label="Enlarge scan-perturbed compensation comparison"><img src="{{ '/assets/papers/structure-aligned-compensation/scan-compensation.webp' | relative_url }}" width="708" height="537" loading="lazy" alt="Direct inversion produces local surface artifacts on red brackets; modal compensation produces smoother blue brackets."></a><figcaption>Fig. 11 · Direct inversion (top), modal compensation (bottom).</figcaption></figure><div><h3>Smoother geometry under imperfect observations.</h3><p>Modal projection suppresses local reconstruction artifacts while preserving the main structural deformation.</p><p class="small">Simulated closed-loop results; improvement varies with geometry. Best suited to deformation captured by a compact structural modal basis.</p></div></div>
+    <p class="result-context">Rounded reductions relative to direct inversion in the paper’s single-pass finite-element closed-loop studies.</p><div class="compact-comparison"><figure class="paper-figure"><a class="zoom" href="{{ '/assets/papers/structure-aligned-compensation/scan-compensation.webp' | relative_url }}" aria-label="Enlarge scan-perturbed compensation comparison"><img src="{{ '/assets/papers/structure-aligned-compensation/scan-compensation.webp' | relative_url }}" width="708" height="537" loading="lazy" alt="Direct inversion produces local surface artifacts on red brackets; modal compensation produces smoother blue brackets."></a><figcaption>Fig. 11 · Direct inversion (top), modal compensation (bottom).</figcaption></figure><div><h3>Smoother geometry under imperfect observations.</h3><p>Modal projection suppresses local reconstruction artifacts while preserving the main structural deformation.</p><p class="small">The benefit is strongest when a compact structural modal basis captures the deformation. Improvement varies with geometry.</p></div></div>
   </section>
 
-  <section class="section wrap citation-section" id="citation"><div class="section-heading"><div><p class="eyebrow">Reference & resources</p><h2>Build on this work.</h2></div><div class="citation-actions"><a class="text-link" href="{{ '/assets/papers/structure-aligned-compensation/citation.bib' | relative_url }}" download>Download BibTeX ↓</a><button class="button" id="copy-citation">Copy citation</button><span id="copy-status" role="status" aria-live="polite"></span></div></div>
+  <section class="section wrap citation-section" id="citation"><div class="section-heading"><div><p class="eyebrow">Continue exploring</p><h2>Explore the research.</h2></div><div class="citation-actions"><a class="text-link" href="{{ '/assets/papers/structure-aligned-compensation/citation.bib' | relative_url }}" download>Download BibTeX ↓</a><button class="button" id="copy-citation">Copy citation</button><span id="copy-status" role="status" aria-live="polite"></span></div></div>
     <details class="citation-details"><summary>BibTeX</summary><pre><code id="bibtex">@article{ye2026structure,
   title = {Structure-Aligned Geometric Compensation for Additive Manufacturing Warpage via Vibrational Modal Analysis},
   author = {Ye, Yifei and Liu, Lijie and Liao, Yiliang and Holland, Stephen and Krishnamurthy, Adarsh and Li, Qing},
