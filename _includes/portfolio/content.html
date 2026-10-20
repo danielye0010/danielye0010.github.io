@@ -8,18 +8,24 @@
 <div class="pf-intro"><p class="pf-eyebrow">{{ p.nav[1] }}</p><h2>{{ p.research }}</h2><p class="pf-lead">{{ p.research_intro }}</p></div>
 {% include portfolio/paper.html %}
 <div class="pf-section"><h2>{{ p.ongoing }}</h2>{% for theme in p.themes %}<article class="pf-theme"><span class="pf-number">0{{ forloop.index }}</span><div><h3>{{ theme[0] }}</h3><p>{{ theme[1] }}</p></div></article>{% endfor %}</div>
-{% when 'manufacturing' %}
-<div class="pf-intro"><p class="pf-eyebrow">{{ p.nav[2] }}</p><h2>{{ p.manufacturing }}</h2><p class="pf-lead">{{ p.manufacturing_intro }}</p></div>
-<h2 class="pf-am-heading">{{ p.am_heading }}</h2><div class="pf-am-processes">{% for photo in p.processes %}<article class="pf-process" id="{{ photo.id }}"><figure>{% include portfolio/photo.html photo=photo %}<figcaption>{{ photo.alt }}</figcaption></figure><div><p class="pf-eyebrow">0{{ forloop.index }} / {{ photo.name }}</p><h2>{{ photo.title }}</h2><p>{{ photo.text }}</p></div></article>{% endfor %}</div>
-<div class="pf-equipment" id="metrology">
-  <p class="pf-eyebrow">MACHINING &amp; METROLOGY</p>
-  <h2>{{ p.metrology }}</h2><p>{{ p.metrology_text }}</p>
-  <div class="pf-equipment-grid">
-    {% for instrument in p.equipment %}
-    <article><figure><img src="{{ '/assets/img/manufacturing/' | append: instrument.image | relative_url }}" width="1400" height="1050" loading="lazy" decoding="async" alt="{{ instrument.alt }}"></figure><p class="pf-eyebrow">{{ instrument.type }}</p><h3>{{ instrument.name }}</h3><p>{{ instrument.text }}</p></article>
-    {% endfor %}
-  </div>
-</div>
+{% when 'engineering' %}
+<div class="pf-intro"><p class="pf-eyebrow">{{ p.nav[2] }}</p><h2>{{ p.engineering }}</h2><p class="pf-lead">{{ p.engineering_intro }}</p></div>
+<div class="pf-engineering-section" id="simulation">
+<h2>{{ p.simulation_heading }}</h2><p class="pf-engineering-intro">{{ p.simulation_intro }}</p>
+<div class="pf-simulation-grid">{% for item in p.simulation %}
+<article id="{{ item.id }}"><figure>
+{% if item.video %}<video class="pf-method-video" controls autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/img/engineering/' | append: item.image | relative_url }}" aria-label="{{ item.alt }}"><source src="{{ '/assets/img/engineering/' | append: item.video | relative_url }}" type="video/mp4"><a href="{{ '/assets/img/engineering/' | append: item.video | relative_url }}">{{ item.alt }}</a></video>
+<figcaption>{{ item.caption }}<span class="pf-media-credit"><a href="{{ '/assets/img/engineering/CREDITS.txt' | relative_url }}">{{ p.method_demo }}</a> · <a href="{{ item.source }}">{{ item.author }}</a> · <a href="{{ item.license_url }}">{{ item.license }}</a></span></figcaption>
+{% else %}<img src="{{ '/assets/img/engineering/' | append: item.image | relative_url }}" width="900" height="520" loading="lazy" alt="{{ item.alt }}"><figcaption>{{ p.schematic }}</figcaption>{% endif %}
+</figure><p class="pf-eyebrow">0{{ forloop.index }} / {{ item.name }}</p><h3>{{ item.title }}</h3><p class="pf-engineering-skills">{{ item.skills | join: ' · ' }}</p></article>{% endfor %}</div></div>
+<div class="pf-engineering-section pf-fabrication" id="manufacturing">
+<h2>{{ p.fabrication_heading }}</h2><p class="pf-engineering-intro">{{ p.fabrication_intro }}</p>
+<h3 class="pf-engineering-group">{{ p.am_heading }}</h3><div class="pf-am-processes">{% for photo in p.processes %}<article class="pf-process" id="{{ photo.id }}"><figure>{% include portfolio/photo.html photo=photo %}</figure><div><h3>{{ photo.name }}</h3><p class="pf-process-title">{{ photo.title }}</p><p>{{ photo.text }}</p></div></article>{% endfor %}</div>
+<div class="pf-equipment" id="metrology"><h3 class="pf-engineering-group">{{ p.metrology }}</h3>
+<div class="pf-equipment-grid">{% for instrument in p.equipment %}<article><figure><img src="{{ '/assets/img/manufacturing/' | append: instrument.image | relative_url }}" width="1400" height="1050" loading="lazy" decoding="async" alt="{{ instrument.alt }}"></figure><h3>{{ instrument.name }}</h3><p class="pf-equipment-subtitle">{{ instrument.subtitle }}</p><p>{{ instrument.text }}</p></article>{% endfor %}</div></div></div>
+<script>
+(function(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.pf-method-video').forEach(function(video){video.removeAttribute('autoplay');video.pause();});}})();
+</script>
 
 {% when 'projects' %}
 <div class="pf-intro"><p class="pf-eyebrow">{{ p.nav[3] }}</p><h2>{{ p.projects }}</h2><p class="pf-more-projects"><a href="https://github.com/danielye0010?tab=repositories">{{ p.more_projects }} ↗</a></p><p class="pf-lead">{{ p.projects_intro }}</p></div>

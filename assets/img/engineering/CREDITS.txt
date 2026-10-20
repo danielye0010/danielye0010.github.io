@@ -1,0 +1,9 @@
+# Engineering media credits
+
+These external simulation clips illustrate engineering methods; they are not Daniel Ye project outputs. The fabrication and metrology photographs remain the owner's supplied on-site photographs.
+
+- `cfd-heat-sink.mp4` / `cfd-heat-sink.png`: Isofilm, **CFD Forced Convection Heat Sink v4**, https://commons.wikimedia.org/wiki/File:CFD_Forced_Convection_Heat_Sink_v4.gif . Licensed under **CC BY-SA 3.0**, https://creativecommons.org/licenses/by-sa/3.0/ . Original GIF transcoded to MP4; first frame exported as PNG. No simulation content changed.
+- `fea-truss-modes.mp4` / `fea-truss-modes.png`: Ajay B Harish, **ModalAnalysis TrussBridge**, https://commons.wikimedia.org/wiki/File:ModalAnalysis_TrussBridge.gif . Licensed under **CC BY-SA 4.0**, https://creativecommons.org/licenses/by-sa/4.0/ . Original GIF transcoded to MP4 (563px width rounded to 562px for video encoding); first frame exported as PNG. No simulation content changed.
+- `parametric-bracket.svg`: original code-authored solid-modeling schematic for this website. Illustrative geometry with symbolic dimensions, not a CAD screenshot or a claimed fabricated project.
+
+Downloaded 2026-10-20. Transcoded derivatives remain available under their respective original media licenses. The clips do not establish competence with the source authors' specific solvers.

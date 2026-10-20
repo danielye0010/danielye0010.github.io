@@ -10,7 +10,7 @@ const path=require('path');
   // Local visual QA must not send telemetry.
   await context.route('**/*',route=> /cloudflareinsights|google-analytics/.test(route.request().url()) ? route.abort() : route.continue());
   const page=await context.newPage();
-  for(const lang of ['en','zh'])for(const name of ['home','research','manufacturing','projects']){
+  for(const lang of ['en','zh'])for(const name of ['home','research','engineering','projects']){
    const url='http://127.0.0.1:4000/'+(lang==='zh'?'zh/':'')+(name==='home'?'':name+'/');
    const response=await page.goto(url,{waitUntil:'networkidle'});
    await page.evaluate(async()=>{await document.fonts.ready;for(const im of document.images){if(im.loading==='lazy')im.loading='eager';}await Promise.all([...document.images].map(im=>im.decode().catch(()=>{})));});

@@ -21,7 +21,7 @@ const keyboardTheme=await page.evaluate(()=>document.documentElement.dataset.the
 const widths=[];
 for(const width of [320,768,1024]){
  await page.setViewportSize({width,height:900});
- for(const route of ['/','/research/','/manufacturing/','/projects/','/zh/']){
+ for(const route of ['/','/research/','/engineering/','/projects/','/zh/']){
   await page.goto('http://127.0.0.1:4000'+route);
   widths.push({width,route,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)});
  }

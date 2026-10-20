@@ -14,7 +14,7 @@ class Page(HTMLParser):
    if key in a:self.urls.append((tag,a[key]))
 errors=[];count=0
 for lang in ('','zh/'):
- for kind in ('','research/','manufacturing/','projects/'):
+ for kind in ('','research/','engineering/','projects/'):
   file=root/lang/kind/'index.html'; p=Page();p.feed(file.read_text(encoding='utf-8'))
   for tag,url in p.urls:
    u=urlsplit(url)
