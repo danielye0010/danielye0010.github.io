@@ -25,8 +25,8 @@
     "prints_note": "Modeled and printed by me. Bringing AI-assisted shape creation, 3D editing, and FDM fabrication together—from digital design to physical objects.",
     "metrology": "Machining & 3D metrology",
     "metrology_text": "Hands-on CNC machining, dimensional inspection, and optical 3D scanning—connecting physical parts with geometric analysis.",
-    "projects": "Scientific computing. 3D intelligence. AI automation.",
-    "projects_intro": "Building software that turns complex data and geometry into working tools.",
+    "projects": "Selected Projects",
+    "projects_intro": "AI agents, spatial interaction, 3D learning, and computing at scale.",
     "all_projects": "View projects",
     "repo": "Repository",
     "upstream": "Fork of idealab-isu/NURBSDiff",
@@ -81,25 +81,26 @@
       {
         "name": "TradeAgent",
         "kind": "AI agents · Automation",
-        "text": "An AI trading agent combining market analysis, execution workflows, and an operator dashboard.",
-        "url": "https://github.com/danielye0010/TradeAgent",
-        "image": "tradeagent-dashboard.png",
-        "image_alt": "TradeAgent operator dashboard screenshot",
-        "image_caption": "Project interface"
+        "text": "Your own GPT- or Claude-powered trading agent: from news analysis to automated Robinhood execution, with a public record of its decisions.",
+        "url": "https://danielye0010.github.io/TradeAgent/",
+        "image": "tradeagent-website.png",
+        "image_alt": "TradeAgent public website",
+        "image_caption": "Project website",
+        "link_label": "Visit website"
       },
       {
         "name": "Adaptive Bubble Selection VR",
         "kind": "Unity · C# · HCI",
-        "text": "Intent-aware object selection for virtual reality, combining hand motion, target proximity, and scene density.",
+        "text": "A VR selector that responds to intent: hand motion and scene density dynamically reshape how targets are selected.",
         "url": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
-        "image": "vr-selection.svg",
-        "image_alt": "Adaptive Bubble Selection VR workflow illustration",
-        "image_caption": "Workflow illustration"
+        "image": "vr-selection.png",
+        "image_alt": "Adaptive Bubble Selection VR showing colored targets and selection feedback",
+        "image_caption": "VR prototype"
       },
       {
         "name": "Topology-Aware Point Cloud Completion",
         "kind": "3D deep learning · Reconstruction",
-        "text": "Reconstructing complete 3D shapes from partial point clouds with topology-aware learning.",
+        "text": "Bring topology into 3D AI: fuse persistent-homology features with a point-cloud network to reconstruct missing geometry and evaluate hole structure.",
         "url": "https://github.com/danielye0010/Topology-3D-Completion",
         "image": "topology-completion.svg",
         "image_alt": "Topology-Aware Point Cloud Completion workflow illustration",
@@ -107,30 +108,12 @@
         "credit": "Team project"
       },
       {
-        "name": "Distributed Spectral Search",
+        "name": "2.5 Million Spectra. One Distributed Search.",
         "kind": "Distributed computing · HTCondor",
-        "text": "Searching astronomical spectra at scale with parallel jobs and global candidate ranking.",
+        "text": "Turn a 2.5-million-spectrum search into parallel HTCondor jobs, then reduce the results to the 100 closest galaxy matches.",
         "url": "https://github.com/danielye0010/CB58-Galaxy-Search",
         "image": "spectral-search.svg",
         "image_alt": "Distributed Spectral Search workflow illustration",
-        "image_caption": "Workflow illustration"
-      },
-      {
-        "name": "Java Takeout System",
-        "kind": "Java · Spring Boot · Redis",
-        "text": "A restaurant-ordering backend spanning authentication, order lifecycle, caching, and real-time notifications.",
-        "url": "https://github.com/danielye0010/full-stack-takeout-system",
-        "image": "java-backend.svg",
-        "image_alt": "Java Takeout System workflow illustration",
-        "image_caption": "Workflow illustration"
-      },
-      {
-        "name": "Our Wisconsin Survey Explorer",
-        "kind": "R Shiny · Data visualization",
-        "text": "Interactive survey exploration for UW–Madison, connecting question selection, group comparisons, and visual analysis.",
-        "url": "https://github.com/danielye0010/OurWisconsin-ShinyApp",
-        "image": "survey-explorer.svg",
-        "image_alt": "Our Wisconsin Survey Explorer workflow illustration",
         "image_caption": "Workflow illustration"
       }
     ],
@@ -167,7 +150,8 @@
       }
     ],
     "spider_experience": "Also operated: Artec Spider 3D scanner.",
-    "am_heading": "Additive manufacturing"
+    "am_heading": "Additive manufacturing",
+    "more_projects": "More on GitHub"
   },
   "zh-Hans": {
     "nav": [
@@ -195,8 +179,8 @@
     "prints_note": "自己建模，自己打印。将 AI 辅助形体创作、三维编辑与 FDM 制造串成完整流程，让数字设计成为实物。",
     "metrology": "加工与三维测量",
     "metrology_text": "从 CNC 加工、接触式尺寸检测到光学三维扫描，将实物制造与几何分析连接起来。",
-    "projects": "科学计算、三维智能与 AI 自动化。",
-    "projects_intro": "把复杂数据与几何问题，变成可用的软件工具。",
+    "projects": "精选项目",
+    "projects_intro": "AI 智能体、空间交互、三维学习与大规模计算。",
     "all_projects": "查看项目",
     "repo": "代码仓库",
     "upstream": "派生自 idealab-isu/NURBSDiff",
@@ -251,25 +235,26 @@
       {
         "name": "TradeAgent",
         "kind": "AI 智能体 · 自动化",
-        "text": "集市场分析、交易执行流程与操作面板于一体的 AI 交易智能体。",
-        "url": "https://github.com/danielye0010/TradeAgent",
-        "image": "tradeagent-dashboard.png",
-        "image_alt": "TradeAgent 操作面板截图",
-        "image_caption": "项目界面"
+        "text": "让 GPT 或 Claude 驱动自己的交易智能体：从新闻分析到 Robinhood 自动执行，每次决策都有公开记录。",
+        "url": "https://danielye0010.github.io/TradeAgent/",
+        "image": "tradeagent-website.png",
+        "image_alt": "TradeAgent 项目官网",
+        "image_caption": "项目官网",
+        "link_label": "访问网站"
       },
       {
         "name": "自适应气泡选择 VR",
         "kind": "Unity · C# · 人机交互",
-        "text": "结合手部运动、目标距离与场景密度，实现感知交互意图的 VR 对象选择。",
+        "text": "让 VR 选择理解动作意图：根据手部运动与场景密度，动态调整目标选择策略。",
         "url": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
-        "image": "vr-selection.svg",
-        "image_alt": "自适应气泡选择 VR项目流程示意图",
-        "image_caption": "流程示意"
+        "image": "vr-selection.png",
+        "image_alt": "自适应气泡选择 VR 中的彩色目标与选择反馈",
+        "image_caption": "VR 原型实图"
       },
       {
         "name": "拓扑感知点云补全",
         "kind": "三维深度学习 · 几何重建",
-        "text": "融合拓扑信息与深度学习，从不完整点云重建完整三维形状。",
+        "text": "把拓扑带入三维 AI：将持续同调特征融入点云网络，重建缺失几何，并评估孔洞结构。",
         "url": "https://github.com/danielye0010/Topology-3D-Completion",
         "image": "topology-completion.svg",
         "image_alt": "拓扑感知点云补全项目流程示意图",
@@ -277,30 +262,12 @@
         "credit": "团队项目"
       },
       {
-        "name": "分布式光谱检索",
+        "name": "250 万条光谱的分布式检索",
         "kind": "分布式计算 · HTCondor",
-        "text": "通过并行任务与全局候选排序，实现大规模天文光谱检索。",
+        "text": "将约 250 万条天文光谱的搜索拆解为 HTCondor 并行任务，汇总筛选出最接近目标星系的 100 个候选。",
         "url": "https://github.com/danielye0010/CB58-Galaxy-Search",
         "image": "spectral-search.svg",
         "image_alt": "分布式光谱检索项目流程示意图",
-        "image_caption": "流程示意"
-      },
-      {
-        "name": "Java 外卖系统",
-        "kind": "Java · Spring Boot · Redis",
-        "text": "覆盖身份认证、订单生命周期、缓存与实时通知的餐饮订购后端。",
-        "url": "https://github.com/danielye0010/full-stack-takeout-system",
-        "image": "java-backend.svg",
-        "image_alt": "Java 外卖系统项目流程示意图",
-        "image_caption": "流程示意"
-      },
-      {
-        "name": "Our Wisconsin 调查分析平台",
-        "kind": "R Shiny · 数据可视化",
-        "text": "为威斯康星大学麦迪逊分校开发交互式调查分析工具，连接问题筛选、分组比较与可视化分析。",
-        "url": "https://github.com/danielye0010/OurWisconsin-ShinyApp",
-        "image": "survey-explorer.svg",
-        "image_alt": "Our Wisconsin 调查分析平台项目流程示意图",
         "image_caption": "流程示意"
       }
     ],
@@ -337,6 +304,7 @@
       }
     ],
     "spider_experience": "其他操作经验：Artec Spider 三维扫描仪。",
-    "am_heading": "增材制造"
+    "am_heading": "增材制造",
+    "more_projects": "更多项目 · GitHub"
   }
 }

@@ -49,7 +49,7 @@ Ruby/Jekyll were installed in WSL; locked gems are in `/home/danielye/.cache/por
 ## Validation
 
 - Latest Jekyll build passes: `_portfolio_dev/build.log`.
-- 156 internal page/asset/fragment references pass: `_portfolio_dev/link-check.json`.
+- 128 internal page/asset/fragment references pass: `_portfolio_dev/link-check.json`.
 - All eight routes rendered at 1440 and 390 pixels, with no overflow, missing images, or missing alt text. Dark-mode persistence passes: `_portfolio_dev/visual-check.json`.
 - 18 refreshed screenshots: `_portfolio_dev/screenshots/`; desktop/mobile EN/ZH pages plus dark Home.
 - Gallery proof: `_portfolio_dev/gallery-proof.jpg`.
@@ -68,3 +68,9 @@ Review the local presentation and final bilingual copy. Real VR/app screenshots 
 The green FDM model is labeled Tiger Hill Pagoda, Suzhou / 苏州虎丘塔 following owner identification. The updated bilingual pages passed the Jekyll build, all 156 local links, and desktop/mobile checks across all eight routes with no overflow or missing images.
 
 LPBF, DED and FDM now form one equal-weight Additive Manufacturing group. FDM modeling/printing details follow, then the compact machining/metrology gallery. Added the supplied ZEISS DuraMax CMM and HAAS CNC photos; labeled the original scanner Creaform and listed Artec Spider experience following owner confirmation. Equipment images are capped at 200px desktop / 220px mobile. Descriptions emphasize operation and capability with concise bilingual wording. Source photos are resized/re-encoded without generative changes. This update follows the existing authorized publication workflow.
+
+## Selected projects and media refinement
+
+Home now renders only the existing About Me content, with other sections reached through navigation. Manufacturing and project media use matching 200px desktop / 220px mobile frames; the pagoda no longer expands vertically. Selected Projects retains four distinct capabilities: AI-agent product engineering (TradeAgent), spatial interaction (VR), topology-informed 3D learning, and distributed scientific computing (~2.5 million spectra). The practice takeout application and survey dashboard were removed from the selection; More links to the GitHub repository list.
+
+TradeAgent links directly to https://danielye0010.github.io/TradeAgent/ and uses a real screenshot of its public website hero captured on 2026-10-19. VR uses the owner-supplied screenshot unchanged. Copy was checked against the public project READMEs. No performance claims were added. Build and 128 internal references passed; all eight routes passed 1440px/390px image, overflow, and dark-theme checks.
