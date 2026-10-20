@@ -218,8 +218,8 @@
           "3D Solid Modeling",
           "Parametric Design"
         ],
-        "image": "parametric-bracket.svg",
-        "alt": "Isometric solid-modeling schematic of a bracket with mounting holes and dimensional parameters",
+        "image": "solidworks-interface.png",
+        "alt": "SOLIDWORKS interface showing a mechanical part, feature history tree, modeling toolbar, and component relations",
         "tools": [
           "SolidWorks",
           "Creo",
@@ -227,7 +227,7 @@
         ]
       }
     ],
-    "simulation_credit": "Animations: Isofilm, Ajay B Harish · CC BY-SA · Wikimedia Commons"
+    "simulation_credit": "Media: Isofilm, Ajay B Harish · Wikimedia Commons; CAD interface: SOLIDWORKS"
   },
   "zh-Hans": {
     "nav": [
@@ -448,8 +448,8 @@
           "三维实体建模",
           "参数化设计"
         ],
-        "image": "parametric-bracket.svg",
-        "alt": "带安装孔与尺寸参数的支架等轴测实体建模示意图",
+        "image": "solidworks-interface.png",
+        "alt": "SOLIDWORKS 真实操作界面，显示机械零件、特征历史树、工具栏与零部件关联",
         "tools": [
           "SolidWorks",
           "Creo",
@@ -457,6 +457,6 @@
         ]
       }
     ],
-    "simulation_credit": "动画：Isofilm、Ajay B Harish · CC BY-SA · Wikimedia Commons"
+    "simulation_credit": "素材：Isofilm、Ajay B Harish · Wikimedia Commons；CAD 界面：SOLIDWORKS"
   }
 }
