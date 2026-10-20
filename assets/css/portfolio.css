@@ -82,7 +82,7 @@ html[data-theme="dark"] .portfolio{--pf-ink:#eee7f4;--pf-muted:#c2b8cb;--pf-acce
 .portfolio .pf-main figure img{height:200px;max-height:200px;aspect-ratio:auto;object-fit:contain;background:var(--pf-panel)}
 .portfolio .pf-print-gallery .pf-pagoda img{max-height:200px}
 .portfolio .pf-project-image{margin-bottom:0}
-.portfolio .pf-more-projects{border-top:1px solid var(--pf-line);padding-top:24px;font:14px/1.6 Arial,sans-serif}
+.portfolio .pf-more-projects{margin:0 0 20px;font:14px/1.6 Arial,sans-serif}
 @media(max-width:700px){
   .portfolio .pf-print-gallery,.portfolio .pf-project{grid-template-columns:1fr}
   .portfolio .pf-main figure img{height:220px;max-height:220px}
