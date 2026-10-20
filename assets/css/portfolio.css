@@ -88,3 +88,7 @@ html[data-theme="dark"] .portfolio{--pf-ink:#eee7f4;--pf-muted:#c2b8cb;--pf-acce
   .portfolio .pf-main figure img{height:220px;max-height:220px}
   .portfolio .pf-print-gallery .pf-pagoda img{max-height:220px}
 }
+
+/* Technical stack below each selected project description. */
+.portfolio .pf-project-tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:0 0 18px}
+.portfolio .pf-project-tags li{padding:4px 9px;border:1px solid var(--pf-line);border-radius:3px;color:var(--pf-accent);background:var(--pf-panel);font:11px/1.5 Arial,sans-serif}

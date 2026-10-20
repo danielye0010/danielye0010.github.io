@@ -84,16 +84,28 @@
         "image": "tradeagent-website.png",
         "image_alt": "TradeAgent public website",
         "image_caption": "Project website",
-        "link_label": "Visit website"
+        "link_label": "Visit website",
+        "tags": [
+          "MCP",
+          "LLM Orchestration",
+          "SQLite",
+          "systemd"
+        ]
       },
       {
         "name": "Adaptive Bubble Selection VR",
-        "kind": "Unity · C# · HCI",
+        "kind": "Spatial interaction · HCI",
         "text": "A VR selector that responds to intent: hand motion and scene density dynamically reshape how targets are selected.",
         "url": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
         "image": "vr-selection.png",
         "image_alt": "Adaptive Bubble Selection VR showing colored targets and selection feedback",
-        "image_caption": "VR prototype"
+        "image_caption": "VR prototype",
+        "tags": [
+          "Unity",
+          "OpenXR",
+          "Intent Scoring",
+          "Adaptive Selection"
+        ]
       },
       {
         "name": "Topology-Aware Point Cloud Completion",
@@ -103,7 +115,12 @@
         "image": "topology-completion.svg",
         "image_alt": "Topology-Aware Point Cloud Completion workflow illustration",
         "image_caption": "Workflow illustration",
-        "credit": "Team project"
+        "tags": [
+          "PyTorch",
+          "GUDHI",
+          "Persistent Homology",
+          "PointNet"
+        ]
       },
       {
         "name": "2.5 Million Spectra. One Distributed Search.",
@@ -112,7 +129,13 @@
         "url": "https://github.com/danielye0010/CB58-Galaxy-Search",
         "image": "spectral-search.svg",
         "image_alt": "Distributed Spectral Search workflow illustration",
-        "image_caption": "Workflow illustration"
+        "image_caption": "Workflow illustration",
+        "tags": [
+          "HTCondor",
+          "FITSio",
+          "Template Matching",
+          "Distributed Reduction"
+        ]
       }
     ],
     "capabilities": "Computational geometry · Mechanics · Additive manufacturing",
@@ -228,16 +251,28 @@
         "image": "tradeagent-website.png",
         "image_alt": "TradeAgent 项目官网",
         "image_caption": "项目官网",
-        "link_label": "访问网站"
+        "link_label": "访问网站",
+        "tags": [
+          "MCP",
+          "LLM Orchestration",
+          "SQLite",
+          "systemd"
+        ]
       },
       {
         "name": "自适应气泡选择 VR",
-        "kind": "Unity · C# · 人机交互",
+        "kind": "空间交互 · 人机交互",
         "text": "让 VR 选择理解动作意图：根据手部运动与场景密度，动态调整目标选择策略。",
         "url": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
         "image": "vr-selection.png",
         "image_alt": "自适应气泡选择 VR 中的彩色目标与选择反馈",
-        "image_caption": "VR 原型实图"
+        "image_caption": "VR 原型实图",
+        "tags": [
+          "Unity",
+          "OpenXR",
+          "Intent Scoring",
+          "Adaptive Selection"
+        ]
       },
       {
         "name": "拓扑感知点云补全",
@@ -247,7 +282,12 @@
         "image": "topology-completion.svg",
         "image_alt": "拓扑感知点云补全项目流程示意图",
         "image_caption": "流程示意",
-        "credit": "团队项目"
+        "tags": [
+          "PyTorch",
+          "GUDHI",
+          "Persistent Homology",
+          "PointNet"
+        ]
       },
       {
         "name": "250 万条光谱的分布式检索",
@@ -256,7 +296,13 @@
         "url": "https://github.com/danielye0010/CB58-Galaxy-Search",
         "image": "spectral-search.svg",
         "image_alt": "分布式光谱检索项目流程示意图",
-        "image_caption": "流程示意"
+        "image_caption": "流程示意",
+        "tags": [
+          "HTCondor",
+          "FITSio",
+          "Template Matching",
+          "Distributed Reduction"
+        ]
       }
     ],
     "capabilities": "计算几何 · 力学建模 · 增材制造",
