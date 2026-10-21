@@ -61,4 +61,18 @@
     <loc>https://danielye.net/papers/structure-aligned-compensation/</loc>
     <lastmod>2026-10-20</lastmod>
   </url>
+  <url>
+    <loc>https://danielye.net/creative/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielye.net/creative/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://danielye.net/zh/creative/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielye.net/creative/"/>
+  </url>
+  <url>
+    <loc>https://danielye.net/zh/creative/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielye.net/creative/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://danielye.net/zh/creative/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielye.net/creative/"/>
+  </url>
 </urlset>

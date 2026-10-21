@@ -4,7 +4,8 @@
       "Home",
       "Research",
       "Engineering",
-      "Projects"
+      "Projects",
+      "Creative"
     ],
     "kicker": "Research & engineering portfolio",
     "headline": "Geometry, mechanics, and the shapes we make.",
@@ -241,14 +242,34 @@
         ]
       }
     ],
-    "simulation_credit": "Media: Isofilm, Ajay B Harish · Wikimedia Commons; CAD interface: SOLIDWORKS"
+    "simulation_credit": "Media: Isofilm, Ajay B Harish · Wikimedia Commons; CAD interface: SOLIDWORKS",
+    "creative_heading": "Fiction & Writing",
+    "creative_works": [
+      {
+        "id": "no-sea-in-the-elevator",
+        "url": "https://www.amazon.com/dp/B0H14C6DS1",
+        "name": "No Sea in the Elevator",
+        "original_title": "電梯裡沒有海",
+        "kind": "Short fiction",
+        "text": "A short story collection about cities, systems, and the people caught inside them.",
+        "tags": [
+          "Short Stories",
+          "Traditional Chinese",
+          "Kindle"
+        ],
+        "link_label": "View on Amazon",
+        "image": "no-sea-in-the-elevator.jpg",
+        "image_alt": "Official cover of No Sea in the Elevator (電梯裡沒有海) by Daniel Ye, showing closed elevator doors and a narrow line of light"
+      }
+    ]
   },
   "zh-Hans": {
     "nav": [
       "首页",
       "研究",
       "工程",
-      "项目"
+      "项目",
+      "创作"
     ],
     "kicker": "研究与工程实践",
     "headline": "从几何与力学，走向真实制造。",
@@ -485,6 +506,25 @@
         ]
       }
     ],
-    "simulation_credit": "素材：Isofilm、Ajay B Harish · Wikimedia Commons；CAD 界面：SOLIDWORKS"
+    "simulation_credit": "素材：Isofilm、Ajay B Harish · Wikimedia Commons；CAD 界面：SOLIDWORKS",
+    "creative_heading": "小说与写作",
+    "creative_works": [
+      {
+        "id": "no-sea-in-the-elevator",
+        "url": "https://www.amazon.com/dp/B0H14C6DS1",
+        "name": "電梯裡沒有海",
+        "original_title": "No Sea in the Elevator",
+        "kind": "短篇小说",
+        "text": "一部关于城市、系统与身处其中之人的短篇小说集。",
+        "tags": [
+          "短篇小说集",
+          "繁体中文",
+          "Kindle 电子书"
+        ],
+        "link_label": "在 Amazon 查看",
+        "image": "no-sea-in-the-elevator.jpg",
+        "image_alt": "Daniel Ye 短篇小说集《電梯裡沒有海》的正式封面，电梯门缝透出一线光"
+      }
+    ]
   }
 }

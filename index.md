@@ -16,8 +16,6 @@ I'm a Ph.D. candidate in Industrial Engineering at <a href="https://www.imse.ias
 
 I studied Statistics and Economics at the <a href="https://www.d.umn.edu/" target="_blank">University of Minnesota Duluth</a>, then did a Master's in Statistics at the <a href="https://cdis.wisc.edu/" target="_blank">University of Wisconsin–Madison</a>, where I also worked on research computing infrastructure in the <a href="https://it.wisc.edu/about/division-of-information-technology/research-cyberinfrastructure-2/" target="_blank">Office of the CTO</a>. In between, I worked in journalism in my hometown on reporting and documentary projects.
 
-Outside of research, I enjoy reading and writing. More recently, I published a short story collection, <a href="https://www.amazon.com/%E9%9B%BB%E6%A2%AF%E8%A3%A1%E6%B2%92%E6%9C%89%E6%B5%B7-Traditional-Chinese-Daniel-Ye-ebook/dp/B0H14C6DS1" target="_blank" rel="noopener"><i>No Sea in the Elevator</i></a>, about cities, systems, and the people caught inside them.
-
 <p style="margin-top: 1rem;">
   <a href="https://destroy.spritefusion.com/?from=badge&amp;url=https%3A%2F%2Fdanielye.net%2F"
      target="_blank" rel="noopener noreferrer"

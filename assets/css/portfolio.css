@@ -116,3 +116,15 @@ html[data-theme="dark"] .portfolio{--pf-ink:#eee7f4;--pf-muted:#c2b8cb;--pf-acce
 .portfolio .pf-fabrication .pf-equipment{border:0;padding:0;margin-top:32px}
 .portfolio .pf-fabrication .pf-equipment-grid{margin-top:18px}
 @media(max-width:700px){.portfolio .pf-simulation-grid{grid-template-columns:1fr;gap:28px}.portfolio .pf-simulation-grid figure{min-height:0;margin-bottom:18px}.portfolio .pf-method-video{height:220px}.portfolio .pf-engineering-section{margin-bottom:32px}}
+
+/* Creative works share the portfolio card layout with a portrait book cover. */
+.portfolio .pf-creative-work{grid-template-columns:minmax(160px,.75fr) minmax(0,1.25fr);gap:35px;padding:34px 0 38px;scroll-margin-top:24px}
+.portfolio .pf-creative-cover{background:var(--pf-panel);padding:20px;border-radius:4px;margin:0}
+.portfolio .pf-creative-cover img{border-radius:0}
+.portfolio .pf-creative-work h2{font-size:clamp(29px,3.2vw,42px);letter-spacing:-.8px;margin:0 0 9px}
+.portfolio .pf-creative-work h2 a{color:var(--pf-ink)}
+.portfolio .pf-creative-work h2 a:hover{color:var(--pf-accent)}
+.portfolio .pf-creative-original{font-size:16px;letter-spacing:.6px;margin-bottom:24px}
+.portfolio .pf-creative-work p:not(.pf-eyebrow):not(.pf-creative-original){max-width:580px}
+@media(max-width:1000px) and (min-width:701px){.portfolio .pf-creative-work{grid-template-columns:130px minmax(0,1fr);gap:25px}.portfolio .pf-creative-cover{padding:8px}}
+@media(max-width:700px){.portfolio .pf-creative-work{grid-template-columns:1fr;gap:26px;padding-top:27px}.portfolio .pf-creative-cover{width:100%;max-width:340px}.portfolio .pf-creative-work h2{font-size:31px}.portfolio .pf-creative-original{font-size:14px}}
