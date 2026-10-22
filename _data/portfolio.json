@@ -91,7 +91,7 @@
       {
         "name": "AutoReport System",
         "kind": "Cloud data engineering · Reporting automation",
-        "text": "Turn laboratory activity into reports ready to share. Built one connected system for API collection, AWS analytics, and automated reporting—delivering monthly overviews, unit-level reports, and trimester summaries.",
+        "text": "Engineered a cloud ETL pipeline across signed APIs, S3, Athena, and RMarkdown—automating longitudinal analytics and multi-level reporting.",
         "url": "https://github.com/danielye0010/Auto-usage-report-system",
         "image": "autoreport.svg",
         "image_alt": "AutoReport workflow: collect laboratory usage data, analyze it with AWS S3 and Athena, and generate reports for delivery",
@@ -374,7 +374,7 @@
       {
         "name": "AutoReport 自动报告系统",
         "kind": "云端数据工程 · 报告自动化",
-        "text": "让实验室使用数据成为可交付的报告。构建贯通 API 采集、AWS 云端分析与报告交付的自动化系统，一站输出月度总览、单位报告和阶段汇总。",
+        "text": "构建贯通签名 API、S3、Athena 与 RMarkdown 的云端 ETL 管线，自动完成纵向数据分析与多层级报告生成。",
         "url": "https://github.com/danielye0010/Auto-usage-report-system",
         "image": "autoreport.svg",
         "image_alt": "AutoReport 系统流程：采集实验室使用数据，经 AWS S3 与 Athena 分析，生成并交付报告",
