@@ -1,0 +1,11 @@
+{
+  "original_deformed_volume": 0.6623412225120316,
+  "removed_reference_cap_deformed_volume": 0.00012232240401143516,
+  "cap_quadrature_values": [
+    0.0001223224040114351,
+    0.00012232240401143516
+  ],
+  "cap_quadrature_refinement_gap": 5.421010862427522e-20,
+  "target_A_C_volume": 0.6622189001080202,
+  "method": "unchanged original scalar Q1 determinant integrated over reference spherical cap; body volume reused from independent saved quadrature"
+}

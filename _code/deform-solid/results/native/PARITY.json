@@ -1,0 +1,470 @@
+[
+  {
+    "case": "strong_four_hole",
+    "n": 512,
+    "passed": true,
+    "parity": {
+      "max_abs_value_gap": 2.498001805406602e-16,
+      "max_abs_source_x_gap": 2.220446049250313e-16,
+      "max_abs_source_y_gap": 1.6653345369377348e-16,
+      "max_abs_source_z_gap": 1.6653345369377348e-16,
+      "max_abs_residual_x_gap": 2.220446049250313e-16,
+      "max_abs_residual_y_gap": 2.220446049250313e-16,
+      "max_abs_residual_z_gap": 2.220446049250313e-16,
+      "max_abs_residual_inf_gap": 2.220446049250313e-16,
+      "max_abs_guarded_inverse_error_gap": 3.552713678800501e-15,
+      "max_abs_guarded_field_error_gap": 5.024295867788121e-15,
+      "numeric_status_mismatches": 0,
+      "guarded_sign_mismatches": 0,
+      "raw_sign_mismatches": 0,
+      "max_raw_sign_mismatch_magnitude": 0.0,
+      "native_non_ok": 0,
+      "native_qualified_intervals": 0,
+      "max_native_residual_inf": 9.992007221626409e-15,
+      "python_recomputed_native_residual_inf": 9.992007221626409e-15,
+      "reported_vs_python_residual_gap": 0.0
+    },
+    "saved_e0": {
+      "saved_dense_max_value_gap": 2.498001805406602e-16,
+      "saved_dense_raw_sign_mismatches": 0,
+      "corner_samples": [
+        {
+          "variant": "global",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_four_hole/512_global/samples.npz",
+          "source_sha256": "752c1dc462a42cf015e9095e256a40c2ab0d0b3c2bdbe5ee161b58e665bbbb51",
+          "nodes": 106451,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        },
+        {
+          "variant": "local",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_four_hole/512_local/samples.npz",
+          "source_sha256": "6464d7702c834e35c19b4dd08d14fd3398ecbb6c8c86cf813173a3932dc63a17",
+          "nodes": 52912,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        }
+      ]
+    },
+    "geometry": {
+      "native_vs_python": {
+        "contour_to_reference_max": 2.1410706353088753e-16,
+        "reference_to_contour_max": 2.140611884902447e-16,
+        "hausdorff_sampled": 2.1410706353088753e-16,
+        "area": 0.7566552413688103,
+        "perimeter": 4.2161967091518875,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 0.0,
+        "perimeter_absolute_error": 0.0,
+        "topology_matches": true
+      },
+      "native_vs_saved_forward_reference": {
+        "contour_to_reference_max": 0.0005938063170870584,
+        "reference_to_contour_max": 0.0015497981960522528,
+        "hausdorff_sampled": 0.0015497981960522528,
+        "area": 0.7566552413688103,
+        "perimeter": 4.2161967091518875,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 1.2005993119790226e-05,
+        "perimeter_absolute_error": 0.004680846590048304,
+        "topology_matches": true
+      }
+    }
+  },
+  {
+    "case": "strong_four_hole",
+    "n": 1024,
+    "passed": true,
+    "parity": {
+      "max_abs_value_gap": 2.498001805406602e-16,
+      "max_abs_source_x_gap": 2.220446049250313e-16,
+      "max_abs_source_y_gap": 2.220446049250313e-16,
+      "max_abs_source_z_gap": 1.6653345369377348e-16,
+      "max_abs_residual_x_gap": 2.220446049250313e-16,
+      "max_abs_residual_y_gap": 2.220446049250313e-16,
+      "max_abs_residual_z_gap": 2.220446049250313e-16,
+      "max_abs_residual_inf_gap": 2.220446049250313e-16,
+      "max_abs_guarded_inverse_error_gap": 3.552713678800501e-15,
+      "max_abs_guarded_field_error_gap": 5.024295867788121e-15,
+      "numeric_status_mismatches": 0,
+      "guarded_sign_mismatches": 0,
+      "raw_sign_mismatches": 0,
+      "max_raw_sign_mismatch_magnitude": 0.0,
+      "native_non_ok": 0,
+      "native_qualified_intervals": 0,
+      "max_native_residual_inf": 9.992007221626409e-15,
+      "python_recomputed_native_residual_inf": 9.992007221626409e-15,
+      "reported_vs_python_residual_gap": 0.0
+    },
+    "saved_e0": {
+      "saved_dense_max_value_gap": 2.498001805406602e-16,
+      "saved_dense_raw_sign_mismatches": 0,
+      "corner_samples": [
+        {
+          "variant": "global",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_four_hole/1024_global/samples.npz",
+          "source_sha256": "a2472bd57850a9af055924b7fc1fe3ecaaf532ecc7736084362e0a624d7c3a42",
+          "nodes": 225857,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        },
+        {
+          "variant": "local",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_four_hole/1024_local/samples.npz",
+          "source_sha256": "b842b7e24f151b06cd80cefb98f72fe82b88ac7f02d747d8ed6d1d5a6c3ab18f",
+          "nodes": 91359,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        }
+      ]
+    },
+    "geometry": {
+      "native_vs_python": {
+        "contour_to_reference_max": 2.2028023368671165e-16,
+        "reference_to_contour_max": 2.2027659120599734e-16,
+        "hausdorff_sampled": 2.2028023368671165e-16,
+        "area": 0.7566461959343801,
+        "perimeter": 4.219115297308763,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 1.1102230246251565e-16,
+        "perimeter_absolute_error": 0.0,
+        "topology_matches": true
+      },
+      "native_vs_saved_forward_reference": {
+        "contour_to_reference_max": 0.0002820037541853666,
+        "reference_to_contour_max": 0.0004980877769273259,
+        "hausdorff_sampled": 0.0004980877769273259,
+        "area": 0.7566461959343801,
+        "perimeter": 4.219115297308763,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 2.9605586895353753e-06,
+        "perimeter_absolute_error": 0.001762258433172903,
+        "topology_matches": true
+      }
+    }
+  },
+  {
+    "case": "strong_four_hole",
+    "n": 2048,
+    "passed": true,
+    "parity": {
+      "max_abs_value_gap": 9.520162436160717e-15,
+      "max_abs_source_x_gap": 9.936496070395151e-15,
+      "max_abs_source_y_gap": 9.547918011776346e-15,
+      "max_abs_source_z_gap": 9.825473767932635e-15,
+      "max_abs_residual_x_gap": 1.0047518372857667e-14,
+      "max_abs_residual_y_gap": 9.880984919163893e-15,
+      "max_abs_residual_z_gap": 9.992007221626409e-15,
+      "max_abs_residual_inf_gap": 9.992007221626409e-15,
+      "max_abs_guarded_inverse_error_gap": 1.5987211554602254e-13,
+      "max_abs_guarded_field_error_gap": 2.26093314050463e-13,
+      "numeric_status_mismatches": 0,
+      "guarded_sign_mismatches": 0,
+      "raw_sign_mismatches": 0,
+      "max_raw_sign_mismatch_magnitude": 0.0,
+      "native_non_ok": 0,
+      "native_qualified_intervals": 0,
+      "max_native_residual_inf": 9.995476668578362e-15,
+      "python_recomputed_native_residual_inf": 9.995476668578362e-15,
+      "reported_vs_python_residual_gap": 0.0
+    },
+    "saved_e0": {
+      "saved_dense_max_value_gap": 9.520162436160717e-15,
+      "saved_dense_raw_sign_mismatches": 0,
+      "corner_samples": [
+        {
+          "variant": "global",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_four_hole/2048_global/samples.npz",
+          "source_sha256": "fbb04f09da934020f7af47a5fb0a131c8ba00d4dd7564b3c1d778ba1599b6e08",
+          "nodes": 468586,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        },
+        {
+          "variant": "local",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_four_hole/2048_local/samples.npz",
+          "source_sha256": "82cc3c52adee1bfeef24b3381e8c359c4aa465af78ea4a86874211d8e4cf4651",
+          "nodes": 165033,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        }
+      ]
+    },
+    "geometry": {
+      "native_vs_python": {
+        "contour_to_reference_max": 2.1414781307222482e-16,
+        "reference_to_contour_max": 2.1412805057445302e-16,
+        "hausdorff_sampled": 2.1414781307222482e-16,
+        "area": 0.7566439486972147,
+        "perimeter": 4.219821663054176,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 0.0,
+        "perimeter_absolute_error": 0.0,
+        "topology_matches": true
+      },
+      "native_vs_saved_forward_reference": {
+        "contour_to_reference_max": 0.0001847558290742179,
+        "reference_to_contour_max": 0.0003402536456429328,
+        "hausdorff_sampled": 0.0003402536456429328,
+        "area": 0.7566439486972147,
+        "perimeter": 4.219821663054176,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 7.13321524181687e-07,
+        "perimeter_absolute_error": 0.0010558926877601849,
+        "topology_matches": true
+      }
+    }
+  },
+  {
+    "case": "strong_small_hole",
+    "n": 512,
+    "passed": true,
+    "parity": {
+      "max_abs_value_gap": 2.498001805406602e-16,
+      "max_abs_source_x_gap": 2.220446049250313e-16,
+      "max_abs_source_y_gap": 1.6653345369377348e-16,
+      "max_abs_source_z_gap": 1.6653345369377348e-16,
+      "max_abs_residual_x_gap": 2.220446049250313e-16,
+      "max_abs_residual_y_gap": 2.220446049250313e-16,
+      "max_abs_residual_z_gap": 2.220446049250313e-16,
+      "max_abs_residual_inf_gap": 2.220446049250313e-16,
+      "max_abs_guarded_inverse_error_gap": 3.552713678800501e-15,
+      "max_abs_guarded_field_error_gap": 5.024295867788121e-15,
+      "numeric_status_mismatches": 0,
+      "guarded_sign_mismatches": 0,
+      "raw_sign_mismatches": 0,
+      "max_raw_sign_mismatch_magnitude": 0.0,
+      "native_non_ok": 0,
+      "native_qualified_intervals": 0,
+      "max_native_residual_inf": 9.992007221626409e-15,
+      "python_recomputed_native_residual_inf": 9.992007221626409e-15,
+      "reported_vs_python_residual_gap": 0.0
+    },
+    "saved_e0": {
+      "saved_dense_max_value_gap": 2.498001805406602e-16,
+      "saved_dense_raw_sign_mismatches": 0,
+      "corner_samples": [
+        {
+          "variant": "global",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_small_hole/512_global/samples.npz",
+          "source_sha256": "dc5498c7b3fdc2c962fefb3deefd2cc86a69fed559ffb1a61677ffad27cc5f1d",
+          "nodes": 105624,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        },
+        {
+          "variant": "local",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_small_hole/512_local/samples.npz",
+          "source_sha256": "2c10797b6ce2eb6d81ca60b4de4c249485a25c2a65bb15567801f525a5ad9907",
+          "nodes": 52398,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        }
+      ]
+    },
+    "geometry": {
+      "native_vs_python": {
+        "contour_to_reference_max": 2.1410706353088753e-16,
+        "reference_to_contour_max": 2.140611884902447e-16,
+        "hausdorff_sampled": 2.1410706353088753e-16,
+        "area": 0.7573407930945346,
+        "perimeter": 4.143535811486047,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 0.0,
+        "perimeter_absolute_error": 0.0,
+        "topology_matches": true
+      },
+      "native_vs_saved_forward_reference": {
+        "contour_to_reference_max": 0.0005938063170870584,
+        "reference_to_contour_max": 0.0015497981960522528,
+        "hausdorff_sampled": 0.0015497981960522528,
+        "area": 0.7573407930945346,
+        "perimeter": 4.143535811486047,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 1.2146214723451898e-05,
+        "perimeter_absolute_error": 0.005205851609645151,
+        "topology_matches": true
+      }
+    }
+  },
+  {
+    "case": "strong_small_hole",
+    "n": 1024,
+    "passed": true,
+    "parity": {
+      "max_abs_value_gap": 2.498001805406602e-16,
+      "max_abs_source_x_gap": 2.220446049250313e-16,
+      "max_abs_source_y_gap": 2.220446049250313e-16,
+      "max_abs_source_z_gap": 1.6653345369377348e-16,
+      "max_abs_residual_x_gap": 2.220446049250313e-16,
+      "max_abs_residual_y_gap": 2.220446049250313e-16,
+      "max_abs_residual_z_gap": 2.220446049250313e-16,
+      "max_abs_residual_inf_gap": 2.220446049250313e-16,
+      "max_abs_guarded_inverse_error_gap": 3.552713678800501e-15,
+      "max_abs_guarded_field_error_gap": 5.024295867788121e-15,
+      "numeric_status_mismatches": 0,
+      "guarded_sign_mismatches": 0,
+      "raw_sign_mismatches": 0,
+      "max_raw_sign_mismatch_magnitude": 0.0,
+      "native_non_ok": 0,
+      "native_qualified_intervals": 0,
+      "max_native_residual_inf": 9.992007221626409e-15,
+      "python_recomputed_native_residual_inf": 9.992007221626409e-15,
+      "reported_vs_python_residual_gap": 0.0
+    },
+    "saved_e0": {
+      "saved_dense_max_value_gap": 2.498001805406602e-16,
+      "saved_dense_raw_sign_mismatches": 0,
+      "corner_samples": [
+        {
+          "variant": "global",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_small_hole/1024_global/samples.npz",
+          "source_sha256": "b096ef5bd1f28edddc4d74d5c2314926130c3e29bb5f96b48961ccf10212146d",
+          "nodes": 223622,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        },
+        {
+          "variant": "local",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_small_hole/1024_local/samples.npz",
+          "source_sha256": "f3a3cf54f3850256b7a8864c4085e39864d817dc1e1883fb95e72e3989972e0b",
+          "nodes": 90192,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        }
+      ]
+    },
+    "geometry": {
+      "native_vs_python": {
+        "contour_to_reference_max": 2.2028023368671165e-16,
+        "reference_to_contour_max": 2.2027659120599734e-16,
+        "hausdorff_sampled": 2.2028023368671165e-16,
+        "area": 0.7573316423972528,
+        "perimeter": 4.146860681029041,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 1.1102230246251565e-16,
+        "perimeter_absolute_error": 0.0,
+        "topology_matches": true
+      },
+      "native_vs_saved_forward_reference": {
+        "contour_to_reference_max": 0.0002820037541853666,
+        "reference_to_contour_max": 0.0004980877769273259,
+        "hausdorff_sampled": 0.0004980877769273259,
+        "area": 0.7573316423972528,
+        "perimeter": 4.146860681029041,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 2.995517441650719e-06,
+        "perimeter_absolute_error": 0.0018809820666509935,
+        "topology_matches": true
+      }
+    }
+  },
+  {
+    "case": "strong_small_hole",
+    "n": 2048,
+    "passed": true,
+    "parity": {
+      "max_abs_value_gap": 9.520162436160717e-15,
+      "max_abs_source_x_gap": 9.936496070395151e-15,
+      "max_abs_source_y_gap": 9.547918011776346e-15,
+      "max_abs_source_z_gap": 9.825473767932635e-15,
+      "max_abs_residual_x_gap": 1.0047518372857667e-14,
+      "max_abs_residual_y_gap": 9.880984919163893e-15,
+      "max_abs_residual_z_gap": 9.992007221626409e-15,
+      "max_abs_residual_inf_gap": 9.992007221626409e-15,
+      "max_abs_guarded_inverse_error_gap": 1.5987211554602254e-13,
+      "max_abs_guarded_field_error_gap": 2.26093314050463e-13,
+      "numeric_status_mismatches": 0,
+      "guarded_sign_mismatches": 0,
+      "raw_sign_mismatches": 0,
+      "max_raw_sign_mismatch_magnitude": 0.0,
+      "native_non_ok": 0,
+      "native_qualified_intervals": 0,
+      "max_native_residual_inf": 9.995476668578362e-15,
+      "python_recomputed_native_residual_inf": 9.995476668578362e-15,
+      "reported_vs_python_residual_gap": 0.0
+    },
+    "saved_e0": {
+      "saved_dense_max_value_gap": 9.520162436160717e-15,
+      "saved_dense_raw_sign_mismatches": 0,
+      "corner_samples": [
+        {
+          "variant": "global",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_small_hole/2048_global/samples.npz",
+          "source_sha256": "8a632b3b2379e3e6300d9fa3e5f0e692f1a221854dea31d521c3589fd8b51978",
+          "nodes": 462867,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        },
+        {
+          "variant": "local",
+          "source": "course_project/gpu/e0/results/run_20261021_complete/strong_small_hole/2048_local/samples.npz",
+          "source_sha256": "b854bda001484daa3920822d99c43de85a821d8ad64dd6fc3b8a5061fd7b61dc",
+          "nodes": 163061,
+          "max_value_gap": 2.498001805406602e-16,
+          "native_vs_e0_validity_mismatches": 0,
+          "native_nominal_outside_saved_e0_point_interval": 0,
+          "note": "Nominal C++ value is not the exact-real value certified by an E0 interval; interval comparison is observed evidence only"
+        }
+      ]
+    },
+    "geometry": {
+      "native_vs_python": {
+        "contour_to_reference_max": 2.1414781307222482e-16,
+        "reference_to_contour_max": 2.1412805057445302e-16,
+        "hausdorff_sampled": 2.1414781307222482e-16,
+        "area": 0.7573293565061749,
+        "perimeter": 4.147656780027351,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 0.0,
+        "perimeter_absolute_error": 0.0,
+        "topology_matches": true
+      },
+      "native_vs_saved_forward_reference": {
+        "contour_to_reference_max": 0.0001847558290742179,
+        "reference_to_contour_max": 0.0003402536456429328,
+        "hausdorff_sampled": 0.0003402536456429328,
+        "area": 0.7573293565061749,
+        "perimeter": 4.147656780027351,
+        "components": 1,
+        "holes": 4,
+        "area_absolute_error": 7.096263637818012e-07,
+        "perimeter_absolute_error": 0.0010848830683416466,
+        "topology_matches": true
+      }
+    }
+  }
+]

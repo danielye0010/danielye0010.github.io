@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DeformSolid — Nonlinear Solid Modeling | Daniel Ye</title>
+  <meta name="description" content="An interactive solid modeling application combining nonlinear deformation, 3D Boolean editing, cross-section inspection, and native C++ batch evaluation. CUDA GPU backend in development.">
+  <link rel="canonical" href="https://danielye.net/projects/deform-solid/">
+  <meta property="og:title" content="DeformSolid — Nonlinear Solid Modeling">
+  <meta property="og:description" content="Solid geometry, nonlinear deformation, and a native C++ engine built toward GPU scale.">
+  <meta property="og:image" content="https://danielye.net/assets/img/projects/deform-solid.png">
+  <meta name="theme-color" content="#574187"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><a class="wordmark" href="/projects/">Daniel Ye <span>/ Projects</span></a><nav aria-label="Project"><a href="#explore">Explore</a><a href="#geometry">Geometry</a><a href="#compute">Compute</a><a href="https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid">GitHub ↗</a></nav></header>
+<main id="main">
+<section class="hero">
+  <p class="eyebrow">DeformSolid / Computational geometry</p>
+  <h1>Model the solid.<br>Follow the deformation.</h1>
+  <p class="lead">Boolean editing and cross-section inspection on nonlinearly deformed solids. An inverse-implicit representation connects exact reference geometry to its deformed shape.</p>
+  <div class="stack"><span>C++</span><span>Python</span><span>WebGL</span><span class="upcoming"><i></i> CUDA · in development</span></div>
+  <div class="hero-links"><a class="button" href="#explore">Explore the geometry <span>↓</span></a><a href="https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid">Read the code ↗</a></div>
+  <figure class="hero-figure"><img src="figures/workflow.png" width="2640" height="880" alt="Actual generated reference four-hole solid, nonlinear deformation, spatial Boolean result, and enlarged cut detail"><figcaption>One four-hole component. A nonlinear map. Actual three-dimensional material removal.</figcaption></figure>
+</section>
+<section id="explore" class="section">
+  <div class="section-heading"><div><p class="eyebrow">01 / Interactive geometry</p><h2>One model. Five ways to inspect it.</h2></div><p>Rotate the actual mesh, compare operations, and move inside the cut. These are the generated geometry outputs.</p></div>
+  <div class="viewer-shell">
+    <div class="model-tabs" role="group" aria-label="Choose solid">
+      <button data-model="reference">Reference</button><button data-model="deformed">Deformed</button><button data-model="cut-first">A · Cut first</button><button data-model="cut-after" class="selected" aria-pressed="true">B · Cut after</button><button data-model="transported">C · Transported tool</button>
+    </div>
+    <div class="viewport"><canvas id="solid" tabindex="0" role="img" aria-label="Interactive three-dimensional deformed solid. Drag to rotate, scroll to zoom, or use arrow keys and plus/minus."></canvas><div class="scene-label"><span id="model-label">B / Deform, then cut</span><small id="model-meta" aria-live="polite">Loading geometry…</small></div><div class="scene-hint">Drag to rotate · Scroll to zoom · Arrow keys supported</div><div class="viewer-error" id="viewer-error" hidden>3D rendering is unavailable in this browser. The comparison figures and downloadable meshes remain available below.</div></div>
+    <div class="viewer-controls"><div class="camera-buttons"><button id="whole" class="selected">Whole solid</button><button id="detail">Cut detail</button><button id="reset">Reset view</button></div><label for="clip">Reveal interior <input id="clip" type="range" min="0.07" max="1.2" value="1.2" step="0.005"></label><a id="mesh-download" href="downloads/cut-after.obj" download>Download OBJ ↓</a></div>
+  </div>
+  <p class="caption">Browser display uses the coarse meshes; the comparisons below use both refinement levels. The reveal control clips the view; it does not construct a capped Boolean. OBJ downloads retain the original double-precision vertices.</p>
+</section>
+<section id="geometry" class="section">
+  <div class="section-heading"><div><p class="eyebrow">02 / Operations under deformation</p><h2>The cutting tool has a coordinate system.</h2></div><p>Cutting in reference space and cutting in the deformed scene answer different geometric questions. Transporting the tool connects them.</p></div>
+  <div class="operation-grid"><article><span class="operation-id">A</span><h3>Cut, then deform</h3><p>Remove the reference-space sphere B₀, then map the remaining solid.</p><code>Φ(Ω₀ ∖ B₀)</code></article><article><span class="operation-id">B</span><h3>Deform, then cut</h3><p>Subtract the independently specified spatial sphere B₁ from the deformed body.</p><code>Φ(Ω₀) ∖ B₁</code></article><article><span class="operation-id">C</span><h3>Transport the tool</h3><p>Map B₀ with the body, then execute a 3D Boolean in deformed space.</p><code>Φ(Ω₀) ∖ Φ(B₀)</code></article></div>
+  <figure><img src="figures/cut_order_geometry.png" width="2640" height="919" loading="lazy" alt="Matching local three-dimensional views of cut-first, spatial-cut, and transported-tool Boolean outputs"><figcaption>A and C describe the same continuous target. Their sampled surface discrepancy decreases from 2.73 × 10⁻⁴ to 6.56 × 10⁻⁵ on refinement. B uses the established independently placed spatial sphere.</figcaption></figure>
+  <details><summary>Tool placement</summary><p>B₀: center (0.0525, 0.18, 0.62), radius 0.045. B₁: center (0.09942443490438002, 0.183131631211526, 0.6264289927536667), radius 0.045. The transported Φ(B₀) is generally not a sphere. Coordinates and volumes are dimensionless.</p></details>
+</section>
+<section id="sections" class="section">
+  <div class="section-heading"><div><p class="eyebrow">03 / Cross-section inspection</p><h2>Look through the shape.</h2></div><p>Compare closed contours at three fixed heights. Every displayed section has one material component and four holes.</p></div>
+  <div class="section-view"><div class="section-toolbar"><label>Inspection plane <select id="plane"><option value="0">z = 0.62643 · through the cut</option><option value="1">z = 0.64893 · upper cut</option><option value="2">z = 0.71643 · above the cut</option></select></label><div><button id="section-whole" class="selected">Whole section</button><button id="section-detail">Cut detail</button></div></div><svg id="section-svg" viewBox="0 0 1000 540" role="img" aria-label="Cross-section overlay of the three actual Boolean results"></svg><div class="legend"><span class="a">A · Cut first</span><span class="b">B · Cut after</span><span class="c">C · Transported tool</span><span id="section-count" aria-live="polite"></span></div></div>
+  <p class="caption">Fine-mesh contours are shown in a shared coordinate frame. Independent inverse-field sections and local comparisons are in the <a href="figures/cut_order_sections.pdf">section figure ↗</a>.</p>
+</section>
+<section id="compute" class="section">
+  <div class="section-heading"><div><p class="eyebrow">04 / Native compute → GPU</p><h2>Geometry queries, built to batch.</h2></div><p>A native C++ evaluator performs the Q1 map, damped Newton inversion, and analytic CSG field evaluation in double precision. No per-query Python calls.</p></div>
+  <div class="numbers"><div><strong>7.2<span>×</span></strong><p>Native CPU speedup<br>at 2048² cells</p></div><div><strong>4.9<span>M/s</span></strong><p>Dense query throughput<br>single-thread C++</p></div><div><strong>9.52<span>× 10⁻¹⁵</span></strong><p>Maximum field difference<br>against Python</p></div></div>
+  <div class="compute-flow"><div><span>01</span><h3>Batch queries</h3><p>Caller-owned buffers and a stable structure-of-arrays C ABI.</p></div><b aria-hidden="true">→</b><div><span>02</span><h3>Native C++</h3><p>Q1 mapping → Newton inverse → analytic CSG → per-query status.</p></div><b aria-hidden="true">→</b><div><span>03 / Next</span><h3>CUDA backend</h3><p>Dense GPU evaluation through the same batch contract. In development.</p></div></div>
+  <div class="benchmark-table"><table><caption>Strong four-hole solid · measured CPU medians</caption><thead><tr><th scope="col">Grid cells</th><th scope="col">C++</th><th scope="col">Python</th><th scope="col">Ratio</th></tr></thead><tbody><tr><th scope="row">512²</th><td>0.0531 s</td><td>0.4091 s</td><td>7.71×</td></tr><tr><th scope="row">1024²</th><td>0.2146 s</td><td>1.5482 s</td><td>7.21×</td></tr><tr><th scope="row">2048²</th><td>0.8514 s</td><td>6.1203 s</td><td>7.19×</td></tr></tbody></table></div>
+  <p class="caption">One warmup and five measured runs per method/grid, single-thread CPU. Native compute excludes allocation and interop; Python uses the existing chunked reference path. These are measured implementation ratios. <a href="data/benchmark_summary.csv">Download timings ↓</a></p>
+</section>
+<section class="section results" id="results">
+  <div class="section-heading"><div><p class="eyebrow">05 / Geometric consistency</p><h2>Keep the features. Measure the error.</h2></div><p>Mesh validity, closed contours, independent volume integration, and refinement connect the 3D result to its implicit definition.</p></div>
+  <div class="result-grid"><article><strong>4 holes</strong><p>Retained in all six comparison solids and all eighteen inspected mesh sections.</p></article><article><strong>6.56 × 10⁻⁵</strong><p>Fine A/C sampled surface distance for the transported-tool equivalence.</p></article><article><strong>7.89 × 10⁻⁷</strong><p>Fine transported-tool result's absolute volume error against independent Q1 integration.</p></article></div>
+  <figure><img src="figures/cut_order_metrics.png" width="2640" height="880" loading="lazy" alt="Measured surface distance, volume error, and section error at two mesh refinement levels"><figcaption>Two established refinement levels. Distances are sampled geometric comparisons; the raw measurements are available below.</figcaption></figure>
+  <details class="feature-detail"><summary>Small features: a representative resolution limit</summary><p>A radius-1/256 hole disappears in a coarse locator grid: three holes are recovered instead of four. Feature-aware refinement restores the fourth hole; its measured contour distance is 1.03147 × 10⁻⁴, slightly above the 10⁻⁴ chord target.</p><img src="figures/feature_failure.png" loading="lazy" alt="Saved example of a missed small hole and the feature-controlled recovery"></details>
+</section>
+<section class="section release" id="code"><p class="eyebrow">Build / Explore / Extend</p><h2>Open the model. Follow the code.</h2><p>The current release brings together the modeling application, the native C++ numerical engine, inspectable meshes, and measured results. The CUDA GPU backend is in development.</p><div class="hero-links"><a class="button" href="https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid">View source on GitHub ↗</a><a href="downloads/cut-after.obj" download>Download a mesh ↓</a></div><div class="data-links"><a href="data/surface_comparison.csv">Surface comparison</a><a href="data/volume_comparison.csv">Volume comparison</a><a href="data/section_comparison.csv">Section comparison</a><a href="data/mesh_checks.csv">Mesh measurements</a></div></section>
+</main><footer><a href="/">Daniel Ye</a><span>Solid Modeling · Fall 2026</span><a href="/projects/">More projects ↗</a></footer>
+<script src="app.js" defer></script>
+</body></html>

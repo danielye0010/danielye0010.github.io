@@ -1,0 +1,8 @@
+.venv/
+build/
+output/
+__pycache__/
+*.pyc
+*.dll
+*.lib
+*.exp
