@@ -74,22 +74,6 @@
     ],
     "software": [
       {
-        "name": "DeformSolid",
-        "kind": "Computational geometry · GPU computing",
-        "text": "Built an inverse-implicit solid modeling application for nonlinear deformation, 3D Boolean editing, and cross-section inspection. Native C++ batch evaluation delivers about 7.2× CPU speedup at 2048²; a CUDA GPU backend is in development.",
-        "url": "/projects/deform-solid/",
-        "image": "deform-solid.png",
-        "image_alt": "Actual four-hole solid, nonlinear deformation, and three-dimensional Boolean cutting results",
-        "image_caption": "Interactive 3D geometry and cut-order comparison",
-        "link_label": "Explore project",
-        "tags": [
-          "C++",
-          "CUDA · in development",
-          "CSG",
-          "WebGL"
-        ]
-      },
-      {
         "name": "TradeAgent",
         "kind": "AI agents · Automation",
         "text": "Developed an open-source AI trading system integrating GPT/Claude research agents, automated Robinhood execution, an operator dashboard, and a public decision record.",
@@ -102,6 +86,21 @@
           "MCP",
           "LLM Orchestration",
           "SQLite"
+        ]
+      },
+      {
+        "name": "DeformSolid",
+        "kind": "Computational geometry · GPU computing",
+        "text": "Built an inverse-implicit solid modeling application for nonlinear deformation, 3D Boolean editing, and cross-section inspection. Native C++ batch evaluation delivers about 7.2× CPU speedup at 2048²; CUDA GPU support is planned next.",
+        "url": "/projects/deform-solid/",
+        "image": "deform-solid.png",
+        "image_alt": "Actual four-hole solid, nonlinear deformation, and three-dimensional Boolean cutting results",
+        "image_caption": "Interactive 3D geometry and cut-order comparison",
+        "link_label": "Visit website",
+        "tags": [
+          "C++",
+          "CUDA",
+          "NumPy"
         ]
       },
       {
@@ -373,22 +372,6 @@
     ],
     "software": [
       {
-        "name": "DeformSolid",
-        "kind": "计算几何 · GPU 计算",
-        "text": "开发面向非线性形变的隐式实体建模应用，集成三维布尔编辑、切割顺序比较与截面查看。原生 C++ 批量求值在 2048² 网格上实现约 7.2 倍 CPU 加速，CUDA GPU 后端正在开发。",
-        "url": "/projects/deform-solid/",
-        "image": "deform-solid.png",
-        "image_alt": "实际生成的四孔实体、非线性形变与三维布尔切割结果",
-        "image_caption": "交互式三维几何与切割顺序比较",
-        "link_label": "查看项目",
-        "tags": [
-          "C++",
-          "CUDA · 开发中",
-          "CSG",
-          "WebGL"
-        ]
-      },
-      {
         "name": "TradeAgent",
         "kind": "AI 智能体 · 自动化",
         "text": "开发开源 AI 交易系统，集成 GPT/Claude 研究智能体、Robinhood 自动执行、操作面板与公开决策记录。",
@@ -401,6 +384,21 @@
           "MCP",
           "LLM Orchestration",
           "SQLite"
+        ]
+      },
+      {
+        "name": "DeformSolid",
+        "kind": "计算几何 · GPU 计算",
+        "text": "开发面向非线性形变的隐式实体建模应用，集成三维布尔编辑、切割顺序比较与截面查看。原生 C++ 批量求值在 2048² 网格上实现约 7.2 倍 CPU 加速；下一步接入 CUDA GPU 后端。",
+        "url": "/projects/deform-solid/",
+        "image": "deform-solid.png",
+        "image_alt": "实际生成的四孔实体、非线性形变与三维布尔切割结果",
+        "image_caption": "交互式三维几何与切割顺序比较",
+        "link_label": "访问网站",
+        "tags": [
+          "C++",
+          "CUDA",
+          "NumPy"
         ]
       },
       {
