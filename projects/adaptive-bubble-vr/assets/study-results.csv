@@ -1,0 +1,4 @@
+condition,time_mean_s,time_sd_s,attempts_mean_per_target,attempts_sd_per_target
+Hand,37.3,18.9,22.1,9.7
+Fixed Bubble,15.5,5.4,7.0,1.4
+WDIB,19.4,2.3,6.4,0.6

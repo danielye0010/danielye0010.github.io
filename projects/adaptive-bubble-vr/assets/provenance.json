@@ -1,0 +1,43 @@
+{
+  "presentation_sha256": "6c7d4d73e448d23a3113c43966f2b6a3c54a4b2aa0eda9335b73f86015e9e07a",
+  "images": [
+    {
+      "asset": "hand-condition.png",
+      "pdf_page": 4,
+      "pdf_xref": 84,
+      "operation": "embedded image extracted without scientific modification"
+    },
+    {
+      "asset": "fixed-bubble.png",
+      "pdf_page": 4,
+      "pdf_xref": 86,
+      "operation": "embedded image extracted without scientific modification"
+    },
+    {
+      "asset": "intent-bubble.png",
+      "pdf_page": 4,
+      "pdf_xref": 87,
+      "operation": "embedded image extracted without scientific modification"
+    },
+    {
+      "asset": "completion-time.png",
+      "pdf_page": 10,
+      "pdf_xref": 286,
+      "operation": "embedded image extracted without scientific modification"
+    },
+    {
+      "asset": "selection-attempts.png",
+      "pdf_page": 11,
+      "pdf_xref": 313,
+      "operation": "embedded image extracted without scientific modification"
+    },
+    {
+      "asset": "subjective-ratings.png",
+      "pdf_page": 13,
+      "pdf_xref": 376,
+      "operation": "embedded image extracted without scientific modification"
+    }
+  ],
+  "results": "Historical reported means/SDs transcribed from slides 10-13. No new participant study or reanalysis.",
+  "interactive_demo": "Illustrative 2D browser adaptation of IntentSelector.cs using exposed defaults, not the Unity VR application or experimental recordings."
+}

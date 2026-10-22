@@ -105,8 +105,8 @@
       },
       {
         "name": "AutoReport System",
-        "kind": "Cloud data engineering · Reporting automation",
-        "text": "Engineered a cloud ETL pipeline across signed APIs, S3, Athena, and RMarkdown—automating longitudinal analytics and multi-level reporting.",
+        "kind": "Production reporting · 10,000+ users",
+        "text": "Built and deployed reporting automation for an electronic lab notebook service with 10,000+ users. Turned usage data into recurring lab, department, and institution-level reports through AWS and RMarkdown.",
         "url": "https://github.com/danielye0010/Auto-usage-report-system",
         "image": "autoreport.svg",
         "image_alt": "AutoReport workflow: collect laboratory usage data, analyze it with AWS S3 and Athena, and generate reports for delivery",
@@ -121,7 +121,7 @@
         "name": "Adaptive Bubble Selection VR",
         "kind": "Spatial interaction · HCI",
         "text": "A VR selector that responds to intent: hand motion and scene density dynamically reshape how targets are selected.",
-        "url": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
+        "url": "/projects/adaptive-bubble-vr/",
         "image": "vr-selection.png",
         "image_alt": "Adaptive Bubble Selection VR showing colored targets and selection feedback",
         "image_caption": "VR prototype",
@@ -129,7 +129,10 @@
           "Unity",
           "OpenXR",
           "Intent Scoring"
-        ]
+        ],
+        "link_label": "Website",
+        "upstream": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
+        "upstream_label": "GitHub"
       },
       {
         "name": "Topology-Aware Point Cloud Completion",
@@ -149,9 +152,9 @@
         ]
       },
       {
-        "name": "2.5 Million Spectra. One Distributed Search.",
-        "kind": "Distributed computing · HTCondor",
-        "text": "Turn a 2.5-million-spectrum search into parallel HTCondor jobs, then reduce the results to the 100 closest galaxy matches.",
+        "name": "Parallel Spectral Search",
+        "kind": "High-performance computing · HTCondor",
+        "text": "High-throughput parallel template matching across 2.5 million spectra. Distributed HTCondor jobs process the search and aggregate the 100 closest galaxy matches.",
         "url": "https://github.com/danielye0010/CB58-Galaxy-Search",
         "image": "spectral-search.svg",
         "image_alt": "Distributed Spectral Search workflow illustration",
@@ -406,8 +409,8 @@
       },
       {
         "name": "AutoReport 自动报告系统",
-        "kind": "云端数据工程 · 报告自动化",
-        "text": "构建贯通签名 API、S3、Athena 与 RMarkdown 的云端 ETL 管线，自动完成纵向数据分析与多层级报告生成。",
+        "kind": "真实应用 · 10,000+ 用户",
+        "text": "为拥有 10,000+ 用户的电子实验记录本服务开发并部署自动报告系统，通过 AWS 与 RMarkdown，将使用数据转化为实验室、院系及机构层级的定期运营报告。",
         "url": "https://github.com/danielye0010/Auto-usage-report-system",
         "image": "autoreport.svg",
         "image_alt": "AutoReport 系统流程：采集实验室使用数据，经 AWS S3 与 Athena 分析，生成并交付报告",
@@ -422,7 +425,7 @@
         "name": "自适应气泡选择 VR",
         "kind": "空间交互 · 人机交互",
         "text": "让 VR 选择理解动作意图：根据手部运动与场景密度，动态调整目标选择策略。",
-        "url": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
+        "url": "/projects/adaptive-bubble-vr/",
         "image": "vr-selection.png",
         "image_alt": "自适应气泡选择 VR 中的彩色目标与选择反馈",
         "image_caption": "VR 原型实图",
@@ -430,7 +433,10 @@
           "Unity",
           "OpenXR",
           "Intent Scoring"
-        ]
+        ],
+        "link_label": "项目网站",
+        "upstream": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
+        "upstream_label": "代码仓库"
       },
       {
         "name": "拓扑感知点云补全",
@@ -450,9 +456,9 @@
         ]
       },
       {
-        "name": "250 万条光谱的分布式检索",
-        "kind": "分布式计算 · HTCondor",
-        "text": "将约 250 万条天文光谱的搜索拆解为 HTCondor 并行任务，汇总筛选出最接近目标星系的 100 个候选。",
+        "name": "并行光谱检索",
+        "kind": "高性能计算 · HTCondor",
+        "text": "面向 250 万条光谱的高吞吐并行模板匹配：通过 HTCondor 分布式任务执行检索，汇总筛选最接近目标星系的 100 个候选。",
         "url": "https://github.com/danielye0010/CB58-Galaxy-Search",
         "image": "spectral-search.svg",
         "image_alt": "分布式光谱检索项目流程示意图",
