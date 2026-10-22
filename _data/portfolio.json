@@ -243,8 +243,28 @@
       }
     ],
     "simulation_credit": "Media: Isofilm, Ajay B Harish · Wikimedia Commons; CAD interface: SOLIDWORKS",
-    "creative_heading": "Fiction & Writing",
+    "creative_heading": "Fiction, Writing & Film",
     "creative_works": [
+      {
+        "id": "the-unused-take",
+        "url": "https://www.youtube.com/shorts/bbXrEGeO0bU",
+        "name": "The Unused Take",
+        "original_title": "备用影像",
+        "kind": "AI short film · 55 s",
+        "text": "In 1969, an ordinary man is secretly cast as an astronaut’s stand-in, rehearsing the Moon landing on a soundstage in case the real broadcast fails. A one-minute fiction that ends on NASA’s original Apollo 11 footage.",
+        "tags": [
+          "Seedance 2.5",
+          "MiniMax 2.8",
+          "FFmpeg",
+          "NASA archive"
+        ],
+        "details_label": "Film details",
+        "link_label": "Watch on YouTube",
+        "image": "the-unused-take.jpg",
+        "image_width": 281,
+        "image_height": 500,
+        "image_alt": "Still from The Unused Take: an astronaut’s gold visor reflecting the film studio’s lights, cameras and crew"
+      },
       {
         "id": "no-sea-in-the-elevator",
         "url": "https://www.amazon.com/dp/B0H14C6DS1",
@@ -507,8 +527,28 @@
       }
     ],
     "simulation_credit": "素材：Isofilm、Ajay B Harish · Wikimedia Commons；CAD 界面：SOLIDWORKS",
-    "creative_heading": "小说与写作",
+    "creative_heading": "小说、写作与影像",
     "creative_works": [
+      {
+        "id": "the-unused-take",
+        "url": "https://www.youtube.com/shorts/bbXrEGeO0bU",
+        "name": "备用影像",
+        "original_title": "The Unused Take",
+        "kind": "AI 短片 · 55 秒",
+        "text": "1969 年，一个普通人被秘密选为宇航员替身，在摄影棚里一遍遍排练登月，只为真实信号中断时顶上。一分钟的虚构故事，结尾接入 NASA 阿波罗 11 号的原始影像。",
+        "tags": [
+          "Seedance 2.5",
+          "MiniMax 2.8",
+          "FFmpeg",
+          "NASA 档案"
+        ],
+        "details_label": "影片信息",
+        "link_label": "在 YouTube 观看",
+        "image": "the-unused-take.jpg",
+        "image_width": 281,
+        "image_height": 500,
+        "image_alt": "《备用影像》剧照：宇航员的金色面罩里倒映着摄影棚的灯光、摄影机和工作人员"
+      },
       {
         "id": "no-sea-in-the-elevator",
         "url": "https://www.amazon.com/dp/B0H14C6DS1",

@@ -34,9 +34,9 @@
 <div class="pf-intro"><p class="pf-eyebrow">{{ p.nav[4] }}</p><h2>{{ p.creative_heading }}</h2></div>
 {% for work in p.creative_works %}
 <article class="pf-project pf-creative-work" id="{{ work.id }}">
-  <figure class="pf-creative-cover"><a href="{{ work.url }}"><img src="{{ '/assets/img/creative/' | append: work.image | relative_url }}" width="353" height="500" loading="lazy" decoding="async" alt="{{ work.image_alt }}"></a></figure>
+  <figure class="pf-creative-cover"><a href="{{ work.url }}"><img src="{{ '/assets/img/creative/' | append: work.image | relative_url }}" width="{{ work.image_width | default: 353 }}" height="{{ work.image_height | default: 500 }}" loading="lazy" decoding="async" alt="{{ work.image_alt }}"></a></figure>
   <div><p class="pf-eyebrow">{{ work.kind }}</p><h2><a href="{{ work.url }}">{{ work.name }}</a></h2><p class="pf-creative-original">{{ work.original_title }}</p><p>{{ work.text }}</p>
-  <div class="pf-project-tags" role="list" aria-label="{% if lang == 'en' %}Book details{% else %}图书信息{% endif %}">{% for tag in work.tags %}<span role="listitem">{{ tag }}</span>{% endfor %}</div>
+  <div class="pf-project-tags" role="list" aria-label="{% if work.details_label %}{{ work.details_label }}{% elsif lang == 'en' %}Book details{% else %}图书信息{% endif %}">{% for tag in work.tags %}<span role="listitem">{{ tag }}</span>{% endfor %}</div>
   <div class="pf-links"><a href="{{ work.url }}" rel="noopener">{{ work.link_label }} ↗</a></div></div>
 </article>
 {% endfor %}
