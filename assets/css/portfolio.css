@@ -100,22 +100,18 @@ html[data-theme="dark"] .portfolio{--pf-ink:#eee7f4;--pf-muted:#c2b8cb;--pf-acce
 .portfolio .pf-simulation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .portfolio .pf-simulation-grid article{min-width:0;scroll-margin-top:24px}
 .portfolio .pf-simulation-grid figure{min-height:200px;margin-bottom:22px}
-.portfolio .pf-method-video{display:block;width:100%;height:200px;object-fit:contain;border-radius:3px;background:var(--pf-panel)}
 .portfolio .pf-simulation-grid .pf-eyebrow{margin:0 0 8px}
 .portfolio .pf-simulation-grid h3{font-size:24px;margin:0 0 12px}
 .portfolio .pf-engineering-skills{font:13px/1.8 Arial,sans-serif}
 .portfolio .pf-engineering-skills{margin:0 0 4px}
 .portfolio .pf-engineering-tools{font:12px/1.8 Arial,sans-serif;letter-spacing:.4px;color:var(--pf-accent);margin:0}
-.portfolio .pf-simulation-credit{font:9.5px/1.5 Arial,sans-serif;letter-spacing:.2px;margin:18px 0 0;opacity:.45;transition:opacity .2s}
-.portfolio .pf-simulation-credit:hover{opacity:.85}
-.portfolio .pf-simulation-credit a{color:var(--pf-muted);text-decoration:none}
 .portfolio .pf-fabrication{padding-top:32px;border-top:1px solid var(--pf-line)}
 .portfolio .pf-engineering-group{font:11px/1.6 Arial,sans-serif;text-transform:uppercase;letter-spacing:1.4px;color:var(--pf-accent);margin:30px 0 18px}
 .portfolio .pf-am-processes .pf-process h3{font-size:24px;margin:18px 0 8px}
 .portfolio .pf-am-processes .pf-process-title,.portfolio .pf-equipment-subtitle{color:var(--pf-ink);margin-bottom:8px}
 .portfolio .pf-fabrication .pf-equipment{border:0;padding:0;margin-top:32px}
 .portfolio .pf-fabrication .pf-equipment-grid{margin-top:18px}
-@media(max-width:700px){.portfolio .pf-simulation-grid{grid-template-columns:1fr;gap:28px}.portfolio .pf-simulation-grid figure{min-height:0;margin-bottom:18px}.portfolio .pf-method-video{height:220px}.portfolio .pf-engineering-section{margin-bottom:32px}}
+@media(max-width:700px){.portfolio .pf-simulation-grid{grid-template-columns:1fr;gap:28px}.portfolio .pf-simulation-grid figure{min-height:0;margin-bottom:18px}.portfolio .pf-engineering-section{margin-bottom:32px}}
 
 /* Creative works share the portfolio card layout with a portrait book cover. */
 .portfolio .pf-creative-work{grid-template-columns:minmax(160px,.75fr) minmax(0,1.25fr);gap:35px;padding:34px 0 38px;scroll-margin-top:24px}
