@@ -76,51 +76,50 @@
       {
         "name": "TradeAgent",
         "kind": "AI agents · Automation",
-        "text": "Developed an open-source AI trading system integrating GPT/Claude research agents, automated Robinhood execution, an operator dashboard, and a public decision record.",
+        "text": [
+          "AI agents turn research into trade execution.",
+          "GPT / Claude orchestration · MCP · SQLite."
+        ],
         "url": "https://danielye0010.github.io/TradeAgent/",
         "image": "tradeagent-website.png",
         "image_alt": "TradeAgent public website",
         "image_caption": "Project website",
-        "link_label": "Visit website",
+        "link_label": "Website",
         "tags": [
           "MCP",
           "LLM Orchestration",
           "SQLite"
-        ]
+        ],
+        "upstream": "https://github.com/danielye0010/TradeAgent",
+        "upstream_label": "Code"
       },
       {
         "name": "DeformSolid",
-        "kind": "Computational geometry · GPU computing",
-        "text": "Built an inverse-implicit solid modeling application for nonlinear deformation, 3D Boolean editing, and cross-section inspection. Native C++ batch evaluation delivers about 7.2× CPU speedup at 2048²; CUDA GPU support is planned next.",
+        "kind": "Computational geometry · High-performance computing",
+        "text": [
+          "Nonlinear 3D solids, Booleans, and sections.",
+          "C++ / NumPy · 7.2× faster batch queries."
+        ],
         "url": "/projects/deform-solid/",
         "image": "deform-solid.png",
         "image_alt": "Actual four-hole solid, nonlinear deformation, and three-dimensional Boolean cutting results",
         "image_caption": "Interactive 3D geometry and cut-order comparison",
-        "link_label": "Visit website",
+        "link_label": "Website",
         "tags": [
           "C++",
-          "CUDA",
-          "NumPy"
-        ]
-      },
-      {
-        "name": "AutoReport System",
-        "kind": "Production reporting · 10,000+ users",
-        "text": "Built and deployed reporting automation for an electronic lab notebook service with 10,000+ users. Turned usage data into recurring lab, department, and institution-level reports through AWS and RMarkdown.",
-        "url": "https://github.com/danielye0010/Auto-usage-report-system",
-        "image": "autoreport.svg",
-        "image_alt": "AutoReport workflow: collect laboratory usage data, analyze it with AWS S3 and Athena, and generate reports for delivery",
-        "image_caption": "System workflow illustration",
-        "tags": [
-          "AWS",
-          "Data Pipelines",
-          "RMarkdown"
-        ]
+          "NumPy",
+          "Batch Computing"
+        ],
+        "upstream": "https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid",
+        "upstream_label": "Code"
       },
       {
         "name": "Adaptive Bubble Selection VR",
         "kind": "Spatial interaction · HCI",
-        "text": "A VR selector that responds to intent: hand motion and scene density dynamically reshape how targets are selected.",
+        "text": [
+          "Motion and density guide precise VR selection.",
+          "Unity / OpenXR · Adaptive intent scoring."
+        ],
         "url": "/projects/adaptive-bubble-vr/",
         "image": "vr-selection.png",
         "image_alt": "Adaptive Bubble Selection VR showing colored targets and selection feedback",
@@ -132,16 +131,19 @@
         ],
         "link_label": "Website",
         "upstream": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
-        "upstream_label": "GitHub"
+        "upstream_label": "Code"
       },
       {
         "name": "Topology-Aware Point Cloud Completion",
         "kind": "3D deep learning · Reconstruction",
-        "text": "Bring topology into 3D AI: fuse persistent-homology features with a point-cloud network to reconstruct missing geometry and evaluate hole structure.",
+        "text": [
+          "Recover 3D geometry with structural awareness.",
+          "PyTorch / GUDHI · Topology-feature fusion."
+        ],
         "url": "/projects/topology-completion/",
         "link_label": "Website",
         "upstream": "https://github.com/danielye0010/Topology-3D-Completion",
-        "upstream_label": "GitHub",
+        "upstream_label": "Code",
         "image": "topology-completion.png",
         "image_alt": "Original project airplane point cloud with a marked hole",
         "image_caption": "Original project figure",
@@ -152,10 +154,33 @@
         ]
       },
       {
+        "name": "AutoReport System",
+        "kind": "Production reporting · 10,000+ users",
+        "text": [
+          "Production reporting for 10,000+ ELN users.",
+          "AWS / Python / R · Automated analytics."
+        ],
+        "url": "/projects/autoreport/",
+        "image": "autoreport.svg",
+        "image_alt": "AutoReport workflow: collect laboratory usage data, analyze it with AWS S3 and Athena, and generate reports for delivery",
+        "image_caption": "System workflow illustration",
+        "tags": [
+          "AWS",
+          "Data Pipelines",
+          "RMarkdown"
+        ],
+        "upstream": "https://github.com/danielye0010/Auto-usage-report-system",
+        "link_label": "Website",
+        "upstream_label": "Code"
+      },
+      {
         "name": "Parallel Spectral Search",
         "kind": "High-performance computing · HTCondor",
-        "text": "High-throughput parallel template matching across 2.5 million spectra. Distributed HTCondor jobs process the search and aggregate the 100 closest galaxy matches.",
-        "url": "https://github.com/danielye0010/CB58-Galaxy-Search",
+        "text": [
+          "Parallel matching across 2.5 million spectra.",
+          "HTCondor / FITSio · High-throughput search."
+        ],
+        "url": "/projects/parallel-spectral-search/",
         "image": "spectral-search.svg",
         "image_alt": "Distributed Spectral Search workflow illustration",
         "image_caption": "Workflow illustration",
@@ -163,7 +188,10 @@
           "HTCondor",
           "FITSio",
           "Template Matching"
-        ]
+        ],
+        "upstream": "https://github.com/danielye0010/CB58-Galaxy-Search",
+        "link_label": "Website",
+        "upstream_label": "Code"
       }
     ],
     "capabilities": "Computational geometry · Mechanics · Additive manufacturing",
@@ -380,51 +408,50 @@
       {
         "name": "TradeAgent",
         "kind": "AI 智能体 · 自动化",
-        "text": "开发开源 AI 交易系统，集成 GPT/Claude 研究智能体、Robinhood 自动执行、操作面板与公开决策记录。",
+        "text": [
+          "AI 智能体驱动研究与交易执行。",
+          "GPT / Claude 编排 · MCP · SQLite。"
+        ],
         "url": "https://danielye0010.github.io/TradeAgent/",
         "image": "tradeagent-website.png",
         "image_alt": "TradeAgent 项目官网",
         "image_caption": "项目官网",
-        "link_label": "访问网站",
+        "link_label": "Website",
         "tags": [
           "MCP",
           "LLM Orchestration",
           "SQLite"
-        ]
+        ],
+        "upstream": "https://github.com/danielye0010/TradeAgent",
+        "upstream_label": "Code"
       },
       {
         "name": "DeformSolid",
-        "kind": "计算几何 · GPU 计算",
-        "text": "开发面向非线性形变的隐式实体建模应用，集成三维布尔编辑、切割顺序比较与截面查看。原生 C++ 批量求值在 2048² 网格上实现约 7.2 倍 CPU 加速；下一步接入 CUDA GPU 后端。",
+        "kind": "计算几何 · 高性能计算",
+        "text": [
+          "非线性三维实体、布尔运算与截面交互。",
+          "C++ / NumPy · 批量查询加速 7.2 倍。"
+        ],
         "url": "/projects/deform-solid/",
         "image": "deform-solid.png",
         "image_alt": "实际生成的四孔实体、非线性形变与三维布尔切割结果",
         "image_caption": "交互式三维几何与切割顺序比较",
-        "link_label": "访问网站",
+        "link_label": "Website",
         "tags": [
           "C++",
-          "CUDA",
-          "NumPy"
-        ]
-      },
-      {
-        "name": "AutoReport 自动报告系统",
-        "kind": "真实应用 · 10,000+ 用户",
-        "text": "为拥有 10,000+ 用户的电子实验记录本服务开发并部署自动报告系统，通过 AWS 与 RMarkdown，将使用数据转化为实验室、院系及机构层级的定期运营报告。",
-        "url": "https://github.com/danielye0010/Auto-usage-report-system",
-        "image": "autoreport.svg",
-        "image_alt": "AutoReport 系统流程：采集实验室使用数据，经 AWS S3 与 Athena 分析，生成并交付报告",
-        "image_caption": "系统流程示意",
-        "tags": [
-          "AWS",
-          "Data Pipelines",
-          "RMarkdown"
-        ]
+          "NumPy",
+          "Batch Computing"
+        ],
+        "upstream": "https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid",
+        "upstream_label": "Code"
       },
       {
         "name": "自适应气泡选择 VR",
         "kind": "空间交互 · 人机交互",
-        "text": "让 VR 选择理解动作意图：根据手部运动与场景密度，动态调整目标选择策略。",
+        "text": [
+          "融合运动与密度，驱动精准 VR 目标选择。",
+          "Unity / OpenXR · 自适应意图评分。"
+        ],
         "url": "/projects/adaptive-bubble-vr/",
         "image": "vr-selection.png",
         "image_alt": "自适应气泡选择 VR 中的彩色目标与选择反馈",
@@ -434,18 +461,21 @@
           "OpenXR",
           "Intent Scoring"
         ],
-        "link_label": "项目网站",
+        "link_label": "Website",
         "upstream": "https://github.com/danielye0010/Adaptive-Bubble-Selection-VR",
-        "upstream_label": "代码仓库"
+        "upstream_label": "Code"
       },
       {
         "name": "拓扑感知点云补全",
         "kind": "三维深度学习 · 几何重建",
-        "text": "把拓扑带入三维 AI：将持续同调特征融入点云网络，重建缺失几何，并评估孔洞结构。",
+        "text": [
+          "融合拓扑特征，重建缺失三维几何。",
+          "PyTorch / GUDHI · 持续同调特征融合。"
+        ],
         "url": "/projects/topology-completion/",
-        "link_label": "项目网站",
+        "link_label": "Website",
         "upstream": "https://github.com/danielye0010/Topology-3D-Completion",
-        "upstream_label": "代码仓库",
+        "upstream_label": "Code",
         "image": "topology-completion.png",
         "image_alt": "原始项目点云图，标出飞机模型中的孔洞",
         "image_caption": "项目原始图",
@@ -456,10 +486,33 @@
         ]
       },
       {
+        "name": "AutoReport 自动报告系统",
+        "kind": "真实应用 · 10,000+ 用户",
+        "text": [
+          "服务 10,000+ 用户的生产级自动报告系统。",
+          "AWS / Python / R · 数据分析与报告自动化。"
+        ],
+        "url": "/projects/autoreport/",
+        "image": "autoreport.svg",
+        "image_alt": "AutoReport 系统流程：采集实验室使用数据，经 AWS S3 与 Athena 分析，生成并交付报告",
+        "image_caption": "系统流程示意",
+        "tags": [
+          "AWS",
+          "Data Pipelines",
+          "RMarkdown"
+        ],
+        "upstream": "https://github.com/danielye0010/Auto-usage-report-system",
+        "link_label": "Website",
+        "upstream_label": "Code"
+      },
+      {
         "name": "并行光谱检索",
         "kind": "高性能计算 · HTCondor",
-        "text": "面向 250 万条光谱的高吞吐并行模板匹配：通过 HTCondor 分布式任务执行检索，汇总筛选最接近目标星系的 100 个候选。",
-        "url": "https://github.com/danielye0010/CB58-Galaxy-Search",
+        "text": [
+          "并行匹配 250 万条光谱，筛选最佳候选。",
+          "HTCondor / FITSio · 高吞吐分布式检索。"
+        ],
+        "url": "/projects/parallel-spectral-search/",
         "image": "spectral-search.svg",
         "image_alt": "分布式光谱检索项目流程示意图",
         "image_caption": "流程示意",
@@ -467,7 +520,10 @@
           "HTCondor",
           "FITSio",
           "Template Matching"
-        ]
+        ],
+        "upstream": "https://github.com/danielye0010/CB58-Galaxy-Search",
+        "link_label": "Website",
+        "upstream_label": "Code"
       }
     ],
     "capabilities": "计算几何 · 力学建模 · 增材制造",

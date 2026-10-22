@@ -128,3 +128,6 @@ html[data-theme="dark"] .portfolio{--pf-ink:#eee7f4;--pf-muted:#c2b8cb;--pf-acce
 .portfolio .pf-creative-work p:not(.pf-eyebrow):not(.pf-creative-original){max-width:580px}
 @media(max-width:1000px) and (min-width:701px){.portfolio .pf-creative-work{grid-template-columns:130px minmax(0,1fr);gap:25px}.portfolio .pf-creative-cover{padding:8px}}
 @media(max-width:700px){.portfolio .pf-creative-work{grid-template-columns:1fr;gap:26px;padding-top:27px}.portfolio .pf-creative-cover{width:100%;max-width:340px;box-sizing:border-box}.portfolio .pf-creative-work>div{min-width:0}.portfolio .pf-creative-work .pf-project-tags{flex-wrap:wrap}.portfolio .pf-creative-work h2{font-size:31px}.portfolio .pf-creative-original{font-size:14px}}
+
+.portfolio .pf-project-summary span{display:block}
+.portfolio .pf-project .pf-project-tags{flex-wrap:wrap}
