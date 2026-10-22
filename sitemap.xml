@@ -75,4 +75,8 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://danielye.net/zh/creative/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielye.net/creative/"/>
   </url>
+  <url>
+    <loc>https://danielye.net/projects/topology-completion/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
 </urlset>

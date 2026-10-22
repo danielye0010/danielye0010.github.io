@@ -1,0 +1,31 @@
+{
+  "presentation_sha256": "c3cc1f89755bf93c5759a66a5c33a174a71ed3f5105fb2d2f864ce4b499e68ee",
+  "images": [
+    {
+      "asset": "hole-detail.png",
+      "pdf_page": 11,
+      "pdf_xref": 83,
+      "operation": "embedded image extracted without scientific modification"
+    },
+    {
+      "asset": "persistence.png",
+      "pdf_page": 12,
+      "pdf_xref": 91,
+      "operation": "embedded image extracted without scientific modification"
+    },
+    {
+      "asset": "completion.png",
+      "pdf_page": 21,
+      "pdf_xref": 141,
+      "operation": "embedded image extracted without scientific modification"
+    },
+    {
+      "asset": "results-original.png",
+      "pdf_page": 19,
+      "pdf_xref": 129,
+      "operation": "embedded image extracted without scientific modification"
+    }
+  ],
+  "pointclouds": "Three paired samples from repository data.zip. Coordinates unchanged except six-decimal JSON serialization; no predictions generated.",
+  "results": "Transcribed from presentation slide 19; historical reported values, not recomputed."
+}
