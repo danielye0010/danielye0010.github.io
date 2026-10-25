@@ -22,7 +22,7 @@
 - 3D shape deformation modeling and prediction
 - Predictive geometric compensation
 - Computational geometry
-- 3D deep learning, multimodal AI, and generative 3D
+- 3D deep learning, spatial intelligence, and generative 3D
 
 ## Education
 - Ph.D. candidate, Industrial Engineering, Iowa State University

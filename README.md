@@ -1,6 +1,6 @@
 # Daniel Ye — Personal Website
 
-Source for **[danielye.net](https://danielye.net/)**, the academic homepage of **Daniel Ye** (Yifei Ye, 叶逸飞), a Ph.D. candidate in Industrial Engineering at **Iowa State University** (Department of Industrial and Manufacturing Systems Engineering; Center for Nondestructive Evaluation), advised by Dr. Qing Li. His research focuses on modeling and correcting 3D shape deformation in additive manufacturing, with broader interests in 3D deep learning, multimodal AI, and generative 3D.
+Source for **[danielye.net](https://danielye.net/)**, the academic homepage of **Daniel Ye** (Yifei Ye, 叶逸飞), a Ph.D. candidate in Industrial Engineering at **Iowa State University** (Department of Industrial and Manufacturing Systems Engineering; Center for Nondestructive Evaluation), advised by Dr. Qing Li. His research focuses on modeling and correcting 3D shape deformation in additive manufacturing, with broader interests in 3D deep learning, spatial intelligence, and generative 3D.
 
 - Website: https://danielye.net/
 - Google Scholar: https://scholar.google.com/citations?user=viHpZJQAAAAJ
