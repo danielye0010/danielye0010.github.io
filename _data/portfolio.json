@@ -77,8 +77,7 @@
         "name": "TradeAgent",
         "kind": "AI agents · Automation",
         "text": [
-          "AI agents turn research into trade execution.",
-          "GPT / Claude orchestration · MCP · SQLite."
+          "AI agents turn research into trade execution."
         ],
         "url": "https://danielye0010.github.io/TradeAgent/",
         "image": "tradeagent-website.png",
@@ -98,7 +97,7 @@
         "kind": "Computational geometry · High-performance computing",
         "text": [
           "Nonlinear 3D solids, Booleans, and sections.",
-          "C++ / NumPy · 7.2× faster batch queries."
+          "7.2× faster native CPU queries; CUDA backend in development."
         ],
         "url": "/projects/deform-solid/",
         "image": "deform-solid.png",
@@ -106,9 +105,9 @@
         "image_caption": "Interactive 3D geometry and cut-order comparison",
         "link_label": "Website",
         "tags": [
+          "CUDA",
           "C++",
-          "NumPy",
-          "Batch Computing"
+          "NumPy"
         ],
         "upstream": "https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid",
         "upstream_label": "Code"
@@ -117,8 +116,7 @@
         "name": "Adaptive Bubble Selection VR",
         "kind": "Spatial interaction · HCI",
         "text": [
-          "Motion and density guide precise VR selection.",
-          "Unity / OpenXR · Adaptive intent scoring."
+          "Motion and density guide precise VR selection."
         ],
         "url": "/projects/adaptive-bubble-vr/",
         "image": "vr-selection.png",
@@ -137,8 +135,7 @@
         "name": "Topology-Aware Point Cloud Completion",
         "kind": "3D deep learning · Reconstruction",
         "text": [
-          "Recover 3D geometry with structural awareness.",
-          "PyTorch / GUDHI · Topology-feature fusion."
+          "Recover 3D geometry with structural awareness."
         ],
         "url": "/projects/topology-completion/",
         "link_label": "Website",
@@ -157,8 +154,7 @@
         "name": "AutoReport System",
         "kind": "Production reporting · 10,000+ users",
         "text": [
-          "Production reporting for 10,000+ ELN users.",
-          "AWS / Python / R · Automated analytics."
+          "Production reporting for 10,000+ ELN users."
         ],
         "url": "/projects/autoreport/",
         "image": "autoreport.svg",
@@ -177,8 +173,7 @@
         "name": "Parallel Spectral Search",
         "kind": "High-performance computing · HTCondor",
         "text": [
-          "Parallel matching across 2.5 million spectra.",
-          "HTCondor / FITSio · High-throughput search."
+          "Parallel matching across 2.5 million spectra."
         ],
         "url": "/projects/parallel-spectral-search/",
         "image": "spectral-search.svg",
@@ -398,8 +393,7 @@
         "name": "TradeAgent",
         "kind": "AI 智能体 · 自动化",
         "text": [
-          "AI 智能体驱动研究与交易执行。",
-          "GPT / Claude 编排 · MCP · SQLite。"
+          "AI 智能体驱动研究与交易执行。"
         ],
         "url": "https://danielye0010.github.io/TradeAgent/",
         "image": "tradeagent-website.png",
@@ -419,7 +413,7 @@
         "kind": "计算几何 · 高性能计算",
         "text": [
           "非线性三维实体、布尔运算与截面交互。",
-          "C++ / NumPy · 批量查询加速 7.2 倍。"
+          "原生 CPU 查询提速 7.2 倍；CUDA 后端开发中。"
         ],
         "url": "/projects/deform-solid/",
         "image": "deform-solid.png",
@@ -427,9 +421,9 @@
         "image_caption": "交互式三维几何与切割顺序比较",
         "link_label": "Website",
         "tags": [
+          "CUDA",
           "C++",
-          "NumPy",
-          "Batch Computing"
+          "NumPy"
         ],
         "upstream": "https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid",
         "upstream_label": "Code"
@@ -438,8 +432,7 @@
         "name": "自适应气泡选择 VR",
         "kind": "空间交互 · 人机交互",
         "text": [
-          "融合运动与密度，驱动精准 VR 目标选择。",
-          "Unity / OpenXR · 自适应意图评分。"
+          "融合运动与密度，驱动精准 VR 目标选择。"
         ],
         "url": "/projects/adaptive-bubble-vr/",
         "image": "vr-selection.png",
@@ -458,8 +451,7 @@
         "name": "拓扑感知点云补全",
         "kind": "三维深度学习 · 几何重建",
         "text": [
-          "融合拓扑特征，重建缺失三维几何。",
-          "PyTorch / GUDHI · 持续同调特征融合。"
+          "融合拓扑特征，重建缺失三维几何。"
         ],
         "url": "/projects/topology-completion/",
         "link_label": "Website",
@@ -478,8 +470,7 @@
         "name": "AutoReport 自动报告系统",
         "kind": "真实应用 · 10,000+ 用户",
         "text": [
-          "服务 10,000+ 用户的生产级自动报告系统。",
-          "AWS / Python / R · 数据分析与报告自动化。"
+          "服务 10,000+ 用户的生产级自动报告系统。"
         ],
         "url": "/projects/autoreport/",
         "image": "autoreport.svg",
@@ -498,8 +489,7 @@
         "name": "并行光谱检索",
         "kind": "高性能计算 · HTCondor",
         "text": [
-          "并行匹配 250 万条光谱，筛选最佳候选。",
-          "HTCondor / FITSio · 高吞吐分布式检索。"
+          "并行匹配 250 万条光谱，筛选最佳候选。"
         ],
         "url": "/projects/parallel-spectral-search/",
         "image": "spectral-search.svg",
