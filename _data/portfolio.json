@@ -29,15 +29,11 @@
     "themes": [
       [
         "Response-Aware Geometric Compensation",
-        "Investigating how structural response influences geometric pre-compensation, and how nominal CAD, manufactured shapes, and measured 3D geometry can be brought into correspondence."
+        "Developing a reduced-order inverse design framework that uses nonlinear FEA and structural response sensitivities to compensate manufacturing distortion. Integrates numerical optimization, B-spline/STEP CAD modification, and experimental evaluation using 3D scans of LPBF metal parts."
       ],
       [
-        "Nonlinear Modal Geometry & Mechanics",
-        "Studying compact structural representations for nonlinear deformation, large rotations, and finite deformation."
-      ],
-      [
-        "Geometric Inversion & Solid Modeling",
-        "Exploring inverse deformation maps and robust geometric modeling operations."
+        "Nonlinear Modal Representations for 3D Solids",
+        "Developing compact models of large 3D deformations through strain-based modal reconstruction and geometry-guided quadratic corrections. Uses finite-strain mechanics and nonlinear FEM benchmarks to evaluate bending–stretching coupling, numerical accuracy, and mesh convergence."
       ]
     ],
     "processes": [
@@ -350,15 +346,11 @@
     "themes": [
       [
         "响应感知几何补偿",
-        "研究结构响应如何影响几何预补偿，以及如何建立名义 CAD、制造形状与三维测量数据之间的对应关系。"
+        "开发降阶逆向设计框架，利用非线性有限元分析与结构响应灵敏度补偿制造变形。整合数值优化、B 样条／STEP CAD 修改，以及基于 LPBF 金属零件三维扫描的实验评估。"
       ],
       [
-        "非线性模态几何与力学",
-        "研究适用于非线性形变、大转动与有限变形的紧凑结构表示。"
-      ],
-      [
-        "几何逆映射与实体建模",
-        "探索逆形变映射与稳健的几何建模运算。"
+        "三维实体的非线性模态表示",
+        "通过基于应变的模态重建与几何引导的二次修正，开发三维大变形的紧凑模型。采用有限应变力学与非线性有限元基准算例，评估弯曲–拉伸耦合、数值精度和网格收敛性。"
       ]
     ],
     "processes": [
