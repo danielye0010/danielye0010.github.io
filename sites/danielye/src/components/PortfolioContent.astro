@@ -1,0 +1,69 @@
+---
+// Body of each homepage section. Text comes from src/data/portfolio.json.
+import { portfolio, type Kind, type Lang } from '../lib/site';
+
+interface Props {
+  kind: Kind;
+  lang: Lang;
+}
+const { kind, lang } = Astro.props;
+const p = portfolio[lang];
+const two = (i: number) => `0${i + 1}`;
+const paperUrl = '/papers/structure-aligned-compensation/';
+---
+<main id="portfolio-main" class="pf-main">
+{kind === 'home' && <div class="pf-bio pf-bio-first"><slot /></div>}
+{kind === 'research' && (
+  <>
+    <div class="pf-intro"><p class="pf-eyebrow" set:html={p.nav[1]} /><h2 set:html={p.research} /><p class="pf-lead" set:html={p.research_intro} /></div>
+    <article class="pf-paper">
+      <div class="pf-paper-index"><span>01</span><p><Fragment set:html={p.published} /><br>ASME · JMSE</p></div>
+      <div><h3><a href={paperUrl} set:html={p.paper} /></h3>
+      <p set:html={p.paper_summary} />
+      <p class="pf-authors">Yifei Ye, Lijie Liu, Yiliang Liao, Stephen Holland, Adarsh Krishnamurthy, and Qing Li</p><p><i>Journal of Manufacturing Science and Engineering</i> · 2026</p>
+      <div class="pf-links"><a href={paperUrl}>Website ↗</a><a href="https://doi.org/10.1115/1.4072276"><Fragment set:html={p.paper_link} /> ↗</a><a href="https://github.com/danielye0010/modal-based-geometric-compensation"><Fragment set:html={p.code} /> ↗</a></div></div>
+    </article>
+    <div class="pf-section"><h2 set:html={p.ongoing} />{p.themes.map(([heading, text], i) => <article class="pf-theme"><span class="pf-number">{two(i)}</span><div><h3 set:html={heading} /><p set:html={text} /></div></article>)}</div>
+  </>
+)}
+{kind === 'engineering' && (
+  <>
+    <div class="pf-intro"><p class="pf-eyebrow" set:html={p.nav[2]} /><h2 set:html={p.engineering} /><p class="pf-lead" set:html={p.engineering_intro} /></div>
+    <div class="pf-engineering-section" id="simulation">
+      <h2 set:html={p.simulation_heading} /><p class="pf-engineering-intro" set:html={p.simulation_intro} />
+      <div class="pf-simulation-grid">{p.simulation.map((item, i) => (
+        <article id={item.id}><figure>
+          <img src={`/assets/img/engineering/${item.image}`} width="900" height="520" loading="lazy" alt={item.alt}>
+        </figure><p class="pf-eyebrow">{two(i)} / <Fragment set:html={item.name} /></p><h3 set:html={item.title} /><p class="pf-engineering-skills" set:html={item.skills.join(' · ')} /><p class="pf-engineering-tools" set:html={item.tools.join(' · ')} /></article>
+      ))}</div>
+    </div>
+    <div class="pf-engineering-section pf-fabrication" id="manufacturing">
+      <h2 set:html={p.fabrication_heading} /><p class="pf-engineering-intro" set:html={p.fabrication_intro} />
+      <h3 class="pf-engineering-group" set:html={p.am_heading} /><div class="pf-am-processes">{p.processes.map((photo) => <article class="pf-process" id={photo.id}><figure><img src={`/assets/img/manufacturing/${photo.image}`} alt={photo.alt} width={photo.w} height={photo.h} loading="lazy" decoding="async"></figure><div><h3 set:html={photo.name} /><p class="pf-process-title" set:html={photo.title} /><p set:html={photo.text} /></div></article>)}</div>
+      <div class="pf-equipment" id="metrology"><h3 class="pf-engineering-group" set:html={p.metrology} />
+      <div class="pf-equipment-grid">{p.equipment.map((instrument) => <article><figure><img src={`/assets/img/manufacturing/${instrument.image}`} width="1400" height="1050" loading="lazy" decoding="async" alt={instrument.alt}></figure><h3 set:html={instrument.name} /><p class="pf-equipment-subtitle" set:html={instrument.subtitle} /><p set:html={instrument.text} /></article>)}</div></div>
+    </div>
+  </>
+)}
+{kind === 'projects' && (
+  <>
+    <div class="pf-intro"><p class="pf-eyebrow" set:html={p.nav[3]} /><h2 set:html={p.projects} /><p class="pf-more-projects"><a href="https://github.com/danielye0010?tab=repositories"><Fragment set:html={p.more_projects} /> ↗</a></p><p class="pf-lead" set:html={p.projects_intro} /></div>
+    {p.software.map((project) => (
+      <article class="pf-project"><figure class="pf-project-image"><img src={`/assets/img/projects/${project.image}`} alt={project.image_alt} width="900" height="520" loading="lazy" decoding="async"><figcaption set:html={project.image_caption} /></figure><div><p class="pf-eyebrow" set:html={project.kind} /><h2 set:html={project.name} /><p class="pf-project-summary">{project.text.map((line) => <span set:html={line} />)}</p>{project.tags && <div class="pf-project-tags" role="list" aria-label={lang === 'en' ? 'Technologies' : '技术'}>{project.tags.map((tag) => <span role="listitem" set:html={tag} />)}</div>}<div class="pf-links"><a href={project.url}><Fragment set:html={project.link_label ?? p.repo} /> ↗</a>{project.upstream && <a href={project.upstream}><Fragment set:html={project.upstream_label ?? p.upstream} /> ↗</a>}</div></div></article>
+    ))}
+  </>
+)}
+{kind === 'creative' && (
+  <>
+    <div class="pf-intro"><p class="pf-eyebrow" set:html={p.nav[4]} /><h2 set:html={p.creative_heading} /></div>
+    {p.creative_works.map((work) => (
+      <article class="pf-project pf-creative-work" id={work.id}>
+        <figure class="pf-creative-cover"><a href={work.url}><img src={`/assets/img/creative/${work.image}`} width={work.image_width ?? 353} height={work.image_height ?? 500} loading="lazy" decoding="async" alt={work.image_alt}></a></figure>
+        <div><p class="pf-eyebrow" set:html={work.kind} /><h2><a href={work.url} set:html={work.name} /></h2><p class="pf-creative-original" set:html={work.original_title} /><p set:html={work.text} />
+        <div class="pf-project-tags" role="list" aria-label={work.details_label ?? (lang === 'en' ? 'Book details' : '图书信息')}>{work.tags.map((tag) => <span role="listitem" set:html={tag} />)}</div>
+        <div class="pf-links"><a href={work.url} rel="noopener"><Fragment set:html={work.link_label} /> ↗</a></div></div>
+      </article>
+    ))}
+  </>
+)}
+</main>

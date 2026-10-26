@@ -1,0 +1,217 @@
+---
+// Shared layout for every homepage section (Home, Research, Engineering, Projects, Creative)
+// in both languages. The section body comes from src/components/PortfolioContent.astro.
+import '../styles/global.css';
+import '../styles/minimal-light.scss';
+import '../styles/publications.css';
+import '../styles/portfolio.css';
+import { absoluteUrl, i18n, kinds, langs, pageMeta, pathFor, portfolio, site, type Kind, type Lang } from '../lib/site';
+import { structuredData } from '../lib/structured-data';
+
+interface Props {
+  kind: Kind;
+  lang: Lang;
+}
+const { kind, lang } = Astro.props;
+const t = i18n[lang];
+const p = portfolio[lang];
+const meta = pageMeta[kind][lang];
+const pageUrl = absoluteUrl(pathFor(kind, lang));
+const title = meta.title;
+const description = meta.description ?? site.description;
+const keywords = meta.keywords ?? site.keywords;
+const buildTime = new Date();
+// Translations of this page; zh-Hans first, matching the original hreflang order.
+const translations = (['zh-Hans', 'en'] as Lang[]).map((l) => ({ lang: l, href: absoluteUrl(pathFor(kind, l)) }));
+const jsonLd = structuredData({ url: pageUrl, title, description, htmlLang: t.html_lang, kind, buildTime });
+const fonts = 'https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Ubuntu+Mono&display=swap';
+const avatar = 'https://danielye.net/assets/img/danielavatar.jpg';
+---
+<!doctype html>
+<html lang={t.html_lang}>
+
+<head>
+  <title>{title}</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <script is:inline>
+    /* Apply a saved light/dark choice before first paint (no flash). */
+    (function () {
+      try {
+        var t = localStorage.getItem('dy-theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="author" content={site.author}>
+  <meta name="description" content={description}>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="keywords" content={keywords}>
+  <link rel="canonical" href={pageUrl} />
+  {translations.map((tr) => <link rel="alternate" hreflang={tr.lang} href={tr.href} />)}
+  <link rel="alternate" hreflang="x-default" href={absoluteUrl(pathFor(kind, 'en'))} />
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Daniel Ye">
+  <meta property="og:locale" content={t.og_locale}>
+  {translations.filter((tr) => tr.lang !== lang).map((tr) => <meta property="og:locale:alternate" content={i18n[tr.lang].og_locale}>)}
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={pageUrl}>
+  <meta property="og:image" content={avatar}>
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content={t.image_alt}>
+  <meta property="profile:first_name" content="Daniel">
+  <meta property="profile:last_name" content="Ye">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={avatar}>
+  <meta name="twitter:image:alt" content={t.image_alt}>
+
+  <link rel="me" href={site.googleScholar}>
+  <link rel="me" href={site.github}>
+  <link rel="me" href={site.linkedin}>
+  <link rel="alternate" type="text/plain" href="https://danielye.net/llms.txt" title="Machine-readable profile summary">
+  <link rel="sitemap" type="application/xml" href="https://danielye.net/sitemap.xml">
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
+  <link rel="icon" media="(prefers-color-scheme:dark)" href={site.faviconDark} type="image/png" />
+  <link rel="icon" media="(prefers-color-scheme:light)" href={site.favicon} type="image/png" />
+  <script is:inline src="/assets/js/favicon-switcher.js" type="application/javascript"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css"
+    integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" media="print" onload="this.media='all'" href={fonts}>
+  <noscript><link rel="stylesheet" href={fonts}></noscript>
+</head>
+
+<body class="portfolio">
+<a class="pf-skip" href="#portfolio-main">{lang === 'en' ? 'Skip to content' : '跳至正文'}</a>
+  <div class="wrapper">
+    <nav class="pf-nav" aria-label={lang === 'en' ? 'Main navigation' : '主导航'}>{kinds.map((k, i) => <a href={pathFor(k, lang)} aria-current={k === kind ? 'page' : undefined}>{p.nav[i]}</a>)}</nav>
+    <div class="top-controls">
+      <nav class="lang-switch" aria-label={t.lang_nav}>
+        {langs.map((l, i) => {
+          const tl = i18n[l];
+          const item = l === lang
+            ? <span class="current" lang={tl.html_lang} aria-current="page">{tl.switch_label}</span>
+            : <a href={pathFor(kind, l)} hreflang={tl.html_lang} lang={tl.html_lang}>{tl.switch_label}</a>;
+          return <>{'\n'}{item}{i < langs.length - 1 && <span class="sep" aria-hidden="true">/</span>}</>;
+        })}
+      </nav>
+      <button class="theme-toggle" type="button" hidden
+        data-to-dark={t.to_dark} data-to-light={t.to_light}
+        aria-label={t.to_dark} title={t.to_dark}>
+        <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
+        <i class="fas fa-sun icon-sun" aria-hidden="true"></i>
+      </button>
+    </div>
+    <header>
+
+      <a class="image avatar"><img src={site.avatar} alt={t.avatar_alt} width="800" height="800" fetchpriority="high" /></a>
+      <br>
+
+      <h1>{t.name}</h1>
+      <p class="alt-name" set:html={t.alt_name} />
+
+      <position style="font-size:1.10rem;">{t.position}</position>
+      <br>
+      <a href={site.subaffiliationLink} rel="noopener" target="_blank">
+        <autocolor>{t.subaffiliation}{lang === 'en' && ','}</autocolor>
+      </a>
+      <br>
+      <a href={site.affiliationLink} rel="noopener" target="_blank">
+        <autocolor>{t.affiliation}</autocolor>
+      </a>
+      <br>
+      <a href={site.addressLink} rel="noopener" target="_blank">
+        <h4>{t.address}</h4>
+      </a>
+      <a class="js-email" href="#" data-u={site.emailUser} data-d={site.emailDomain} style="color:#6d6d6d">
+        <email>
+          {site.email}
+        </email>
+      </a>
+      <script is:inline>
+        document.querySelectorAll('a.js-email').forEach(function (a) {
+          a.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d;
+        });
+      </script>
+
+      <br>
+      <br>
+      <div class="social-icons">
+        <a style="margin: 0 5px 0 0" href={site.googleScholar} rel="me noopener" target="_blank" aria-label={t.links.scholar} title="Google Scholar">
+          <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
+        </a>
+        <a style="margin: 0 5px 0 0" href={site.github} rel="me noopener" target="_blank" aria-label={t.links.github} title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a style="margin: 0 5px 0 0" href={site.linkedin} rel="me noopener" target="_blank" aria-label={t.links.linkedin} title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      <br>
+
+    </header>
+    <section>
+
+      <slot />
+
+      <br>
+
+      <div class="site-credit mt-10 border-t border-line pt-4 font-[Arial,sans-serif] text-[11px] tracking-[0.3px] text-muted">{lang === 'en'
+        ? 'Built with Astro, TypeScript, and Tailwind CSS. Deployed on GitHub Pages.'
+        : '使用 Astro、TypeScript 与 Tailwind CSS 构建，部署于 GitHub Pages。'}</div>
+
+    </section>
+    <footer>
+
+    </footer>
+  </div>
+  <script is:inline>
+    /* Light/dark toggle: follows the system until the visitor chooses. */
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var root = document.documentElement;
+      var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+      function current() {
+        var t = root.getAttribute('data-theme');
+        if (t === 'dark' || t === 'light') return t;
+        return mq && mq.matches ? 'dark' : 'light';
+      }
+      function sync() {
+        var label = current() === 'dark' ? btn.getAttribute('data-to-light') : btn.getAttribute('data-to-dark');
+        btn.setAttribute('aria-label', label);
+        btn.setAttribute('title', label);
+      }
+      btn.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('dy-theme', next); } catch (e) {}
+        sync();
+      });
+      if (mq && mq.addEventListener) mq.addEventListener('change', sync);
+      btn.hidden = false;
+      sync();
+    })();
+  </script>
+  <script is:inline src="/assets/js/scale.fix.js"></script>
+  <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon={`{"token":"${site.cloudflareAnalyticsToken}"}`}></script>
+</body>
+
+</html>

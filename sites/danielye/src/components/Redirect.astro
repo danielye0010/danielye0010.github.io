@@ -1,0 +1,13 @@
+---
+// Minimal page that sends visitors (and search engines, via canonical + noindex) to another URL.
+interface Props {
+  lang: string;
+  title: string;
+  to: string; // site-relative path or absolute URL
+  canonical: string;
+  label: string;
+}
+const { lang, title, to, canonical, label } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{title}</title><link rel="canonical" href={canonical}><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content={`0; url=${to}`}><script is:inline set:html={`window.location.replace(${JSON.stringify(to)} + window.location.search + window.location.hash);`} /></head><body><p><a href={to}>{label} →</a></p></body></html>

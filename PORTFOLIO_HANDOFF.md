@@ -1,5 +1,7 @@
 # Portfolio handoff — 2026-10-19
 
+> **Update 2026-10-26:** the site was rebuilt with Astro + TypeScript + Tailwind CSS in `sites/danielye/` (see its README). File paths and build commands below refer to the earlier Jekyll version; the content and design decisions still apply.
+
 Local branch: `feat/portfolio-preview-2026-10`, based on master `21cae8a`. The owner authorized publication on 2026-10-19; this release is prepared for the existing master-based GitHub Pages deployment.
 
 ## Current presentation

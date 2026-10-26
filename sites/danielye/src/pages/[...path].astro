@@ -1,0 +1,21 @@
+---
+// The ten homepage sections: Home, Research, Engineering, Projects, Creative, in English and Chinese.
+import Home from '../layouts/Home.astro';
+import PortfolioContent from '../components/PortfolioContent.astro';
+import { Content as AboutEn } from '../content/about-en.md';
+import { Content as AboutZh } from '../content/about-zh.md';
+import { kinds, langs, pathFor, type Kind, type Lang } from '../lib/site';
+
+export function getStaticPaths() {
+  return langs.flatMap((lang) =>
+    kinds.map((kind) => ({
+      params: { path: pathFor(kind, lang).replace(/^\/|\/$/g, '') || undefined },
+      props: { kind, lang },
+    })),
+  );
+}
+const { kind, lang } = Astro.props as { kind: Kind; lang: Lang };
+---
+<Home kind={kind} lang={lang}>
+<PortfolioContent kind={kind} lang={lang}>{lang === 'en' ? <AboutEn /> : <AboutZh />}</PortfolioContent>
+</Home>

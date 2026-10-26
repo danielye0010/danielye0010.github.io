@@ -1,13 +1,7 @@
-# Jekyll build output / caches
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# Local Bundler configuration and installed gems
-.bundle/
-vendor/bundle/
-*.gem
+# Node / Astro build output
+node_modules/
+dist/
+.astro/
 
 # Editor / local history
 .history/
@@ -24,4 +18,3 @@ _portfolio_dev/*.log
 _portfolio_dev/*.jpg
 _portfolio_dev/screenshots/
 
-# Gemfile.lock is intentionally tracked for reproducible site builds.

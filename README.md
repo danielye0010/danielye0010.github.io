@@ -6,30 +6,22 @@ Source for **[danielye.net](https://danielye.net/)**, the academic homepage of *
 - Google Scholar: https://scholar.google.com/citations?user=viHpZJQAAAAJ
 - LinkedIn: https://www.linkedin.com/in/danielye0001/
 
-## Structure
+Both sites are built with **Astro, TypeScript, and Tailwind CSS**.
 
-| Path | Purpose |
-| --- | --- |
-| `index.md` | English homepage (`lang: en`, `ref: home`) |
-| `zh/index.md` | Simplified Chinese homepage at `/zh/` (`lang: zh-Hans`, `ref: home`) |
-| `_data/i18n.yml` | Per-language header strings (name, position, affiliation, switch label) |
-| `_config.yml` | Name, affiliation, links, SEO description |
-| `_layouts/homepage.html` | Page template, meta tags, JSON-LD structured data |
-| `llms.txt` | Plain-text profile summary for LLM crawlers |
-| `sitemap.xml`, `robots.txt` | Crawling and indexing (update `<lastmod>` when content changes) |
-| `d48e99ff3f3e2223b56b1152af5fe7c8.txt` | IndexNow key (do not delete) |
-| `.github/workflows/indexnow.yml` | Pings IndexNow (Bing etc.) after each GitHub Pages build |
-| `xiaoliang/`, `_layouts/xl.html`, `_data/xl.yml` | Separate homepage for Xiao Liang at `/xiaoliang/`; canonical copy at https://xiaoliang.group/ (built from `_deploy/xiaoliang-group/`) |
+## Repository layout
 
-To add a translated page, give it the same `ref` as its counterpart and a `lang` key that exists in `_data/i18n.yml`; the layout adds `hreflang` links and the language switch automatically.
+| Path | Site | Deployed by |
+| --- | --- | --- |
+| [`sites/danielye/`](sites/danielye/) | https://danielye.net/ | GitHub Pages, via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) |
+| [`sites/xiaoliang/`](sites/xiaoliang/) | https://xiaoliang.group/ (Xiao Liang's homepage) | Cloudflare Pages, via [`_deploy/xiaoliang-group/`](_deploy/xiaoliang-group/) |
 
-Deployed automatically by GitHub Pages (Jekyll). Local preview:
+The two sites are independent: each has its own `package.json`, and neither build reads the other's folder.
+See each folder's README for how to edit content and build locally.
 
-```bash
-bundle install
-bundle exec jekyll serve
-```
+Other folders: `.github/workflows/indexnow.yml` pings IndexNow (Bing etc.) after each danielye.net deploy;
+`_code/` holds research code behind the DeformSolid project page; `_portfolio_dev/` holds older review scripts
+from the Jekyll version of the site.
 
 ## Acknowledgements
 
-Built on Yaoyao Liu's [minimal-light](https://github.com/yaoyao-liu/minimal-light) theme (CC0 1.0), which derives from [pages-themes/minimal](https://github.com/pages-themes/minimal) and [orderedlist/minimal](https://github.com/orderedlist/minimal).
+The danielye.net design builds on Yaoyao Liu's [minimal-light](https://github.com/yaoyao-liu/minimal-light) theme (CC0 1.0), which derives from [pages-themes/minimal](https://github.com/pages-themes/minimal) and [orderedlist/minimal](https://github.com/orderedlist/minimal).

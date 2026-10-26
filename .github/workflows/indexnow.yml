@@ -1,9 +1,11 @@
 # Notify IndexNow (Bing, Yandex, Seznam, Naver; Bing powers ChatGPT search / Copilot results)
-# after each successful GitHub Pages build, so updated pages are recrawled quickly.
+# after each successful deploy of danielye.net, so updated pages are recrawled quickly.
 name: IndexNow ping
 
 on:
-  page_build:
+  workflow_run:
+    workflows: ["Deploy danielye.net"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +13,7 @@ permissions:
 
 jobs:
   ping:
-    if: github.event_name == 'workflow_dispatch' || github.event.build.status == 'built'
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Submit sitemap URLs to IndexNow

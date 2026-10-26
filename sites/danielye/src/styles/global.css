@@ -1,0 +1,17 @@
+/* Tailwind CSS v4. Preflight (Tailwind's reset) is intentionally not loaded: the page is styled by
+   minimal-light.scss, publications.css and portfolio.css, and the reset would change their base
+   typography. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* The site palette as Tailwind colors (text-accent, text-ink, bg-panel, border-line, ...). They read
+   the CSS variables defined in portfolio.css, so they follow light/dark mode automatically. */
+@theme inline {
+  --color-accent: var(--pf-accent);
+  --color-ink: var(--pf-ink);
+  --color-muted: var(--pf-muted);
+  --color-line: var(--pf-line);
+  --color-panel: var(--pf-panel);
+  --font-serif: "Crimson Pro", Georgia, serif;
+  --font-mono: "Ubuntu Mono", ui-monospace, monospace;
+}

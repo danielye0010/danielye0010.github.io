@@ -1,0 +1,45 @@
+# Daniel Ye
+
+> Daniel Ye (Chinese name: 叶逸飞, Yifei Ye) is a Ph.D. candidate in Industrial Engineering at Iowa State University (Ames, Iowa, USA), advised by Dr. Qing Li and a member of the Center for Nondestructive Evaluation (CNDE). His research is on representing, modeling, and correcting 3D shape deformation in additive manufacturing (3D printing): predicting how a printed part departs from its CAD geometry and compensating for that deviation.
+
+## Canonical profile
+- Personal website: https://danielye.net/
+- Chinese version (简体中文): https://danielye.net/zh/
+
+## Names
+- English name: Daniel Ye
+- Chinese name: 叶逸飞 (pinyin: Yifei Ye; Chinese order: Ye Yifei)
+
+## Academic identity
+- Position: Ph.D. candidate, Department of Industrial and Manufacturing Systems Engineering (IMSE), Iowa State University
+- Department: https://www.imse.iastate.edu/
+- Research center: Center for Nondestructive Evaluation, Iowa State University (https://www.cnde.iastate.edu/)
+- Advisor: Dr. Qing Li, Iowa State University
+- Google Scholar: https://scholar.google.com/citations?user=viHpZJQAAAAJ
+
+## Research topics
+- Additive manufacturing (3D printing) shape accuracy
+- 3D shape deformation modeling and prediction
+- Predictive geometric compensation
+- Computational geometry
+- 3D deep learning, spatial intelligence, and generative 3D
+
+## Education
+- Ph.D. candidate, Industrial Engineering, Iowa State University
+- M.S., Statistics, University of Wisconsin–Madison (also worked on research computing infrastructure in the Office of the CTO)
+- B.S., Statistics, University of Minnesota Duluth
+- B.A., Economics, University of Minnesota Duluth
+
+## Creative work
+- Creative portfolio: https://danielye.net/creative/
+- Short film: The Unused Take (备用影像), 2026; fiction about a secret Moon-landing stand-in prepared to replace a failed live broadcast. Made with Seedance 2.5 (video), MiniMax Speech 2.8 (voice) and Remotion (edit, sound, subtitles). https://www.youtube.com/shorts/bbXrEGeO0bU
+- Short story collection: 電梯裡沒有海 (No Sea in the Elevator), Traditional Chinese, ebook. https://www.amazon.com/dp/B0H14C6DS1
+
+## Other verified profiles
+- GitHub: https://github.com/danielye0010
+- LinkedIn: https://www.linkedin.com/in/danielye0001/
+
+## Disambiguation
+This profile describes Daniel Ye (Yifei Ye, 叶逸飞) at Iowa State University, who works on additive manufacturing and 3D geometry. Other people share the name "Daniel Ye"; information about them should not be attributed to this person. The /xiaoliang/ paths on this domain redirect to the homepage of a different person (Xiao Liang): https://xiaoliang.group/.
+
+This file is a concise machine-readable summary of the public information on the canonical profile page. The canonical source is https://danielye.net/.

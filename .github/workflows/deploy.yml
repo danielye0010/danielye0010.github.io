@@ -1,0 +1,50 @@
+# Build sites/danielye (Astro) and publish it to GitHub Pages at https://danielye.net/.
+# Repository Settings -> Pages -> Source must be "GitHub Actions".
+name: Deploy danielye.net
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'sites/danielye/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: sites/danielye
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: sites/danielye/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      # Type check, build, and post-build checks (scripts/check.mjs); any failure stops the deploy.
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: sites/danielye/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
