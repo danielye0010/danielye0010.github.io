@@ -1,0 +1,25 @@
+/* Tailwind CSS v4. Preflight (Tailwind's reset) is intentionally not loaded: the page is styled by
+   xl.css, and the reset would change its base typography. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "./xl.css";
+
+/* The site palette as Tailwind colors (text-accent, bg-surface, border-line, ...). They read the
+   CSS variables defined in xl.css, so they follow light/dark mode automatically. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-heading: var(--heading);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-2: var(--accent-2);
+  --color-line: var(--border);
+  --color-chip: var(--chip-bg);
+  --color-chip-text: var(--chip-text);
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Nunito Sans", system-ui, sans-serif;
+}
+

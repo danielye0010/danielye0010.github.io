@@ -1,33 +1,23 @@
 # xiaoliang.group build
 
-Builds Xiao Liang's pages as a standalone site for https://xiaoliang.group, deployed by
-Cloudflare Pages. danielye.net (GitHub Pages) does not use anything in this folder; Jekyll
-skips folders whose names start with `_`.
-
-Content is edited in the usual places and both sites pick it up:
-`xiaoliang/`, `_layouts/xl.html`, `_data/xl.yml`, `_includes/xl/`.
+Cloudflare Pages entry point for https://xiaoliang.group. The site itself lives in
+[`sites/xiaoliang/`](../../sites/xiaoliang/) (Astro + TypeScript + Tailwind CSS).
+danielye.net (GitHub Pages) does not use anything in this folder.
 
 | File | Purpose |
 |---|---|
-| `build.sh` | Copies only Xiao's sources into a temp Jekyll site, builds with `xl_standalone: true`, moves the `/xiaoliang/` output to the root of `dist/`, runs `check.rb` |
-| `check.rb` | Fails the build on missing files, broken root-relative links, leftover `/xiaoliang/` or `danielye.net` references, or wrong canonical URLs |
-| `_config.yml` | `url: https://xiaoliang.group`, `xl_standalone: true` |
-| `site/` | Pages only on the new domain: `404.html`, `robots.txt`, `sitemap.xml` |
-| `static/_redirects` | 301s from old `/xiaoliang/...` paths to the root |
-| `Gemfile`, `Gemfile.lock`, `.ruby-version` | Jekyll 3.10.0 / Liquid 4.0.4 (same as GitHub Pages), Ruby 3.4.4 |
+| `build.sh` | Installs and builds `sites/xiaoliang/` (type check, build, post-build checks) and copies its output to `dist/` |
+| `.node-version` | Node.js major version Cloudflare uses for the build |
 
 ## Cloudflare Pages settings
 
-- Production branch: `master`
+- Production branch: `master` (other branches get preview deployments)
 - Root directory: `_deploy/xiaoliang-group`
 - Build command: `bash build.sh`
 - Build output directory: `dist`
-- Build watch paths: `*` (default)
 
 ## Local build
 
 ```bash
-cd _deploy/xiaoliang-group
-bash build.sh             # output in dist/
-npx wrangler pages dev dist   # optional: serve with Cloudflare's routing rules
+bash _deploy/xiaoliang-group/build.sh     # output in _deploy/xiaoliang-group/dist/
 ```

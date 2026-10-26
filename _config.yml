@@ -62,3 +62,4 @@ exclude:
   - vendor
   - PORTFOLIO_HANDOFF.md
   - _portfolio_dev
+  - sites

@@ -1,0 +1,191 @@
+---
+// The whole homepage. Each language page (src/pages/index.astro, src/pages/zh/index.astro)
+// supplies its own "About" section through the default slot.
+import '../styles/global.css';
+import { localize, pages, profile as p, site, urlFor, homeUrl, type Lang } from '../lib/profile';
+import { structuredData } from '../lib/structured-data';
+import landscape from '../assets/thumbs/thumb-landscape.svg?raw';
+import muon from '../assets/thumbs/thumb-muon.svg?raw';
+import tubal from '../assets/thumbs/thumb-tubal.svg?raw';
+import sphere from '../assets/thumbs/thumb-sphere.svg?raw';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = localize(lang);
+const { ui } = t;
+const thumbs = { landscape, muon, tubal, sphere };
+const avatarUrl = `${site}${p.avatar}`;
+const buildTime = new Date();
+const others = pages.filter((pg) => pg.lang !== lang);
+const jsonLd = structuredData({ lang, url: t.url, pageTitle: t.pageTitle, description: t.description, htmlLang: ui.html_lang, avatarUrl, buildTime });
+const fontsUrl =
+  'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap';
+const native = p.zh.name_native ?? '';
+---
+<!doctype html>
+<html lang={ui.html_lang}>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{t.pageTitle}</title>
+  <meta name="author" content={p.name}>
+  <meta name="description" content={t.description}>
+  <meta name="keywords" content={t.keywords}>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href={t.url}>
+  {pages.map((pg) => <link rel="alternate" hreflang={pg.lang} href={urlFor(pg.lang)}>)}
+  <link rel="alternate" hreflang="x-default" href={homeUrl}>
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content={p.name}>
+  <meta property="og:locale" content={ui.og_locale}>
+  {others.map((pg) => <meta property="og:locale:alternate" content={p.ui[pg.lang].og_locale}>)}
+  <meta property="og:title" content={`${t.heading} | ${ui.og_title_suffix}`}>
+  <meta property="og:description" content={t.description}>
+  <meta property="og:url" content={t.url}>
+  <meta property="og:image" content={avatarUrl}>
+  <meta property="og:image:alt" content={ui.portrait_alt}>
+  <meta property="profile:first_name" content="Xiao">
+  <meta property="profile:last_name" content="Liang">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content={`${t.heading} | ${ui.og_title_suffix}`}>
+  <meta name="twitter:description" content={t.description}>
+  <meta name="twitter:image" content={avatarUrl}>
+  {p.links.map((l) => <link rel="me" href={l.url}>)}
+  <link rel="alternate" type="text/plain" href={`${homeUrl}llms.txt`} title="Machine-readable profile summary">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="/assets/logo-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Loaded non-blocking: a render-blocking Google Fonts request can stall the page where Google is unreachable. -->
+  <link rel="stylesheet" href={fontsUrl} media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href={fontsUrl}></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
+  <script is:inline>
+    (function () {
+      try {
+        var t = localStorage.getItem('xl-theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="top-controls">
+    <nav class="lang-switch" aria-label={ui.lang_nav}>
+      {pages.map((pg, i) => {
+        const tu = p.ui[pg.lang];
+        const item = pg.lang === lang
+          ? <span class="current" lang={tu.html_lang} aria-current="page">{tu.switch_label}</span>
+          : <a href={pg.path} hreflang={tu.html_lang} lang={tu.html_lang}>{tu.switch_label}</a>;
+        return <>{'\n'}{item}{i < pages.length - 1 && <span class="sep" aria-hidden="true">/</span>}</>;
+      })}
+    </nav>
+    <button class="theme-toggle" type="button" aria-label={ui.theme_label} title={ui.theme_label}>
+      <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+      <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <main class="page">
+    <header class="hero">
+      <div class="portrait">
+        <img src={p.avatar} alt={ui.portrait_alt} width="220" height="271">
+      </div>
+      <div class="hero-text">
+        <p class="eyebrow"><Fragment set:html={t.title} /> &middot; <Fragment set:html={t.university} /></p>
+        <h1>{t.heading}</h1>
+        {t.heading !== p.name
+          ? <p class="alt-name" lang="en">{p.name}</p>
+          : native && <p class="alt-name" lang="zh-Hans">{native}</p>}
+        <p class="tagline" set:html={t.tagline} />
+        <p class="affil">
+          <a href={p.department_link} target="_blank" rel="noopener" set:html={t.department} /><br>
+          <a href={p.university_link} target="_blank" rel="noopener" set:html={t.university} />{lang === 'en' ? ', ' : ' · '}<Fragment set:html={t.location} />
+        </p>
+        <p class="email" aria-label={ui.email_label}>
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          <span>{p.email_user} [at] {p.email_domain} [dot] {p.email_tld}</span>
+        </p>
+        <nav class="links" aria-label={ui.profiles_label}>
+          {p.links.map((l) => <>{'\n'}<a class="pill" href={l.url} target="_blank" rel="noopener me"><i class={l.icon} aria-hidden="true"></i>{l.label}</a></>)}
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <section class="section" id="publications">
+      <h2>{ui.research}</h2>
+      <ol class="papers" lang="en">
+        {p.research.map((pub) => (
+          <li class="paper" id={pub.id}>
+            <div class="thumb">
+              <Fragment set:html={thumbs[pub.thumb]} />
+              <span class="badge">{pub.badge}</span>
+            </div>
+            <div class="paper-body">
+              <h3><a href={pub.links[0]!.url} target="_blank" rel="noopener" set:html={pub.title} /></h3>
+              <p class="authors" set:html={pub.authors} />
+              <p class="venue"><Fragment set:html={pub.venue} />{pub.note !== '' && <> <span class="note">(<Fragment set:html={pub.note} />)</span></>}</p>
+              <p class="tldr" set:html={pub.tldr} />
+              <div class="actions">
+                {pub.links.map((l) => <>{'\n'}<a class="chip" href={l.url} target="_blank" rel="noopener">{l.label}</a></>)}
+                <details class="bib">
+                  <summary class="chip">BibTeX</summary>
+                  <div class="bib-box">
+                    <button class="copy" type="button" aria-label={ui.copy_label} data-copied={ui.copied} lang={ui.html_lang}>{ui.copy}</button>
+                    <pre><code>{pub.bibtex}</code></pre>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <h2 class="sub">{ui.other}</h2>
+      <ul class="others" lang="en">
+        {p.other.map((o) => (
+          <li>
+            <a href={o.url} target="_blank" rel="noopener" set:html={o.title} />
+            <span class="authors" set:html={o.authors} />
+            <span class="venue" set:html={o.venue} />
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section" id="education">
+      <h2>{ui.education}</h2>
+      <ul class="timeline">
+        {t.education.map((e) => (
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            <div>
+              <p class="degree" set:html={e.degree} />
+              <p class="school"><Fragment set:html={e.school} />{e.years !== '' && <> <span class="years">&middot; <Fragment set:html={e.years} /></span></>}</p>{e.note !== '' && <p class="edu-note" set:html={e.note} />}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; {buildTime.getUTCFullYear()} {t.heading} &middot; <Fragment set:html={lang === 'en' ? `${t.department}, ${t.university}` : `${t.university}${t.department}`} /></p>
+    </footer>
+  </main>
+
+  <script>
+    import '../scripts/xl.ts';
+  </script>
+</body>
+</html>

@@ -1,18 +1,16 @@
 ---
-layout: null
-permalink: /xiaoliang/404.html
-sitemap: false
+import '../styles/global.css';
+import { profile } from '../lib/profile';
 ---
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>Page not found | {{ site.data.xl.name }}</title>
+  <title>Page not found | {profile.name}</title>
   <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="stylesheet" href="/assets/xl.css?v={{ site.time | date: '%s' }}">
-  <style>
+  <style is:inline>
     .nf { max-width: 36rem; margin: 18vh auto 0; padding: 0 1.25rem; text-align: center; }
     .nf h1 { margin-bottom: .5rem; }
     .nf p { color: var(--muted); }

@@ -1,5 +1,10 @@
 # Deployment handoff: xiaoliang.group
 
+> **Update 2026-10-26:** the site was rebuilt with Astro + TypeScript + Tailwind CSS in `sites/xiaoliang/`.
+> `build.sh` now builds that project; the Jekyll-specific files described below (`_config.yml`, `check.rb`,
+> `site/`, `static/`, Gemfile) were replaced by their Astro equivalents (`src/pages/`, `scripts/check.mjs`,
+> `public/_redirects`). Cloudflare settings, domains, and DNS below are unchanged and still current.
+
 Status as of 2026-10-18: **live**. PR #2 merged into `master`.
 
 | Item | Status |

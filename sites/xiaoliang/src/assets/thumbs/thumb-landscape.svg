@@ -1,0 +1,20 @@
+<svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contour landscape with two symmetric minima and a descent path">
+  <g fill="none" stroke-linecap="round">
+    <g stroke="var(--thumb-line)" stroke-width="1.3">
+      <ellipse cx="78" cy="78" rx="52" ry="40"/>
+      <ellipse cx="162" cy="72" rx="52" ry="40"/>
+      <ellipse cx="78" cy="78" rx="36" ry="27"/>
+      <ellipse cx="162" cy="72" rx="36" ry="27"/>
+    </g>
+    <g stroke="var(--accent-2)" stroke-width="1.6" opacity=".8">
+      <ellipse cx="78" cy="78" rx="21" ry="15"/>
+      <ellipse cx="162" cy="72" rx="21" ry="15"/>
+    </g>
+    <path d="M214 132 C 196 118, 190 98, 178 86 S 166 74, 163 73" stroke="var(--accent)" stroke-width="2.4" stroke-dasharray="1 6"/>
+  </g>
+  <circle cx="214" cy="132" r="4" fill="var(--accent)" opacity=".55"/>
+  <circle cx="162" cy="72" r="5" fill="var(--accent)"/>
+  <circle cx="78" cy="78" r="5" fill="var(--accent)"/>
+  <text x="78" y="128" text-anchor="middle" font-size="11" fill="var(--muted)" font-style="italic">&#8722;x&#9733;</text>
+  <text x="162" y="122" text-anchor="middle" font-size="11" fill="var(--muted)" font-style="italic">+x&#9733;</text>
+</svg>
