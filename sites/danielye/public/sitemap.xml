@@ -45,14 +45,14 @@
   </url>
   <url>
     <loc>https://danielye.net/projects/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielye.net/projects/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://danielye.net/zh/projects/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielye.net/projects/"/>
   </url>
   <url>
     <loc>https://danielye.net/zh/projects/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielye.net/projects/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://danielye.net/zh/projects/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielye.net/projects/"/>
@@ -84,5 +84,5 @@
     <lastmod>2026-10-22</lastmod>
   </url>
   <url><loc>https://danielye.net/projects/autoreport/</loc><lastmod>2026-10-22</lastmod></url>
-  <url><loc>https://danielye.net/projects/parallel-spectral-search/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://danielye.net/projects/parallel-spectral-search/</loc><lastmod>2026-10-27</lastmod></url>
 </urlset>
