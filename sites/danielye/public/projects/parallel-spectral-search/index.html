@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HPC Spectral Search — High-Performance & High-Throughput Computing</title>
-<meta name="description" content="A cluster batch-processing pipeline for 2.5 million spectra: data partitioning, explicit resource requests, per-job data staging, and global Top-100 result reduction.">
+<meta name="description" content="Slurm/sbatch scheduling and distributed batch processing for a 2.5-million-spectrum search, with resource declarations and global Top-100 result reduction.">
 <link rel="canonical" href="https://danielye.net/projects/parallel-spectral-search/">
-<meta property="og:title" content="HPC Spectral Search"><meta property="og:description" content="2.5 million spectra. Distributed batch processing. Global result reduction.">
+<meta property="og:title" content="HPC Spectral Search"><meta property="og:description" content="Slurm / sbatch. 2.5 million spectra. Distributed batch processing and global result reduction.">
 <meta property="og:image" content="https://danielye.net/assets/img/projects/spectral-search.svg">
 <meta name="theme-color" content="#1d2531"><link rel="icon" href="/assets/img/favicon_black.png"><link rel="stylesheet" href="../brief.css">
 </head>
@@ -13,21 +13,21 @@
 <a class="skip" href="#main">Skip to content</a>
 <header><a href="/projects/"><strong>HPC Spectral Search</strong></a><nav><a href="#compute">Architecture</a><a href="#execution">Execution</a><a href="https://github.com/danielye0010/CB58-Galaxy-Search">Code ↗</a></nav></header>
 <main id="main">
-<section class="hero"><p class="eyebrow">HIGH-PERFORMANCE & HIGH-THROUGHPUT COMPUTING</p><h1>Millions of spectra.<br><em>Scheduled at cluster scale.</em></h1>
-<p class="lead"><span>A cluster batch-processing pipeline for 2.5 million spectra.</span><span>Data partitioning, explicit resource requests, and global result reduction.</span></p>
-<div class="tags"><span>HPC / HTC</span><span>Batch Scheduling</span><span>Linux</span><span>R</span></div>
+<section class="hero"><p class="eyebrow">SLURM / HIGH-PERFORMANCE & HIGH-THROUGHPUT COMPUTING</p><h1>Millions of spectra.<br><em>Scheduled at cluster scale.</em></h1>
+<p class="lead"><span>A cluster batch-processing pipeline for 2.5 million spectra.</span><span>Slurm/sbatch scheduling, explicit resource requests, and global result reduction.</span></p>
+<div class="tags"><span>Slurm / sbatch</span><span>HPC / HTC</span><span>Linux</span><span>R</span></div>
 <div class="actions"><a class="button" href="#compute">Explore the architecture ↓</a><a href="https://github.com/danielye0010/CB58-Galaxy-Search">Source & job definitions ↗</a></div></section>
 <figure class="stage"><img src="/assets/img/projects/spectral-search.svg" width="900" height="520" alt="HPC workflow: partition spectral archives, schedule independent cluster jobs, and reduce partial results into a global ranking"></figure>
-<div class="metrics"><div><strong>2.5M</strong><span>spectra in the original search</span></div><div><strong>Batch jobs</strong><span>independent data-parallel workloads</span></div><div><strong>Top 100</strong><span>global reduction across job outputs</span></div></div>
+<div class="metrics"><div><strong>2.5M</strong><span>spectra in the original search</span></div><div><strong>Slurm</strong><span>sbatch submission · independent batch workloads</span></div><div><strong>Top 100</strong><span>global reduction across job outputs</span></div></div>
 <section class="section" id="compute"><p class="eyebrow">DISTRIBUTED WORKLOAD DESIGN</p><h2>Partition the data. Scale the work.</h2><div class="flow">
 <article><span>01 / DECOMPOSE</span><h3>Partition for throughput</h3><p>One compressed spectrum archive per job. Independent partitions distribute the expensive sliding-window search across cluster workers.</p></article>
-<article><span>02 / SCHEDULE</span><h3>Define the job contract</h3><p>Each task declares CPU, memory, and disk requirements, stages its input archive, and writes an isolated result file with separate logs.</p></article>
+<article><span>02 / SCHEDULE</span><h3>Submit with Slurm / sbatch</h3><p>Schedule independent batch workloads with Slurm, declare compute resources, and collect per-job outputs and logs for downstream reduction.</p></article>
 <article><span>03 / REDUCE</span><h3>Recover the global ranking</h3><p>Merge per-job CSV outputs and rank spectral distances across all partitions to retain the 100 strongest candidate matches.</p></article>
 </div></section>
 <section class="section" id="execution"><p class="eyebrow">CLUSTER EXECUTION</p><h2>From submission to scientific output.</h2><div class="flow">
-<article><span>RESOURCES</span><h3>Explicit resource requests</h3><p>The recorded submit configuration requests 1 CPU, 2 GB memory, and 2 GB disk per task. Resource sizing is visible in the job definition.</p></article>
+<article><span>RESOURCES</span><h3>Explicit resource requests</h3><p>The public HTCondor reference configuration requests 1 CPU, 2 GB memory, and 2 GB disk per task. It preserves an inspectable example of explicit batch-job resource sizing.</p></article>
 <article><span>JOB I/O</span><h3>Stage, execute, collect</h3><p>The scheduler transfers each archive and the reference spectrum. A Bash worker extracts the batch, runs the R/FITSio search, and returns its result CSV.</p></article>
-<article><span>IMPLEMENTATION</span><h3>Original cluster environment</h3><p>The original ~2.5-million-spectrum search ran in UW–Madison’s CHTC high-throughput computing environment using HTCondor. Submit definitions and the retained Top-100 candidate artifact are public.</p></article>
+<article><span>IMPLEMENTATION</span><h3>Cluster execution experience</h3><p>The project used Slurm/sbatch scheduling as well as HTCondor batch execution. The public repository preserves the HTCondor submission path, the R/Bash search worker, and the retained Top-100 results.</p></article>
 </div></section>
 <section class="release"><div><h2>A reusable scientific-computing pattern.</h2><p>Independent batch tasks, resource declarations, data staging, and distributed result reduction.</p></div><a class="button" href="https://github.com/danielye0010/CB58-Galaxy-Search">Explore the code ↗</a></section>
 </main><footer><a href="/">Home</a><span>HPC / HTC · Distributed scientific computing</span><a href="/projects/">All projects ↗</a></footer>

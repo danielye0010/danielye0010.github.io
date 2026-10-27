@@ -171,18 +171,18 @@
       },
       {
         "name": "HPC Spectral Search",
-        "kind": "High-performance & high-throughput computing",
+        "kind": "HPC / HTC · Slurm scheduling",
         "text": [
-          "Distributed 2.5 million spectra across independent cluster batch jobs.",
-          "Defined CPU, memory, and disk requirements, then reduced distributed results to the global Top 100."
+          "Slurm/sbatch scheduling for distributed spectral-search workloads.",
+          "Partitioned 2.5 million spectra into independent batch jobs and reduced their outputs to a global Top 100."
         ],
         "url": "/projects/parallel-spectral-search/",
         "image": "spectral-search.svg",
         "image_alt": "HPC and high-throughput computing workflow: data partitions, scheduled cluster jobs, and global result reduction",
         "image_caption": "Workflow illustration",
         "tags": [
+          "Slurm / sbatch",
           "HPC / HTC",
-          "Batch Scheduling",
           "Linux · R"
         ],
         "upstream": "https://github.com/danielye0010/CB58-Galaxy-Search",
@@ -488,18 +488,18 @@
       },
       {
         "name": "HPC 并行光谱检索",
-        "kind": "高性能计算 · 高通量计算",
+        "kind": "高性能 / 高通量计算 · Slurm 调度",
         "text": [
-          "将 250 万条光谱分片，分发为集群并行批任务。",
-          "声明 CPU、内存与磁盘需求，汇总分布式输出并生成全局 Top 100。"
+          "使用 Slurm / sbatch 调度分布式光谱检索任务。",
+          "将 250 万条光谱分片为独立批作业，汇总输出并生成全局 Top 100。"
         ],
         "url": "/projects/parallel-spectral-search/",
         "image": "spectral-search.svg",
         "image_alt": "高性能与高通量计算流程：数据分片、集群批作业调度与全局结果归并",
         "image_caption": "流程示意",
         "tags": [
+          "Slurm / sbatch",
           "HPC / HTC",
-          "Batch Scheduling",
           "Linux · R"
         ],
         "upstream": "https://github.com/danielye0010/CB58-Galaxy-Search",
