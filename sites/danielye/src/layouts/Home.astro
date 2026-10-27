@@ -170,11 +170,9 @@ const avatar = 'https://danielye.net/assets/img/danielavatar.jpg';
 
       <slot />
 
-      <br>
-
-      <div class="site-credit mt-10 border-t border-line pt-4 font-[Arial,sans-serif] text-[11px] tracking-[0.3px] text-muted">{lang === 'en'
-        ? 'Built with Astro, TypeScript, and Tailwind CSS. Deployed on GitHub Pages.'
-        : '使用 Astro、TypeScript 与 Tailwind CSS 构建，部署于 GitHub Pages。'}</div>
+      {kind === 'home' && <div class="site-credit mt-10 border-t border-line pt-4 font-[Arial,sans-serif] text-[11px] tracking-[0.3px] text-muted">{lang === 'en'
+        ? 'Built with Astro, TypeScript, and Tailwind CSS.'
+        : '使用 Astro、TypeScript 与 Tailwind CSS 构建。'}</div>}
 
     </section>
     <footer>

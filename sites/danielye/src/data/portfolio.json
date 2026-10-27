@@ -173,8 +173,7 @@
         "name": "HPC Spectral Search",
         "kind": "HPC / HTC · Slurm scheduling",
         "text": [
-          "Slurm/sbatch scheduling for distributed spectral-search workloads.",
-          "Partitioned 2.5 million spectra into independent batch jobs and reduced their outputs to a global Top 100."
+          "Parallel search across 2.5M spectra with Slurm."
         ],
         "url": "/projects/parallel-spectral-search/",
         "image": "spectral-search.svg",
@@ -490,8 +489,7 @@
         "name": "HPC 并行光谱检索",
         "kind": "高性能 / 高通量计算 · Slurm 调度",
         "text": [
-          "使用 Slurm / sbatch 调度分布式光谱检索任务。",
-          "将 250 万条光谱分片为独立批作业，汇总输出并生成全局 Top 100。"
+          "基于 Slurm 的 250 万条光谱并行检索。"
         ],
         "url": "/projects/parallel-spectral-search/",
         "image": "spectral-search.svg",
