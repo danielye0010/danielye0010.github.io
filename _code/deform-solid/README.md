@@ -122,3 +122,6 @@ A standalone matched-input splitter exhibited numerical seam gaps near
 - [FE-alignment convergence chart](../../sites/danielye/public/projects/deform-solid/figures/fe_alignment_convergence.svg)
 - [Source data](../../sites/danielye/public/projects/deform-solid/data/fe_alignment_convergence.csv)
 - [Interactive 3D demo](https://danielye.net/projects/deform-solid/)
+
+The standalone public repository is now available at
+[danielye0010/DeformSolid](https://github.com/danielye0010/DeformSolid).

@@ -106,7 +106,7 @@
           "FE-Aware Geometry",
           "C++"
         ],
-        "upstream": "https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid",
+        "upstream": "https://github.com/danielye0010/DeformSolid",
         "upstream_label": "Code"
       },
       {
@@ -422,7 +422,7 @@
           "FE-Aware Geometry",
           "C++"
         ],
-        "upstream": "https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid",
+        "upstream": "https://github.com/danielye0010/DeformSolid",
         "upstream_label": "Code"
       },
       {
