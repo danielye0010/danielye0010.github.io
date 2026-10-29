@@ -91,10 +91,10 @@
       },
       {
         "name": "DeformSolid",
-        "kind": "Computational geometry · High-performance computing",
+        "kind": "Computational geometry · Solid modeling",
         "text": [
-          "Nonlinear 3D solids, Booleans, and sections.",
-          "7.2× faster native CPU queries; CUDA backend in development."
+          "3D Boolean editing and inspection under nonlinear deformation.",
+          "FE-aligned reconstruction: 105× smaller sampled geometric error."
         ],
         "url": "/projects/deform-solid/",
         "image": "deform-solid.png",
@@ -102,9 +102,9 @@
         "image_caption": "Interactive 3D geometry and cut-order comparison",
         "link_label": "Website",
         "tags": [
-          "CUDA",
-          "C++",
-          "NumPy"
+          "3D Boolean",
+          "FE-Aware Geometry",
+          "C++"
         ],
         "upstream": "https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid",
         "upstream_label": "Code"
@@ -407,10 +407,10 @@
       },
       {
         "name": "DeformSolid",
-        "kind": "计算几何 · 高性能计算",
+        "kind": "计算几何 · 三维实体建模",
         "text": [
-          "非线性三维实体、布尔运算与截面交互。",
-          "原生 CPU 查询提速 7.2 倍；CUDA 后端开发中。"
+          "非线性变形实体的三维布尔运算与几何检验。",
+          "有限元界面对齐使采样几何误差降低 105 倍。"
         ],
         "url": "/projects/deform-solid/",
         "image": "deform-solid.png",
@@ -418,9 +418,9 @@
         "image_caption": "交互式三维几何与切割顺序比较",
         "link_label": "Website",
         "tags": [
-          "CUDA",
-          "C++",
-          "NumPy"
+          "3D Boolean",
+          "FE-Aware Geometry",
+          "C++"
         ],
         "upstream": "https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid",
         "upstream_label": "Code"

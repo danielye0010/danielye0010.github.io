@@ -1,7 +1,7 @@
 # DeformSolid
 
 Nonlinear solid modeling with inverse-implicit queries, 3D Boolean editing,
-cross-section inspection, and a native C++ numerical engine.
+cross-section inspection, independently checked geometry, and a native C++ numerical engine.
 
 **[Live application](https://danielye.net/projects/deform-solid/)** ·
 **[Daniel Ye](https://danielye.net/)**
@@ -16,8 +16,7 @@ cross-section inspection, and a native C++ numerical engine.
 - Extracts ordered cross-sections and compares surface, contour, volume, and feature behavior.
 - Runs dense double-precision field queries in native C++, through a versioned structure-of-arrays C ABI.
 
-**GPU update:** the CUDA backend is in development. The current release includes
-the native C++ CPU evaluator and its batch interface.
+**Current release:** a reproducible CPU modeling and geometric evaluation application. Exp09 results are reported here; the separate Exp09 experiment scripts have not been included in this public source snapshot.
 
 ## Run the geometry example
 
@@ -94,3 +93,32 @@ The website source is at [`projects/deform-solid/`](../../projects/deform-solid/
 in the repository root. Its WebGL viewer displays exported meshes; numerical
 modeling runs in Python/C++. Float32 browser display buffers are separate from
 the double-precision numerical engine and OBJ exports.
+
+## FE-aligned boundary reconstruction (Exp09, October 2026)
+
+The finite-element deformation is continuous but has gradient jumps across
+neighboring cells. A mesh edge crossing an element boundary can miss a kink in
+the mapped surface. The existing FE-aligned tessellator respects these interfaces.
+
+| Grid cells | Unsplit max sampled error | FE-aligned max sampled error |
+| ---: | ---: | ---: |
+| 7 | 2.897610e-2 | 4.028896e-3 |
+| 21 | 1.013866e-2 | 4.105835e-4 |
+| 49 | 4.403282e-3 | 8.978049e-5 |
+| 105 | 2.065682e-3 | 1.958339e-5 |
+
+The finest aligned result was **105.48×** closer to the independently sampled
+reference boundary with **3.75%** more input triangles. Observed convergence
+orders were **0.975** (unsplit) and **1.954** (aligned). These are sampled
+numerical results, not general certified Hausdorff bounds.
+
+Twelve saved Boolean meshes underwent **49,636** independent point–mesh
+comparisons. Their **4,214** definite label differences all lay within
+**1.892468e-4** of the mesh; **120** representative independent checks passed.
+Four further Boolean outputs passed mesh checks and retained four-hole sections.
+A standalone matched-input splitter exhibited numerical seam gaps near
+**1e-13**; these results support the established full FE-aligned construction.
+
+- [FE-alignment convergence chart](../../sites/danielye/public/projects/deform-solid/figures/fe_alignment_convergence.svg)
+- [Source data](../../sites/danielye/public/projects/deform-solid/data/fe_alignment_convergence.csv)
+- [Interactive 3D demo](https://danielye.net/projects/deform-solid/)

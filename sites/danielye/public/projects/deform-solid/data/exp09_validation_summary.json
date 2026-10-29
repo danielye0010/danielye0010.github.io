@@ -1,0 +1,13 @@
+{
+  "experiment": "Exp09",
+  "comparison_scope": "12 saved Exp08 Boolean meshes",
+  "point_mesh_comparisons": 49636,
+  "jointly_definite": 39659,
+  "definite_label_differences": 4214,
+  "max_distance_of_label_differences_to_mesh": 0.0001892468,
+  "independent_checks_passed": 120,
+  "independent_checks_run": 120,
+  "additional_Boolean_outputs": 4,
+  "additional_mesh_checks": "pass",
+  "note": "Finite sampled classification comparisons, not continuous geometric or topology certification."
+}

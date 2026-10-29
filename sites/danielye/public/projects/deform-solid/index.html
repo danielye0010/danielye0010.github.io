@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>DeformSolid — Nonlinear Solid Modeling</title>
-  <meta name="description" content="An interactive solid modeling application combining nonlinear deformation, 3D Boolean editing, cross-section inspection, and native C++ batch evaluation.">
+  <meta name="description" content="DeformSolid: nonlinear 3D Boolean modeling, independent implicit validation, and FE-aligned reconstruction with 105× smaller sampled surface error.">
   <link rel="canonical" href="https://danielye.net/projects/deform-solid/">
   <meta property="og:title" content="DeformSolid — Nonlinear Solid Modeling">
-  <meta property="og:description" content="Solid geometry, nonlinear deformation, and high-performance native C++ queries.">
+  <meta property="og:description" content="Nonlinear Boolean modeling, independent geometric validation, and a measured 105× FE-alignment improvement.">
   <meta property="og:image" content="https://danielye.net/assets/img/projects/deform-solid.png">
   <meta name="theme-color" content="#574187"><link rel="stylesheet" href="style.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header><a class="wordmark" href="/projects/">DeformSolid <span>/ Projects</span></a><nav aria-label="Project"><a href="#explore">Explore</a><a href="#geometry">Geometry</a><a href="#compute">Compute</a><a href="https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid">Code ↗</a></nav></header>
+<header><a class="wordmark" href="/projects/">DeformSolid <span>/ Projects</span></a><nav aria-label="Project"><a href="#explore">Explore</a><a href="#geometry">Geometry</a><a href="#accuracy">Accuracy</a><a href="#compute">Compute</a><a href="https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid">Code ↗</a></nav></header>
 <main id="main">
 <section class="hero">
   <p class="eyebrow">DeformSolid / Computational geometry</p>
   <h1>Model the solid.<br>Follow the deformation.</h1>
-  <p class="lead"><span>Nonlinear solids, Boolean editing, and sections.</span><span>7.2× faster native CPU queries; CUDA backend in development.</span></p>
-  <div class="stack"><span>CUDA</span><span>C++</span><span>NumPy</span></div>
+  <p class="lead"><span>Model and edit solids after nonlinear deformation.</span><span>FE-aligned boundaries made sampled geometry 105× more accurate at the finest tested resolution.</span></p>
+  <div class="stack"><span>3D Boolean</span><span>Finite-element geometry</span><span>C++</span></div>
   <div class="hero-links"><a class="button" href="#explore">Explore the geometry <span>↓</span></a><a href="https://github.com/danielye0010/danielye0010.github.io/tree/master/_code/deform-solid">Read the code ↗</a></div>
   <figure class="hero-figure"><img src="figures/workflow.png" width="2640" height="880" alt="Actual generated reference four-hole solid, nonlinear deformation, spatial Boolean result, and enlarged cut detail"><figcaption>One four-hole component. A nonlinear map. Actual three-dimensional material removal.</figcaption></figure>
 </section>
@@ -44,16 +44,23 @@
   <div class="section-view"><div class="section-toolbar"><label>Inspection plane <select id="plane"><option value="0">z = 0.62643 · through the cut</option><option value="1">z = 0.64893 · upper cut</option><option value="2">z = 0.71643 · above the cut</option></select></label><div><button id="section-whole" class="selected">Whole section</button><button id="section-detail">Cut detail</button></div></div><svg id="section-svg" viewBox="0 0 1000 540" role="img" aria-label="Cross-section overlay of the three actual Boolean results"></svg><div class="legend"><span class="a">A · Cut first</span><span class="b">B · Cut after</span><span class="c">C · Transported tool</span><span id="section-count" aria-live="polite"></span></div></div>
   <p class="caption">Fine-mesh contours are shown in a shared coordinate frame. Independent inverse-field sections and local comparisons are in the <a href="figures/cut_order_sections.pdf">section figure ↗</a>.</p>
 </section>
+<section id="accuracy" class="section">
+  <div class="section-heading"><div><p class="eyebrow">04 / FE-aware accuracy</p><h2>Follow the element boundaries.</h2></div><p>A deformed solid is reconstructed from a finite-element map. Its slope changes across element interfaces; edges crossing those interfaces can carry extra geometric error into the final Boolean output.</p></div>
+  <div class="result-grid"><article><strong>105.48×</strong><p>Smaller finest-level sampled geometric error with FE-aligned boundary reconstruction.</p></article><article><strong>0.975 → 1.954</strong><p>Observed convergence orders: without versus with FE alignment.</p></article><article><strong>+3.75%</strong><p>Input triangle count at the finest resolution.</p></article></div>
+  <figure><img src="figures/fe_alignment_convergence.svg" width="1080" height="600" loading="lazy" alt="Measured maximum sampled surface errors at four resolutions: the unsplit boundary converges near first order; the FE-aligned boundary approaches second order."><figcaption>Measured sampled distances, same strong deformation and independent reference points. No continuous error or topology certificate is claimed. <a href="data/fe_alignment_convergence.csv">Download plotted values ↓</a></figcaption></figure>
+  <p class="caption">At the finest resolution, sampled maximum error decreased from 2.066 × 10⁻³ to 1.958 × 10⁻⁵. Four follow-up 3D Boolean outputs passed mesh checks and kept the expected four-hole sections. A separate standalone matched-input splitter exposed seam gaps near 10⁻¹³; the supported result is for the complete FE-aligned construction.</p>
+</section>
 <section id="compute" class="section">
-  <div class="section-heading"><div><p class="eyebrow">04 / High-performance compute</p><h2>Geometry queries, built to batch.</h2></div><p>A native C++ evaluator performs the Q1 map, damped Newton inversion, and analytic CSG field evaluation in double precision. No per-query Python calls.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">05 / High-performance compute</p><h2>Geometry queries, built to batch.</h2></div><p>A native C++ evaluator performs the Q1 map, damped Newton inversion, and analytic CSG field evaluation in double precision. No per-query Python calls.</p></div>
   <div class="numbers"><div><strong>7.2<span>×</span></strong><p>Native CPU speedup<br>at 2048² cells</p></div><div><strong>4.9<span>M/s</span></strong><p>Dense query throughput<br>single-thread C++</p></div><div><strong>9.52<span>× 10⁻¹⁵</span></strong><p>Maximum field difference<br>against Python</p></div></div>
   <div class="compute-flow"><div><span>01</span><h3>Batch queries</h3><p>Caller-owned buffers and a stable structure-of-arrays C ABI.</p></div><b aria-hidden="true">→</b><div><span>02</span><h3>Native C++</h3><p>Q1 mapping → Newton inverse → analytic CSG → per-query status.</p></div><b aria-hidden="true">→</b><div><span>03</span><h3>NumPy integration</h3><p>Contiguous arrays connect native batch evaluation to Python geometry workflows.</p></div></div>
   <div class="benchmark-table"><table><caption>Strong four-hole solid · measured CPU medians</caption><thead><tr><th scope="col">Grid cells</th><th scope="col">C++</th><th scope="col">Python</th><th scope="col">Ratio</th></tr></thead><tbody><tr><th scope="row">512²</th><td>0.0531 s</td><td>0.4091 s</td><td>7.71×</td></tr><tr><th scope="row">1024²</th><td>0.2146 s</td><td>1.5482 s</td><td>7.21×</td></tr><tr><th scope="row">2048²</th><td>0.8514 s</td><td>6.1203 s</td><td>7.19×</td></tr></tbody></table></div>
   <p class="caption">One warmup and five measured runs per method/grid, single-thread CPU. Native compute excludes allocation and interop; Python uses the existing chunked reference path. These are measured implementation ratios. <a href="data/benchmark_summary.csv">Download timings ↓</a></p>
 </section>
 <section class="section results" id="results">
-  <div class="section-heading"><div><p class="eyebrow">05 / Geometric consistency</p><h2>Keep the features. Measure the error.</h2></div><p>Mesh validity, closed contours, independent volume integration, and refinement connect the 3D result to its implicit definition.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">06 / Geometric consistency</p><h2>Keep the features. Measure the error.</h2></div><p>Mesh validity, closed contours, independent volume integration, and refinement connect the 3D result to its implicit definition.</p></div>
   <div class="result-grid"><article><strong>4 holes</strong><p>Retained in all six comparison solids and all eighteen inspected mesh sections.</p></article><article><strong>6.56 × 10⁻⁵</strong><p>Fine A/C sampled surface distance for the transported-tool equivalence.</p></article><article><strong>7.89 × 10⁻⁷</strong><p>Fine transported-tool result's absolute volume error against independent Q1 integration.</p></article></div>
+  <p class="caption">Independent implicit-field checks covered twelve saved 3D Boolean meshes (49,636 point–mesh comparisons). All 4,214 definite label differences were within 1.892 × 10⁻⁴ of the mesh surface; 120 representative independent checks passed. They are sampled geometric differences near approximated boundaries, not exact label identity. <a href="data/exp09_validation_summary.json">Exp09 validation summary ↓</a></p>
   <figure><img src="figures/cut_order_metrics.png" width="2640" height="880" loading="lazy" alt="Measured surface distance, volume error, and section error at two mesh refinement levels"><figcaption>Two established refinement levels. Distances are sampled geometric comparisons; the raw measurements are available below.</figcaption></figure>
 
 </section>
